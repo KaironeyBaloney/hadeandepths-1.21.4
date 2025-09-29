@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north":  { "model": "hadeandepths:block/davy_jones_locker", "y":  0 },
+    "facing=south":  { "model": "hadeandepths:block/davy_jones_locker", "y": 180 },
+    "facing=west":   { "model": "hadeandepths:block/davy_jones_locker", "y":  270 },
+    "facing=east":   { "model": "hadeandepths:block/davy_jones_locker", "y": 90 }
+  }
+}

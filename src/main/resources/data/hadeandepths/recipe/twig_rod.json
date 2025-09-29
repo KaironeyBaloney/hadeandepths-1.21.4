@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "  A",
+    " AB",
+    "A B"
+  ],
+  "key": {
+    "A": [
+      "minecraft:stick"
+    ],
+    "B": [
+      "minecraft:string"
+    ]
+  },
+  "result": {
+    "id": "hadeandepths:twig_rod",
+    "count": 1
+  }
+}

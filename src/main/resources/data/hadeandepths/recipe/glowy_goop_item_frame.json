@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    [
+      "minecraft:item_frame",
+      "hadeandepths:glowy_goop"
+    ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:glow_item_frame"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " DC",
+    "DCB",
+    "A B"
+  ],
+  "key": {
+    "A": [
+      "minecraft:stick"
+    ],
+    "B": [
+      "minecraft:string"
+    ],
+    "C": [
+      "minecraft:iron_ingot"
+    ],
+    "D": [
+      "minecraft:diamond"
+    ]
+  },
+  "result": {
+    "id": "hadeandepths:reinforced_rod",
+    "count": 1
+  }
+}

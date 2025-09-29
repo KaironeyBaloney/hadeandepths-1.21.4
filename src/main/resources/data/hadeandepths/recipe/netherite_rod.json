@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "hadeandepths:reinforced_rod",
+  "addition": "minecraft:netherite_ingot",
+  "template": "minecraft:netherite_upgrade_smithing_template",
+  "result": {
+    "id": "hadeandepths:netherite_rod",
+    "count": 1
+  }
+}

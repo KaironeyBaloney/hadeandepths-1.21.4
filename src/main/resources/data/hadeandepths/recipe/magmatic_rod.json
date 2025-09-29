@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "hadeandepths:netherite_rod",
+  "addition": "minecraft:blaze_rod",
+  "template": "hadeandepths:magmatic_upgrade_smithing_template",
+  "result": {
+    "id": "hadeandepths:magmatic_rod",
+    "count": 1
+  }
+}

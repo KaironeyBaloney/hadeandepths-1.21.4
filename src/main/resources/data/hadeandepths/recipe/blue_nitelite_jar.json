@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "hadeandepths:blue_nitelite",
+    "hadeandepths:water_jar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hadeandepths:blue_nitelite_jar"
+  }
+}
