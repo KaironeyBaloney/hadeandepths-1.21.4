@@ -5,7 +5,9 @@ import com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities;
 import com.kaironeybaloney.hadeandepths.item.ModCreativeModeTabs;
 import com.kaironeybaloney.hadeandepths.item.ModItems;
 import com.kaironeybaloney.hadeandepths.screen.ModMenuTypes;
+import com.kaironeybaloney.hadeandepths.sounds.ModSounds;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.repository.BuiltInPackSource;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -48,6 +50,7 @@ public class HadeanDepths {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModSounds.SOUND_EVENTS.register(modEventBus);
 
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 

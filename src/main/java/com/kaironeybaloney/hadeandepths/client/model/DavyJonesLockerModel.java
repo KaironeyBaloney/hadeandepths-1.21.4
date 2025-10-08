@@ -3,6 +3,7 @@ package com.kaironeybaloney.hadeandepths.client.model;
 import com.kaironeybaloney.hadeandepths.block.entity.DavyJonesLockerBlockEntity;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoRenderer;
 
@@ -25,5 +26,16 @@ public class DavyJonesLockerModel extends GeoModel<DavyJonesLockerBlockEntity> {
     @Override
     public ResourceLocation getAnimationResource(DavyJonesLockerBlockEntity animatable) {
         return ANIM;
+    }
+
+    @Override
+    public void setCustomAnimations(DavyJonesLockerBlockEntity entity, long instanceId, AnimationState<DavyJonesLockerBlockEntity> state) {
+        super.setCustomAnimations(entity, instanceId, state);
+
+        var lid = this.getAnimationProcessor().getBone("lid");
+        if (lid != null) {
+            float openness = entity.getOpenness(state.getPartialTick());
+            lid.setRotY(openness * ((float) Math.PI / 2F));
+        }
     }
 }

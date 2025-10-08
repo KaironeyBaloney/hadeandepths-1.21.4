@@ -1,0 +1,12 @@
+{
+  "davy_jones_locker_open": {
+    "sounds": [
+      { "name": "hadeandepths:block/davy_jones_locker/open", "stream": false }
+    ]
+  },
+  "davy_jones_locker_close": {
+    "sounds": [
+      { "name": "hadeandepths:block/davy_jones_locker/close", "stream": false }
+    ]
+  }
+}

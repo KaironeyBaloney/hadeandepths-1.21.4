@@ -3,11 +3,15 @@ package com.kaironeybaloney.hadeandepths.block.entity;
 
 import com.kaironeybaloney.hadeandepths.block.custom.DavyJonesLockerBlock;
 import com.kaironeybaloney.hadeandepths.screen.custom.DavyJonesLockerMenu;
+import com.kaironeybaloney.hadeandepths.sounds.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
 import net.minecraft.world.CompoundContainer;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
@@ -36,11 +40,10 @@ import static com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities.DAV
 
 public class DavyJonesLockerBlockEntity extends RandomizableContainerBlockEntity implements MenuProvider, GeoBlockEntity {
     private NonNullList<ItemStack> items;
-    private final AnimatableInstanceCache animatableCache = GeckoLibUtil.createInstanceCache(this);
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    private static final RawAnimation OPEN_CLOSE_ANIM = RawAnimation.begin().thenPlayAndHold("animation.davy_jones_locker.open_close");
-
-    private float animationProgress = 0f;
+    private float openness;
+    private float oOpenness;
     public boolean isOpening() {
         return openersCounter.getOpenerCount() > 0;
     }
@@ -84,12 +87,37 @@ public class DavyJonesLockerBlockEntity extends RandomizableContainerBlockEntity
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, DavyJonesLockerBlockEntity be) {
-        if (!level.isClientSide) {
-            be.openersCounter.recheckOpeners(level, pos, state);
+        be.oOpenness = be.openness;
+        be.openersCounter.recheckOpeners(level, pos, state);
+        int openCount = be.openersCounter.getOpenerCount();
+
+        if (openCount > 0 && be.openness == 0.0F) {
+            level.playSound(null, pos, ModSounds.DAVY_JONES_LOCKER_OPEN.value(), SoundSource.BLOCKS, 1F,
+                    level.random.nextFloat() * 0.1F + 0.9F);
         }
-        System.out.println("IsOpening = " + be.isOpening());
+
+        if ((openCount == 0 && be.openness > 0.0F) || (openCount > 0 && be.openness < 1.0F)) {
+            float prev = be.openness;
+
+            if (openCount > 0)
+                be.openness += 0.1F;
+            else
+                be.openness -= 0.1F;
+
+            be.openness = Mth.clamp(be.openness, 0.0F, 1.0F);
+
+            if (be.openness < 0.5F && prev >= 0.5F) {
+                level.playSound(null, pos, ModSounds.DAVY_JONES_LOCKER_CLOSE.value(), SoundSource.BLOCKS, 1F,
+                        level.random.nextFloat() * 0.1F + 0.9F);
+            }
+        }
     }
 
+    public float getOpenness(float partialTicks) {
+        float linear = Mth.lerp(partialTicks, oOpenness, openness);
+
+        return 1.0F - (float)Math.pow(1.0F - linear, 3.0F);
+    }
     public static int getOpenCount(BlockGetter level, BlockPos pos) {
         BlockState blockstate = level.getBlockState(pos);
         if (blockstate.hasBlockEntity()) {
@@ -154,38 +182,13 @@ public class DavyJonesLockerBlockEntity extends RandomizableContainerBlockEntity
         return 36;
     }
 
-
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, "main_controller", 0, this::predicate)
-                        .triggerableAnim("open_close", OPEN_CLOSE_ANIM)
-        );
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+
     }
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.animatableCache;
-    }
-
-    public <E extends GeoAnimatable> PlayState predicate(AnimationState<E> event) {
-        AnimationController<E> controller = event.getController();
-        controller.transitionLength(5);
-
-        if (isOpening()) {
-            controller.setAnimation(
-                    RawAnimation.begin()
-                            .then("animation.davy_jones_locker.open_close", Animation.LoopType.PLAY_ONCE)
-            );
-            controller.setAnimationSpeed(1.0f);
-        } else {
-            controller.setAnimation(
-                    RawAnimation.begin()
-                            .then("animation.davy_jones_locker.open_close", Animation.LoopType.PLAY_ONCE)
-            );
-            controller.setAnimationSpeed(-1.0f);
-        }
-
-        return PlayState.CONTINUE;
+        return cache;
     }
 }
