@@ -4,12 +4,10 @@ import com.kaironeybaloney.hadeandepths.HadeanDepths;
 import com.kaironeybaloney.hadeandepths.block.ModBlocks;
 import com.kaironeybaloney.hadeandepths.block.entity.BlueNiteliteJarBlockEntity;
 import com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities;
-import com.kaironeybaloney.hadeandepths.client.renderer.block.BlueNiteliteJarRenderer;
-import com.kaironeybaloney.hadeandepths.client.renderer.block.DavyJonesLockerRenderer;
-import com.kaironeybaloney.hadeandepths.client.renderer.block.GreenNiteliteJarRenderer;
-import com.kaironeybaloney.hadeandepths.client.renderer.block.PinkNiteliteJarRenderer;
+import com.kaironeybaloney.hadeandepths.client.renderer.block.*;
 import com.kaironeybaloney.hadeandepths.screen.ModMenuTypes;
 import com.kaironeybaloney.hadeandepths.screen.custom.DavyJonesLockerScreen;
+import com.kaironeybaloney.hadeandepths.screen.custom.WoodenCrateScreen;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -44,5 +42,6 @@ public class ModClient {
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
         event.register(ModMenuTypes.DAVY_JONES_LOCKER_MENU.get(), DavyJonesLockerScreen::new);
+        event.register(ModMenuTypes.WOODEN_CRATE_MENU.get(), WoodenCrateScreen::new);
     }
 }

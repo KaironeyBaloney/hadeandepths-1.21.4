@@ -7,6 +7,7 @@ import com.kaironeybaloney.hadeandepths.sounds.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -56,7 +57,26 @@ public class DavyJonesLockerBlockEntity extends RandomizableContainerBlockEntity
         this.openersCounter  = new ContainerOpenersCounter() {
             @Override
             protected void onOpen(Level level, BlockPos blockPos, BlockState blockState) {
+                if (!level.isClientSide) return;
+                var facing = state.getValue(DavyJonesLockerBlock.FACING);
 
+                for (int i = 0; i < 10; i++) {
+                    double speed = 0.2D + level.random.nextDouble() * 0.05D;
+                    double spread = 0.3D;
+
+                    double dx = facing.getStepX() * speed + (level.random.nextDouble() - 0.5D) * spread;
+                    double dy = 0.05D + (level.random.nextDouble() - 0.5D) * 0.05D;
+                    double dz = facing.getStepZ() * speed + (level.random.nextDouble() - 0.5D) * spread;
+
+                    double x = pos.getX() + 0.6D + facing.getStepX() * 0.6D;
+                    double y = pos.getY() + 0.6D;
+                    double z = pos.getZ() + 0.6D + facing.getStepZ() * 0.6D;
+
+                    level.addParticle(
+                            net.minecraft.core.particles.ParticleTypes.BUBBLE,
+                            x, y, z, dx, dy, dz
+                    );
+                }
             }
 
             @Override

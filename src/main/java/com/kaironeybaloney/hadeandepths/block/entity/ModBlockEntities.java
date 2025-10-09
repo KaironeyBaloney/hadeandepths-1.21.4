@@ -30,6 +30,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("davy_jones_locker_block_entity", () -> new BlockEntityType<>(
                     DavyJonesLockerBlockEntity::new, ModBlocks.DAVY_JONES_LOCKER.get()));
 
+    public static final Supplier<BlockEntityType<WoodenCrateBlockEntity>> WOODEN_CRATE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("wooden_crate_block_entity", () -> new BlockEntityType<>(
+                    WoodenCrateBlockEntity::new, ModBlocks.WOODEN_CRATE.get()));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
