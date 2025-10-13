@@ -41,6 +41,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLOBFISH);
                         output.accept(ModItems.LANTERN_FISH);
                         output.accept(ModItems.BARRACUDA);
+                        output.accept(ModItems.TIGER_FISH);
 
                         output.accept(ModItems.GREAT_WHITE_SHARK);
                         output.accept(ModItems.TUNA);
@@ -62,6 +63,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHELL_FRAGMENT);
                         output.accept(ModItems.LARGE_SCALES);
                         output.accept(ModItems.SQUID_EYE);
+                        output.accept(ModItems.RAW_FILLET);
+                        output.accept(ModItems.COOKED_FILLET);
+
                         output.accept(ModItems.SAND_DOLLAR);
                         output.accept(ModItems.MAGMATIC_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(ModItems.GLASS_JAR);

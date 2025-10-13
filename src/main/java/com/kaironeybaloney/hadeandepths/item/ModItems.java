@@ -6,6 +6,8 @@ import com.kaironeybaloney.hadeandepths.item.custom.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -41,55 +43,132 @@ public class ModItems {
     public static final DeferredItem<Item> WATER_JAR = ITEMS.registerItem("water_jar",
             properties -> new Item(properties.stacksTo(1).rarity(Rarity.COMMON)));
 
+    public static final DeferredItem<Item> RAW_FILLET = ITEMS.registerItem("raw_fillet",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.3F)
+                    .build())));
+    public static final DeferredItem<Item> COOKED_FILLET = ITEMS.registerItem("cooked_fillet",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(6)
+                    .saturationModifier(1.3F)
+                    .build())));
+
     public static final DeferredItem<Item> REAPER_FIN = ITEMS.registerItem("reaper_fin",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.RARE, FishType.OCEANIC));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.3F)
+                    .build()), FishRarity.RARE, FishType.OCEANIC));
     public static final DeferredItem<Item> FISH = ITEMS.registerItem("fish",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.RARE, FishType.FABLED));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.3F)
+                    .build()), FishRarity.RARE, FishType.FABLED));
     public static final DeferredItem<Item> MINN_O_WISP = ITEMS.registerItem("minn_o_wisp",
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
-                    .nutrition(2)
+                    .nutrition(3)
                     .saturationModifier(0.3F)
                     .build()), FishRarity.RARE, FishType.FABLED));
     public static final DeferredItem<Item> ZOMBIE_FISH = ITEMS.registerItem("zombie_fish",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.UNCOMMON, FishType.INLAND));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.UNCOMMON, FishType.INLAND));
     public static final DeferredItem<Item> GOLD_FISH = ITEMS.registerItem("gold_fish",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.RARE, FishType.CAVERNOUS));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.3F)
+                    .build()), FishRarity.RARE, FishType.CAVERNOUS));
     public static final DeferredItem<Item> EEL = ITEMS.registerItem("eel",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.OCEANIC));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.OCEANIC));
     public static final DeferredItem<Item> ELECTRIC_EEL = ITEMS.registerItem("electric_eel",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.UNCOMMON, FishType.OCEANIC));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.UNCOMMON, FishType.OCEANIC));
     public static final DeferredItem<Item> CARP = ITEMS.registerItem("carp",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.INLAND));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.INLAND));
     public static final DeferredItem<Item> LAMPLIGHTER = ITEMS.registerItem("lamplighter",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.UNCOMMON, FishType.ABYSSAL));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.UNCOMMON, FishType.ABYSSAL));
     public static final DeferredItem<Item> PINK_NITELITE = ITEMS.registerItem("pink_nitelite",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.OCEANIC));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.OCEANIC));
     public static final DeferredItem<Item> BLUE_NITELITE = ITEMS.registerItem("blue_nitelite",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.OCEANIC));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.OCEANIC));
     public static final DeferredItem<Item> GREEN_NITELITE = ITEMS.registerItem("green_nitelite",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.OCEANIC));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.OCEANIC));
     public static final DeferredItem<Item> TRILOBITE = ITEMS.registerItem("trilobite",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.ANCIENT));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.ANCIENT));
     public static final DeferredItem<Item> NAUTILUS = ITEMS.registerItem("nautilus",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.UNCOMMON, FishType.ANCIENT));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.UNCOMMON, FishType.ANCIENT));
     public static final DeferredItem<Item> GLOW_FISH = ITEMS.registerItem("glow_fish",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.UNCOMMON, FishType.CAVERNOUS));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.UNCOMMON, FishType.CAVERNOUS));
     public static final DeferredItem<Item> COELACANTH = ITEMS.registerItem("coelacanth",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.RARE, FishType.ANCIENT));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.3F)
+                    .build()), FishRarity.RARE, FishType.ANCIENT));
     public static final DeferredItem<Item> HORSESHOE_CRAB = ITEMS.registerItem("horseshoe_crab",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.ANCIENT));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.ANCIENT));
     public static final DeferredItem<Item> GHOST_FISH = ITEMS.registerItem("ghost_fish",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.CAVERNOUS));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.CAVERNOUS));
     public static final DeferredItem<Item> CAVE_CARP = ITEMS.registerItem("cave_carp",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.CAVERNOUS));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.CAVERNOUS));
     public static final DeferredItem<Item> BLOBFISH = ITEMS.registerItem("blobfish",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.RARE, FishType.ABYSSAL));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.3F)
+                    .build()), FishRarity.RARE, FishType.ABYSSAL));
     public static final DeferredItem<Item> LANTERN_FISH = ITEMS.registerItem("lantern_fish",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.COMMON, FishType.ABYSSAL));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.2F)
+                    .build()), FishRarity.COMMON, FishType.ABYSSAL));
     public static final DeferredItem<Item> BARRACUDA = ITEMS.registerItem("barracuda",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.RARE, FishType.OCEANIC));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.3F)
+                    .build()), FishRarity.RARE, FishType.OCEANIC));
     public static final DeferredItem<Item> TIGER_FISH = ITEMS.registerItem("tiger_fish",
-            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.RARE, FishType.INLAND));
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.3F)
+                    .build()), FishRarity.RARE, FishType.INLAND));
 
     public static final DeferredItem<Item> GREAT_WHITE_SHARK = ITEMS.registerItem("great_white_shark",
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.LEGENDARY, FishType.OCEANIC));
