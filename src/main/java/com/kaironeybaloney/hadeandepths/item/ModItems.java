@@ -154,7 +154,7 @@ public class ModItems {
                     .nutrition(3)
                     .saturationModifier(0.3F)
                     .build()), FishRarity.RARE, FishType.ABYSSAL));
-    public static final DeferredItem<Item> LANTERN_FISH = ITEMS.registerItem("lantern_fish",
+    public static final DeferredItem<Item> LANTERN_FISH = ITEMS.registerItem("lantern_fish,json",
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
                     .nutrition(2)
                     .saturationModifier(0.2F)
