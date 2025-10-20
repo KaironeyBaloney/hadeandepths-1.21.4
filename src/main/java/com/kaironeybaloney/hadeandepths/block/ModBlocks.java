@@ -50,6 +50,12 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.WOOD)
                     .noOcclusion());
+    public static final DeferredBlock<Block> BUTCHERING_HOOK = registerBlock("butchering_hook",
+            properties -> new ButcheringHookBlock(properties), BlockBehaviour.Properties.of()
+                    .strength(2f, 2f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)
+                    .noOcclusion());
 
 
 

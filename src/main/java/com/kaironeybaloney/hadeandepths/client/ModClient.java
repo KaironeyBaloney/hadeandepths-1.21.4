@@ -5,11 +5,14 @@ import com.kaironeybaloney.hadeandepths.block.ModBlocks;
 import com.kaironeybaloney.hadeandepths.block.entity.BlueNiteliteJarBlockEntity;
 import com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities;
 import com.kaironeybaloney.hadeandepths.client.renderer.block.*;
+import com.kaironeybaloney.hadeandepths.client.renderer.entity.HangingFishEntityRenderer;
+import com.kaironeybaloney.hadeandepths.entity.ModEntities;
 import com.kaironeybaloney.hadeandepths.screen.ModMenuTypes;
 import com.kaironeybaloney.hadeandepths.screen.custom.DavyJonesLockerScreen;
 import com.kaironeybaloney.hadeandepths.screen.custom.WoodenCrateScreen;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -37,6 +40,13 @@ public class ModClient {
         event.registerBlockEntityRenderer(ModBlockEntities.GREEN_NITELITE_JAR_BLOCK_ENTITY.get(), GreenNiteliteJarRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.PINK_NITELITE_JAR_BLOCK_ENTITY.get(), PinkNiteliteJarRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.DAVY_JONES_LOCKER_BLOCK_ENTITY.get(), DavyJonesLockerRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.BUTCHERING_HOOK_BLOCK_ENTITY.get(), ButcheringHookRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerER(EntityRenderersEvent.RegisterRenderers event) {
+        EntityRenderers.register(ModEntities.HANGING_FISH_COMMON.get(), HangingFishEntityRenderer::new);
+        EntityRenderers.register(ModEntities.HANGING_FISH_LEGENDARY.get(), HangingFishEntityRenderer::new);
     }
 
     @SubscribeEvent

@@ -22,6 +22,10 @@ public class FishItem extends Item {
     private final FishRarity rarity;
     private final FishType type;
 
+    public FishRarity getRarity(ItemStack stack) {
+        return this.rarity;
+    }
+
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag flags) {
         if (Screen.hasShiftDown()) {

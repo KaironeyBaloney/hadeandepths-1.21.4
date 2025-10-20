@@ -2,6 +2,7 @@ package com.kaironeybaloney.hadeandepths;
 
 import com.kaironeybaloney.hadeandepths.block.ModBlocks;
 import com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities;
+import com.kaironeybaloney.hadeandepths.entity.ModEntities;
 import com.kaironeybaloney.hadeandepths.item.ModCreativeModeTabs;
 import com.kaironeybaloney.hadeandepths.item.ModItems;
 import com.kaironeybaloney.hadeandepths.screen.ModMenuTypes;
@@ -51,6 +52,7 @@ public class HadeanDepths {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
 
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 

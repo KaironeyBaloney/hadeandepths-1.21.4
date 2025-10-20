@@ -1,4 +1,4 @@
-package com.kaironeybaloney.hadeandepths.client.renderer.Models;
+package com.kaironeybaloney.hadeandepths.client.renderer.models;
 
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;

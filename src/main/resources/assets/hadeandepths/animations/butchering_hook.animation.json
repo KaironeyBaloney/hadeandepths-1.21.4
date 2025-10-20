@@ -1,0 +1,138 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.model.common": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"dial": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.75": {
+							"vector": [0, 0, 62.5],
+							"easing": "easeInElastic"
+						}
+					}
+				}
+			}
+		},
+		"animation.model.uncommon": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"dial": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.75": {
+							"vector": [0, 0, 150],
+							"easing": "easeInElastic"
+						}
+					}
+				}
+			}
+		},
+		"animation.model.rare": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"dial": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.75": {
+							"vector": [0, 0, 240],
+							"easing": "easeInElastic"
+						}
+					}
+				}
+			}
+		},
+		"animation.model.legendary": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.75,
+			"bones": {
+				"dial": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.75": {
+							"vector": [0, 0, 330],
+							"easing": "easeInElastic"
+						}
+					}
+				}
+			}
+		},
+		"animation.model.common_reset": {
+			"animation_length": 0.75,
+			"bones": {
+				"dial": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 62.5]
+						},
+						"0.75": {
+							"vector": [0, 0, 0],
+							"easing": "easeInElastic"
+						}
+					}
+				}
+			}
+		},
+		"animation.model.uncommon_reset": {
+			"animation_length": 0.75,
+			"bones": {
+				"dial": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 150]
+						},
+						"0.75": {
+							"vector": [0, 0, 0],
+							"easing": "easeInElastic"
+						}
+					}
+				}
+			}
+		},
+		"animation.model.rare_reset": {
+			"animation_length": 0.75,
+			"bones": {
+				"dial": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 240]
+						},
+						"0.75": {
+							"vector": [0, 0, 0],
+							"easing": "easeInElastic"
+						}
+					}
+				}
+			}
+		},
+		"animation.model.legendary_reset": {
+			"animation_length": 0.75,
+			"bones": {
+				"dial": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 330]
+						},
+						"0.75": {
+							"vector": [0, 0, 0],
+							"easing": "easeInElastic"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

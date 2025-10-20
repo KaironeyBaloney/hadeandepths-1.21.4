@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north":  { "model": "hadeandepths:block/butchering_hook", "y":  0 },
+    "facing=south":  { "model": "hadeandepths:block/butchering_hook", "y": 180 },
+    "facing=west":   { "model": "hadeandepths:block/butchering_hook", "y":  270 },
+    "facing=east":   { "model": "hadeandepths:block/butchering_hook", "y": 90 }
+  }
+}
