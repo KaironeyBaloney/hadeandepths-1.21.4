@@ -1,0 +1,82 @@
+{
+  "parent": "hadeandepths:fishing/first_fish",
+  "criteria": {
+    "has_blue_nitelite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:blue_nitelite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_frozen_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:frozen_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_icicle_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:icicle_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_icy_krill": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:icy_krill"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_orca": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:orca"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Collect every Glacial Fish",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:frozen_fish"
+    },
+    "title": "Ice Fishing"
+  },
+  "requirements": [
+    [
+      "has_icy_krill"
+    ],
+    [
+      "has_icicle_fish"
+    ],
+    [
+      "has_frozen_fish"
+    ],
+    [
+      "has_orca"
+    ],
+    [
+      "has_blue_nitelite"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

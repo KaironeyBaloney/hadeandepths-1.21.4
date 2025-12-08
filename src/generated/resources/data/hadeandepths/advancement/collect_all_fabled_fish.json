@@ -1,0 +1,82 @@
+{
+  "parent": "hadeandepths:fishing/first_fish",
+  "criteria": {
+    "has_bassigator": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:bassigator"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_fur_bearing_trout": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:fur_bearing_trout"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minn_o_wisp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:minn_o_wisp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sea_serpent": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:sea_serpent"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Collect every Fabled Fish",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:minn_o_wisp"
+    },
+    "title": "The Things of Legend"
+  },
+  "requirements": [
+    [
+      "has_minn_o_wisp"
+    ],
+    [
+      "has_fish"
+    ],
+    [
+      "has_sea_serpent"
+    ],
+    [
+      "has_fur_bearing_trout"
+    ],
+    [
+      "has_bassigator"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

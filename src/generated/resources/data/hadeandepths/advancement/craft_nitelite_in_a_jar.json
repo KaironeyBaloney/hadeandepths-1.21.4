@@ -1,0 +1,51 @@
+{
+  "parent": "hadeandepths:fishing/root",
+  "criteria": {
+    "has_blue_nitelite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:blue_nitelite_jar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_green_nitelite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:green_nitelite_jar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pink_nitelite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:pink_nitelite_jar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a Nitelite in a jar",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:blue_nitelite_jar"
+    },
+    "title": "Jellyfish Museum"
+  },
+  "requirements": [
+    [
+      "has_blue_nitelite",
+      "has_green_nitelite",
+      "has_pink_nitelite"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

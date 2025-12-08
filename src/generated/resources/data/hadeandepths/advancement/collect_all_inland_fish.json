@@ -1,0 +1,108 @@
+{
+  "parent": "hadeandepths:fishing/first_fish",
+  "criteria": {
+    "has_carp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:carp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_giant_catfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:giant_catfish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_salmon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:salmon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sturgeon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:sturgeon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tiger_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:tiger_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_trout": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:trout"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_zombie_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:zombie_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Collect every Inland Fish",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:carp"
+    },
+    "title": "Ain't no River Wide Enough"
+  },
+  "requirements": [
+    [
+      "has_zombie_fish"
+    ],
+    [
+      "has_carp"
+    ],
+    [
+      "has_giant_catfish"
+    ],
+    [
+      "has_sturgeon"
+    ],
+    [
+      "has_tiger_fish"
+    ],
+    [
+      "has_trout"
+    ],
+    [
+      "has_salmon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
