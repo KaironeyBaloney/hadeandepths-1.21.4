@@ -18,6 +18,7 @@ public class ModEntities {
             DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, HadeanDepths.MODID);
 
     public static ResourceKey<EntityType<?>> HANGING_FISH_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("hanging_fish"));
+    public static ResourceKey<EntityType<?>> TOOTH_ARROW_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("tooth_arrow"));
 
     public static final Supplier<EntityType<HangingFishEntity>> HANGING_FISH_LEGENDARY =
             ENTITY_TYPES.register("hanging_fish_legendary", () -> EntityType.Builder.of(HangingFishEntity::new, MobCategory.MISC)
@@ -25,6 +26,9 @@ public class ModEntities {
     public static final Supplier<EntityType<HangingFishEntity>> HANGING_FISH_COMMON =
             ENTITY_TYPES.register("hanging_fish_common", () -> EntityType.Builder.of(HangingFishEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.75f).build(HANGING_FISH_KEY));
+    public static final Supplier<EntityType<ToothArrowEntity>> TOOTH_ARROW =
+            ENTITY_TYPES.register("tooth_arrow", () -> EntityType.Builder.<ToothArrowEntity>of(ToothArrowEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.75f).build(TOOTH_ARROW_KEY));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

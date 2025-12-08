@@ -6,4 +6,6 @@ import net.minecraft.resources.ResourceLocation;
 public class ModModelLayers {
     public static final ModelLayerLocation DAVY_JONES_LOCKER_MODEL =
             new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("hadeandepths", "block/davy_jones_locker"), "main");
+    public static final ModelLayerLocation BUTCHERING_HOOK_MODEL =
+            new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("hadeandepths", "block/butchering_hook"), "main");
 }

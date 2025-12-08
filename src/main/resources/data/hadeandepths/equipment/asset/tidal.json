@@ -1,0 +1,8 @@
+{
+  "equipment": {
+    "head":  "hadeandepths:tidal_helmet",
+    "chest": "hadeandepths:tidal_chestplate",
+    "legs":  "hadeandepths:tidal_leggings",
+    "feet":  "hadeandepths:tidal_boots"
+  }
+}

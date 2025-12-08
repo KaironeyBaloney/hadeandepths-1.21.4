@@ -1,0 +1,189 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:great_white_shark",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:megalodon",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_deep_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:phantom_jellyfish",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_deep_ocean"
+              }
+            },
+            {
+              "condition": "minecraft:time_check",
+              "value": {
+                "min": 18000,
+                "max": 24000
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:orca",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_aquatic_icy"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:frilled_shark",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_deep_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:tuna",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:colossal_squid",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_aquatic_icy"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:dunkleosteus",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:warm_ocean",
+                  "minecraft:lukewarm_ocean",
+                  "minecraft:deep_lukewarm_ocean"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:amethyst_grouper",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -60,
+                    "max": 45
+                  }
+                },
+                "can_see_sky": false
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:giant_catfish",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#hadeandepths:is_land_water_biome"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:sturgeon",
+          "weight": 50000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_river"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:sturgeon",
+          "weight": 50000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_jungle"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "hadeandepths:gameplay/fishing/rare_fish",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

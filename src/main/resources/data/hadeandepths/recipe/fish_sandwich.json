@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " # ",
+    " $ ",
+    " # "
+  ],
+  "key": {
+    "#": "minecraft:bread",
+    "$": "hadeandepths:cooked_fillet"
+  },
+  "result": {
+    "id": "hadeandepths:fish_sandwich",
+    "count": 2
+  }
+}

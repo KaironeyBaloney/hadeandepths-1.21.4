@@ -42,6 +42,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LANTERN_FISH);
                         output.accept(ModItems.BARRACUDA);
                         output.accept(ModItems.TIGER_FISH);
+                        output.accept(ModItems.ICY_KRILL);
+                        output.accept(ModItems.TROUT);
+                        output.accept(ModItems.FUR_BEARING_TROUT);
+                        output.accept(ModItems.ICICLE_FISH);
+                        output.accept(ModItems.FROZEN_FISH);
+                        output.accept(ModItems.BASSIGATOR);
+                        output.accept(ModItems.SLACK_JAW);
+                        output.accept(ModItems.RED_HERRING);
 
                         output.accept(ModItems.GREAT_WHITE_SHARK);
                         output.accept(ModItems.TUNA);
@@ -51,31 +59,66 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.AMETHYST_GROUPER);
                         output.accept(ModItems.GIANT_CATFISH);
                         output.accept(ModItems.STURGEON);
+                        output.accept(ModItems.FRILLED_SHARK);
+                        output.accept(ModItems.ORCA);
+                        output.accept(ModItems.PHANTOM_JELLYFISH);
+                        output.accept(ModItems.MEGALODON);
 
                         output.accept(ModItems.TWIG_ROD);
                         output.accept(ModItems.REINFORCED_ROD);
                         output.accept(ModItems.NETHERITE_ROD);
                         output.accept(ModItems.MAGMATIC_ROD);
 
+                        output.accept(ModItems.TIDAL_PICKAXE);
+                        output.accept(ModItems.TIDAL_SHOVEL);
+                        output.accept(ModItems.TIDAL_AXE);
+                        output.accept(ModItems.TIDAL_SWORD);
+                        output.accept(ModItems.TIDAL_HOE);
+                        output.accept(ModItems.SERPENT_BONE_BOW);
+
+                        output.accept(ModItems.TIDAL_HELMET);
+                        output.accept(ModItems.TIDAL_CHESTPLATE);
+                        output.accept(ModItems.TIDAL_LEGGINGS);
+                        output.accept(ModItems.TIDAL_BOOTS);
+
                         output.accept(ModItems.FISH_BONE);
                         output.accept(ModItems.SHARP_TOOTH);
+                        output.accept(ModItems.SHARK_TOOTH);
                         output.accept(ModItems.GLOWY_GOOP);
                         output.accept(ModItems.SHELL_FRAGMENT);
+                        output.accept(ModItems.PRISMARINE_ROD);
+                        output.accept(ModItems.HUGE_BONE);
+                        output.accept(ModItems.GIANT_WHISKER);
                         output.accept(ModItems.LARGE_SCALES);
                         output.accept(ModItems.SQUID_EYE);
+                        output.accept(ModItems.DUNKLEOSTEUS_PLATING);
+                        output.accept(ModItems.LEGENDARY_HEART);
+                        output.accept(ModItems.DEEP_SEA_RESIDUE);
+                        output.accept(ModItems.DEEP_SEA_AMALGAM);
                         output.accept(ModItems.RAW_FILLET);
                         output.accept(ModItems.COOKED_FILLET);
+                        output.accept(ModItems.RAW_HUGE_FILLET);
+                        output.accept(ModItems.COOKED_HUGE_FILLET);
+                        output.accept(ModItems.FISH_STEW);
+                        output.accept(ModItems.FISH_SANDWICH);
+                        output.accept(ModItems.TENTACLE);
+                        output.accept(ModItems.COOKED_TENTACLE);
+                        output.accept(ModItems.FIN);
+                        output.accept(ModItems.BAKED_FIN);
 
                         output.accept(ModItems.SAND_DOLLAR);
                         output.accept(ModItems.MAGMATIC_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(ModItems.GLASS_JAR);
                         output.accept(ModItems.WATER_JAR);
+                        output.accept(ModItems.TOOTH_ARROW);
 
+                        output.accept(ModBlocks.GLOWY_GOOP_BLOCK);
                         output.accept(ModBlocks.BLUE_NITELITE_JAR);
                         output.accept(ModBlocks.GREEN_NITELITE_JAR);
                         output.accept(ModBlocks.PINK_NITELITE_JAR);
                         output.accept(ModBlocks.WOODEN_CRATE);
                         output.accept(ModBlocks.DAVY_JONES_LOCKER);
+                        output.accept(ModBlocks.BUTCHERING_HOOK);
 
                     }).build());
 

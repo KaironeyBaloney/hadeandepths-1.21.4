@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:davy_jones_locker",
+          "weight": 5,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_ocean"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_loot_table",
+              "type": "minecraft:chest",
+              "name": "hadeandepths:chests/davy_jones_locker"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "book",
+          "functions": [
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": {
+                "minecraft:mending": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "damage": {
+                "type": "minecraft:uniform",
+                "max": 0.25,
+                "min": 0.0
+              },
+              "function": "minecraft:set_damage"
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 30.0,
+              "options": "#minecraft:on_random_loot"
+            }
+          ],
+          "name": "hadeandepths:reinforced_rod"
+        }
+      ]
+    }
+  ]
+}

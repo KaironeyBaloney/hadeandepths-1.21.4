@@ -1,0 +1,86 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:twig_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#hadeandepths:is_land_water_biome"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:blue_ice",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_aquatic_icy"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:potion_contents": {
+                  "potion": "minecraft:water"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ink_sac",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glow_ink_sac",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -60,
+                    "max": 50
+                  }
+                },
+                "can_see_sky": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

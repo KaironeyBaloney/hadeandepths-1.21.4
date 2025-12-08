@@ -1,0 +1,160 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:minn_o_wisp",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:time_check",
+              "value": {
+                "min": 18000,
+                "max": 24000
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_spooky"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:gold_fish",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -60,
+                    "max": 50
+                  }
+                },
+                "can_see_sky": false
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:fish",
+          "weight": 100000,
+          "conditions": []
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:barracuda",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:warm_ocean",
+                  "minecraft:lukewarm_ocean"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:coelacanth",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_deep_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:frozen_fish",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_aquatic_icy"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:bassigator",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_swamp"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:blobfish",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_deep_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:tiger_fish",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_hot/overworld"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:nautilus",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:warm_ocean",
+                  "minecraft:deep_lukewarm_ocean",
+                  "minecraft:lukewarm_ocean",
+                  "minecraft:ocean",
+                  "minecraft:deep_ocean"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "hadeandepths:gameplay/fishing/uncommon_fish",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "# #",
+    "#^#"
+  ],
+  "key": {
+    "#": [
+      "hadeandepths:deep_sea_amalgam"
+    ],
+    "^": [
+      "hadeandepths:legendary_heart"
+    ]
+  },
+  "result": {
+    "id": "hadeandepths:tidal_boots",
+    "count": 1
+  }
+}

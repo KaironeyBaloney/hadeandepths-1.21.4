@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "id": "hadeandepths:magmatic_rod",
+      "count": 1
+    },
+    "title": "Red Hot Fishing",
+    "description": "Upgraded a Netherite Rod into a Magmatic Rod",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "hadeandepths:fishing/netherite_rod",
+  "criteria": {
+    "has_magmatic_rod": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:magmatic_rod"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_magmatic_rod"
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " $$",
+    " #$",
+    "#  "
+  ],
+  "key": {
+    "#": [
+      "hadeandepths:prismarine_rod"
+    ],
+    "$": [
+      "hadeandepths:shark_tooth"
+    ]
+  },
+  "result": {
+    "id": "minecraft:trident",
+    "count": 1
+  }
+}

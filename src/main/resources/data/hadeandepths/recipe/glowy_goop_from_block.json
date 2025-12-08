@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "hadeandepths:glowy_goop_block"
+  ],
+  "result": {
+    "id": "hadeandepths:glowy_goop",
+    "count": 9
+  }
+}

@@ -10,7 +10,8 @@ public enum FishRarity implements StringRepresentable {
     COMMON("common"),
     UNCOMMON("uncommon"),
     RARE("rare"),
-    LEGENDARY("legendary");
+    LEGENDARY("legendary"),
+    IMPOSSIBLE("impossible");
 
     private final String name;
     FishRarity(String name) {

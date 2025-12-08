@@ -1,0 +1,269 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:eel",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:icy_krill",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_aquatic_icy"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:carp",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#hadeandepths:is_land_water_biome"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:trout",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#hadeandepths:is_land_water_biome"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:pink_nitelite",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:time_check",
+              "value": {
+                "min": 18000,
+                "max": 24000
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:green_nitelite",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:time_check",
+              "value": {
+                "min": 18000,
+                "max": 24000
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:deep_lukewarm_ocean",
+                  "minecraft:lukewarm_ocean",
+                  "minecraft:warm_ocean"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:blue_nitelite",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:time_check",
+              "value": {
+                "min": 18000,
+                "max": 24000
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_aquatic_icy"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cod",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:salmon",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": 50
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tropical_fish",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:deep_lukewarm_ocean",
+                  "minecraft:lukewarm_ocean",
+                  "minecraft:warm_ocean",
+                  "minecraft:lush_caves"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:trilobite",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_beach"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:horseshoe_crab",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_beach"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:ghost_fish",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -60,
+                    "max": 50
+                  }
+                },
+                "can_see_sky": false
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:cave_carp",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -60,
+                    "max": 50
+                  }
+                },
+                "can_see_sky": false
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:lantern_fish",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_deep_ocean"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:red_herring",
+          "weight": 10000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_spooky"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:bug_fish",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

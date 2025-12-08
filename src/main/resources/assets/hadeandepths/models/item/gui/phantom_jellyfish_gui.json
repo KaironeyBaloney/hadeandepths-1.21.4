@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hadeandepths:item/phantom_jellyfish_gui"
+  }
+}

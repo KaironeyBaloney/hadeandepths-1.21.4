@@ -1,0 +1,602 @@
+{
+  "parent": "hadeandepths:collect_first_legendary_fish",
+  "criteria": {
+    "has_amethyst_grouper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:amethyst_grouper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_barracuda": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:barracuda"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bassigator": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:bassigator"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_blobfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:blobfish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_blue_nitelite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:blue_nitelite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_carp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:carp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cave_carp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:cave_carp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cod": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cod"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_coelacanth": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:coelacanth"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_colossal_squid": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:colossal_squid"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_dunkleosteus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:dunkleosteus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_eel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:eel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_electric_eel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:electric_eel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_frilled_shark": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:frilled_shark"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_frozen_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:frozen_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_fur_bearing_trout": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:fur_bearing_trout"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ghost_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:ghost_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_giant_catfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:giant_catfish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_glow_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:glow_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_gold_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:gold_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_great_white_shark": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:great_white_shark"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_green_nitelite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:green_nitelite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_horseshoe_crab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:horseshoe_crab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_icicle_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:icicle_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_icy_krill": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:icy_krill"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lamplighter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:lamplighter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lantern_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:lantern_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minn_o_wisp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:minn_o_wisp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_nautilus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:nautilus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_orca": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:orca"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_phantom_jellyfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:phantom_jellyfish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pink_nitelite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:pink_nitelite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pufferfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:pufferfish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_reaper_fin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:reaper_fin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_salmon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:salmon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sea_serpent": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:sea_serpent"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_slack_jaw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:slack_jaw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sturgeon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:sturgeon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tiger_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:tiger_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_trilobite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:trilobite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tropical_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:tropical_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_trout": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:trout"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tuna": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:tuna"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_zombie_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:zombie_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Collect every Fish",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:fish"
+    },
+    "title": "Master Baiter"
+  },
+  "requirements": [
+    [
+      "has_reaper_fin"
+    ],
+    [
+      "has_eel"
+    ],
+    [
+      "has_lamplighter"
+    ],
+    [
+      "has_gold_fish"
+    ],
+    [
+      "has_coelacanth"
+    ],
+    [
+      "has_fish"
+    ],
+    [
+      "has_carp"
+    ],
+    [
+      "has_trilobite"
+    ],
+    [
+      "has_green_nitelite"
+    ],
+    [
+      "has_blue_nitelite"
+    ],
+    [
+      "has_pink_nitelite"
+    ],
+    [
+      "has_amethyst_grouper"
+    ],
+    [
+      "has_barracuda"
+    ],
+    [
+      "has_blobfish"
+    ],
+    [
+      "has_cave_carp"
+    ],
+    [
+      "has_colossal_squid"
+    ],
+    [
+      "has_dunkleosteus"
+    ],
+    [
+      "has_electric_eel"
+    ],
+    [
+      "has_lantern_fish"
+    ],
+    [
+      "has_tuna"
+    ],
+    [
+      "has_zombie_fish"
+    ],
+    [
+      "has_giant_catfish"
+    ],
+    [
+      "has_great_white_shark"
+    ],
+    [
+      "has_glow_fish"
+    ],
+    [
+      "has_ghost_fish"
+    ],
+    [
+      "has_horseshoe_crab"
+    ],
+    [
+      "has_nautilus"
+    ],
+    [
+      "has_minn_o_wisp"
+    ],
+    [
+      "has_sea_serpent"
+    ],
+    [
+      "has_sturgeon"
+    ],
+    [
+      "has_tiger_fish"
+    ],
+    [
+      "has_frilled_shark"
+    ],
+    [
+      "has_icy_krill"
+    ],
+    [
+      "has_trout"
+    ],
+    [
+      "has_fur_bearing_trout"
+    ],
+    [
+      "has_icicle_fish"
+    ],
+    [
+      "has_frozen_fish"
+    ],
+    [
+      "has_orca"
+    ],
+    [
+      "has_bassigator"
+    ],
+    [
+      "has_slack_jaw"
+    ],
+    [
+      "has_phantom_jellyfish"
+    ],
+    [
+      "has_cod"
+    ],
+    [
+      "has_tropical_fish"
+    ],
+    [
+      "has_pufferfish"
+    ],
+    [
+      "has_salmon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

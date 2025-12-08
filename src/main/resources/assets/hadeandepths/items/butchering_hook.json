@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "hadeandepths:block/butchering_hook"
+    "model": "hadeandepths:item/butchering_hook"
   }
 }

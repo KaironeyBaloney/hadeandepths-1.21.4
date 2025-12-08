@@ -2,6 +2,7 @@ package com.kaironeybaloney.hadeandepths.client.model;
 
 import com.kaironeybaloney.hadeandepths.block.entity.ButcheringHookBlockEntity;
 import com.kaironeybaloney.hadeandepths.block.entity.DavyJonesLockerBlockEntity;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animation.AnimationState;
@@ -27,6 +28,11 @@ public class ButcheringHookModel extends GeoModel<ButcheringHookBlockEntity> {
     @Override
     public ResourceLocation getAnimationResource(ButcheringHookBlockEntity animatable) {
         return ANIM;
+    }
+
+    @Override
+    public RenderType getRenderType(ButcheringHookBlockEntity animatable, ResourceLocation texture) {
+        return RenderType.entityCutoutNoCull(texture);
     }
 
 }

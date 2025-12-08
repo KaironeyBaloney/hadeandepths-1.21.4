@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:name_tag",
+          "conditions": []
+        },
+        {
+          "type": "minecraft:item",
+          "name": "saddle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:coal",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -60,
+                    "max": 60
+                  }
+                },
+                "can_see_sky": false
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_copper",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -60,
+                    "max": 60
+                  }
+                },
+                "can_see_sky": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

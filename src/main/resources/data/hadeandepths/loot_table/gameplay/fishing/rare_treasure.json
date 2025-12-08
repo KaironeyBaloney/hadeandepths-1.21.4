@@ -1,0 +1,122 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:wooden_crate",
+          "conditions": [],
+          "functions": [
+            {
+              "function": "minecraft:set_loot_table",
+              "type": "minecraft:chest",
+              "name": "hadeandepths:chests/wooden_crate"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "barrel",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_ocean"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Barrel of Fish"
+              },
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:set_loot_table",
+              "type": "minecraft:barrel",
+              "name": "hadeandepths:chests/fish_barrel"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chest",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_ocean"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Buried Treasure"
+              },
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:set_loot_table",
+              "type": "minecraft:chest",
+              "name": "minecraft:chests/buried_treasure"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -60,
+                    "max": 16
+                  }
+                },
+                "can_see_sky": false
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -16
+                  }
+                },
+                "biomes": "#c:is_mountain"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_gold",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "#c:is_badlands"
+              }
+            }
+          ],
+          "functions": []
+        }
+      ]
+    }
+  ]
+}

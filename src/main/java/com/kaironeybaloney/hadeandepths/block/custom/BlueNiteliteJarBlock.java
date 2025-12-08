@@ -44,7 +44,17 @@ public class BlueNiteliteJarBlock extends Block implements SimpleWaterloggedBloc
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
-        return Block.canSupportCenter(world, pos.below(), Direction.UP);
+        BlockState above = world.getBlockState(pos.above());
+
+        if (Block.canSupportCenter(world, pos.below(), Direction.UP)) {
+            return true;
+        }
+
+        if (above.getBlock() instanceof ChainBlock && above.getValue(ChainBlock.AXIS) == Direction.Axis.Y) {
+            return true;
+        }
+
+        return false;
     }
 
     @Override

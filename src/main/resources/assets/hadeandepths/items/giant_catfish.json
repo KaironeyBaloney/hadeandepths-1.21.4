@@ -1,6 +1,27 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "hadeandepths:item/giant_catfish"
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:condition",
+          "property": "minecraft:carried",
+          "on_true": {
+            "type": "minecraft:model",
+            "model": "hadeandepths:item/giant_catfish"
+          },
+          "on_false": {
+            "type": "minecraft:model",
+            "model": "hadeandepths:item/gui/giant_catfish_gui"
+          }
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "hadeandepths:item/giant_catfish"
+    }
   }
 }

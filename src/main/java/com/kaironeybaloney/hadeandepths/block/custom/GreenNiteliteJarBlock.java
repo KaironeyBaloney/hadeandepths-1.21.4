@@ -43,7 +43,7 @@ public class GreenNiteliteJarBlock extends Block implements SimpleWaterloggedBlo
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
-        return Block.canSupportCenter(world, pos.below(), Direction.UP);
+        return Block.canSupportCenter(world, pos.below(), Direction.UP) || Block.canSupportCenter(world, pos.above(), Direction.DOWN);
     }
 
     @Override

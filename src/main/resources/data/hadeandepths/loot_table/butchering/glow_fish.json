@@ -6,12 +6,24 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "hadeandepths:fish_bone",
+          "name": "hadeandepths:fish_bone"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glow_berry",
           "functions": [
             {
               "function": "minecraft:set_count",
-              "count": 1,
-              "add": false
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
             }
           ]
         }
@@ -22,7 +34,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:glow_berries",
+          "name": "hadeandepths:fin",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -36,5 +48,6 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": []
 }

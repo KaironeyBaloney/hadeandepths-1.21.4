@@ -10,6 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
@@ -56,5 +57,10 @@ public class WoodenCrateBlock extends Block implements EntityBlock {
             }
         }
         return InteractionResult.SUCCESS;
+    }
+
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        Containers.dropContentsOnDestroy(state, newState, level, pos);
+        super.onRemove(state, level, pos, newState, isMoving);
     }
 }

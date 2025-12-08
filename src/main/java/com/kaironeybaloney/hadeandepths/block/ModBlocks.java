@@ -19,7 +19,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BLUE_NITELITE_JAR = registerBlock("blue_nitelite_jar",
             properties -> new BlueNiteliteJarBlock(properties), BlockBehaviour.Properties.of()
                     .strength(0.3f, 0.3f)
-                    .requiresCorrectToolForDrops()
                     .sound(SoundType.GLASS)
                     .noOcclusion()
                     .dynamicShape()
@@ -27,14 +26,12 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GREEN_NITELITE_JAR = registerBlock("green_nitelite_jar",
             properties -> new GreenNiteliteJarBlock(properties), BlockBehaviour.Properties.of()
                     .strength(0.3f, 0.3f)
-                    .requiresCorrectToolForDrops()
                     .sound(SoundType.GLASS)
                     .noOcclusion()
                     .lightLevel(state -> 10));
     public static final DeferredBlock<Block> PINK_NITELITE_JAR = registerBlock("pink_nitelite_jar",
             properties -> new PinkNiteliteJarBlock(properties), BlockBehaviour.Properties.of()
                     .strength(0.3f, 0.3f)
-                    .requiresCorrectToolForDrops()
                     .sound(SoundType.GLASS)
                     .noOcclusion()
                     .lightLevel(state -> 10));
@@ -56,6 +53,13 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.METAL)
                     .noOcclusion());
+
+    public static final DeferredBlock<Block> GLOWY_GOOP_BLOCK = registerBlock("glowy_goop_block",
+            properties -> new Block(properties), BlockBehaviour.Properties.of()
+                    .strength(0f, 0f)
+                    .sound(SoundType.HONEY_BLOCK)
+                    .noOcclusion()
+                    .lightLevel(state -> 15));
 
 
 

@@ -1,6 +1,6 @@
 {
+  "replace": false,
   "values": [
-    "minecraft:fishing_rod",
     "hadeandepths:twig_rod",
     "hadeandepths:reinforced_rod",
     "hadeandepths:magmatic_rod"

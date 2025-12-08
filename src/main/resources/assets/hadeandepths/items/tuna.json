@@ -1,6 +1,27 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "hadeandepths:item/tuna"
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:condition",
+          "property": "minecraft:carried",
+          "on_true": {
+            "type": "minecraft:model",
+            "model": "hadeandepths:item/tuna"
+          },
+          "on_false": {
+            "type": "minecraft:model",
+            "model": "hadeandepths:item/gui/tuna_gui"
+          }
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "hadeandepths:item/tuna"
+    }
   }
 }

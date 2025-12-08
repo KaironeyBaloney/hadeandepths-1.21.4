@@ -16,14 +16,30 @@ public class FishItem extends Item {
         super(properties);
         this.rarity = itemRarity;
         this.type = fishType;
+        this.attachPoint = FishAttachPoint.BOTTOM_LEFT;
+
+    }
+
+    public FishItem(Properties properties, FishRarity itemRarity, FishType fishType, FishAttachPoint fishAttachPoint) {
+        super(properties);
+        this.rarity = itemRarity;
+        this.type = fishType;
+        this.attachPoint = fishAttachPoint;
 
     }
 
     private final FishRarity rarity;
     private final FishType type;
+    private final FishAttachPoint attachPoint;
 
     public FishRarity getRarity(ItemStack stack) {
         return this.rarity;
+    }
+    public FishType getType(ItemStack stack) {
+        return this.type;
+    }
+    public FishAttachPoint getAttachPoint(ItemStack stack) {
+        return this.attachPoint;
     }
 
     @Override
@@ -32,7 +48,7 @@ public class FishItem extends Item {
             ResourceLocation id = BuiltInRegistries.ITEM.getKey(this);
             if (id != null) {
                 Component rarityComp = Component.translatable("rarity." + rarity.getSerializedName());
-                Component typeComp   = Component.translatable("type."   + type .getSerializedName());
+                Component typeComp   = Component.translatable("type."   + type.getSerializedName());
 
                 Component combined = Component.translatable(
                         "tooltip.hadeandepths.rarity_type",

@@ -44,6 +44,7 @@ import static com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities.WOO
 
 public class ButcheringHookBlockEntity extends BlockEntity implements GeoAnimatable {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+    private Direction clickedFace = Direction.SOUTH;
     public final ItemStackHandler inventory = new ItemStackHandler(1) {
         @Override
         protected int getStackLimit(int slot, ItemStack stack) {
@@ -121,16 +122,39 @@ public class ButcheringHookBlockEntity extends BlockEntity implements GeoAnimata
         Containers.dropContents(this.level, this.worldPosition, inv);
     }
 
+    public void setClickedFace(Direction face) {
+        this.clickedFace = face;
+        setChanged();
+
+        if (level != null) {
+            if (!level.isClientSide) {
+                level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+            }
+        }
+        System.out.println("SERVER: " + face);
+        System.out.println("CLIENT: " + this.clickedFace);
+    }
+
+    public Direction getClickedFace() {
+        return this.clickedFace;
+    }
+
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadAdditional(tag, provider);
         if (tag.contains("Inventory")) {
             inventory.deserializeNBT(provider, tag.getCompound("Inventory"));
+        }
+        if (tag.contains("ClickedFace")) {
+            this.clickedFace = Direction.values()[tag.getInt("ClickedFace")];
         }
     }
 
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
         super.saveAdditional(tag, provider);
         tag.put("Inventory", inventory.serializeNBT(provider));
+        if (clickedFace != null) {
+            tag.putInt("ClickedFace", clickedFace.ordinal());
+        }
     }
 
     @Nullable
@@ -144,7 +168,12 @@ public class ButcheringHookBlockEntity extends BlockEntity implements GeoAnimata
         if (tag.contains("Inventory")) {
             inventory.deserializeNBT(provider, tag.getCompound("Inventory"));
         }
+        if (tag.contains("ClickedFace")) {
+            inventory.deserializeNBT(provider, tag.getCompound("Inventory"));
+        }
     }
+
+
 
     public void spawnHangingFish(Level level, BlockPos pos) {
         if (level.isClientSide()) {

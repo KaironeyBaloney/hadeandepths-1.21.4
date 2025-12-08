@@ -1,6 +1,27 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "hadeandepths:item/sturgeon"
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:condition",
+          "property": "minecraft:carried",
+          "on_true": {
+            "type": "minecraft:model",
+            "model": "hadeandepths:item/sturgeon"
+          },
+          "on_false": {
+            "type": "minecraft:model",
+            "model": "hadeandepths:item/gui/sturgeon_gui"
+          }
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "hadeandepths:item/sturgeon"
+    }
   }
 }

@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "hadeandepths:twig_rod",
+      "count": 1
+    },
+    "title": "Fishing",
+    "description": "Set out on your fishing journey!",
+    "background": "hadeandepths:textures/gui/advancements/backgrounds/fishing.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "has_fishing_rod": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hadeandepths:twig_rod",
+              "minecraft:fishing_rod",
+              "hadeandepths:reinforced_rod",
+              "hadeandepths:netherite_rod",
+              "hadeandepths:magmatic_rod"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fishing_rod"
+    ]
+  ]
+}

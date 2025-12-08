@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": "hadeandepths:tentacle",
+  "result": {
+    "id": "hadeandepths:cooked_tentacle"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

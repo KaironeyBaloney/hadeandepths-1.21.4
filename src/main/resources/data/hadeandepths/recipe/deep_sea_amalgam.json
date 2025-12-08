@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " $ ",
+    "$#$",
+    " $ "
+  ],
+  "key": {
+    "#": [
+      "minecraft:diamond"
+    ],
+    "$": [
+      "hadeandepths:deep_sea_residue"
+    ]
+  },
+  "result": {
+    "id": "hadeandepths:deep_sea_amalgam",
+    "count": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " #$",
+    "^ $",
+    " #$"
+  ],
+  "key": {
+    "#": [
+      "hadeandepths:deep_sea_amalgam"
+    ],
+    "$": [
+      "hadeandepths:giant_whisker"
+    ],
+    "^": [
+      "hadeandepths:legendary_heart"
+    ]
+  },
+  "result": {
+    "id": "hadeandepths:serpent_bone_bow",
+    "count": 1
+  }
+}

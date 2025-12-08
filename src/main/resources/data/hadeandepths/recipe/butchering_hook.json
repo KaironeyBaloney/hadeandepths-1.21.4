@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " $ ",
+    "%$%",
+    "###"
+  ],
+  "key": {
+    "#": [
+      "minecraft:iron_ingot"
+    ],
+    "$": [
+      "minecraft:chain"
+    ],
+    "%": [
+      "minecraft:iron_nugget"
+    ]
+  },
+  "result": {
+    "id": "hadeandepths:butchering_hook",
+    "count": 1
+  }
+}
