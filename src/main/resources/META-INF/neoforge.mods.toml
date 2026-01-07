@@ -12,6 +12,7 @@ loaderVersion="2" #mandatory
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="MIT"
+logoFile="icon.png"
 
 # A URL to refer people to when problems occur with this mod
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
@@ -43,7 +44,7 @@ ordering= "AFTER"
 #credits="" #optional
 
 # A text field displayed in the mod UI
-authors="${mod_authors}" #optional
+authors="KaironeyBaloney" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''Fishing from the depths!'''
