@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "hadeandepths:tidal_sword"
+    "hadeandepths:tidal_sword",
+    "hadeandepths:tidal_morning_star",
+    "hadeandepths:tidal_sledge"
   ]
 }

@@ -281,6 +281,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_megalodon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:megalodon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_minn_o_wisp": {
       "conditions": {
         "items": [
@@ -346,6 +356,16 @@
         "items": [
           {
             "items": "hadeandepths:reaper_fin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_red_herring": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:red_herring"
           }
         ]
       },
@@ -584,6 +604,12 @@
     ],
     [
       "has_phantom_jellyfish"
+    ],
+    [
+      "has_megalodon"
+    ],
+    [
+      "has_red_herring"
     ],
     [
       "has_cod"

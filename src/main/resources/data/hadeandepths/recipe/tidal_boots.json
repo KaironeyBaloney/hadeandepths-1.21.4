@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "# #",
+    "% %",
     "#^#"
   ],
   "key": {
@@ -11,6 +11,9 @@
     ],
     "^": [
       "hadeandepths:legendary_heart"
+    ],
+    "%": [
+      "hadeandepths:serpent_fin"
     ]
   },
   "result": {

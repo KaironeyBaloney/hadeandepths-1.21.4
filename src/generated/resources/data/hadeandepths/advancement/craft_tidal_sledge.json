@@ -1,0 +1,30 @@
+{
+  "parent": "hadeandepths:find_deep_sea_residue",
+  "criteria": {
+    "has_tidal_sledge": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:tidal_sledge"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a Tidal Sledge",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:tidal_sledge"
+    },
+    "title": "With All the Force of A Great Typhoon"
+  },
+  "requirements": [
+    [
+      "has_tidal_sledge"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

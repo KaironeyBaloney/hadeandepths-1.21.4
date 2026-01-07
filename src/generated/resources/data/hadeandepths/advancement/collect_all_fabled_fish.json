@@ -41,6 +41,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_red_herring": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:red_herring"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_sea_serpent": {
       "conditions": {
         "items": [
@@ -76,6 +86,9 @@
     ],
     [
       "has_bassigator"
+    ],
+    [
+      "has_red_herring"
     ]
   ],
   "sends_telemetry_event": true

@@ -61,6 +61,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_megalodon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:megalodon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_phantom_jellyfish": {
       "conditions": {
         "items": [
@@ -121,7 +131,8 @@
       "has_amethyst_grouper",
       "has_tuna",
       "has_frilled_shark",
-      "has_phantom_jellyfish"
+      "has_phantom_jellyfish",
+      "has_megalodon"
     ]
   ],
   "sends_telemetry_event": true

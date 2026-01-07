@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "%#%",
+    " $ ",
+    " ^ "
+  ],
+  "key": {
+    "#": [
+      "hadeandepths:deep_sea_amalgam"
+    ],
+    "$": [
+      "minecraft:stick"
+    ],
+    "^": [
+      "hadeandepths:legendary_heart"
+    ],
+    "%": [
+      "hadeandepths:huge_amethyst_shard"
+    ]
+  },
+  "result": {
+    "id": "hadeandepths:tidal_sledge",
+    "count": 1
+  }
+}

@@ -4,6 +4,7 @@ import com.kaironeybaloney.hadeandepths.data.ModDataComponents;
 import com.kaironeybaloney.hadeandepths.data.custom.LoadedAmmoComponent;
 import com.kaironeybaloney.hadeandepths.event.TickScheduler;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
@@ -239,5 +241,11 @@ public class SerpentBoneBowItem extends BowItem {
     @Override
     public int getUseDuration(ItemStack p_40680_, LivingEntity p_345962_) {
         return 72000;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag flags) {
+        tooltipComponents.add(Component.translatable("tooltip.hadeandepths.tidal_bow"));
+        super.appendHoverText(stack, context, tooltipComponents, flags);
     }
 }

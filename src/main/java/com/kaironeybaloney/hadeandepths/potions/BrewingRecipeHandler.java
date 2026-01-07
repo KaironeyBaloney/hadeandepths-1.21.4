@@ -71,6 +71,10 @@ public class BrewingRecipeHandler {
                 ModPotions.LONG_DOLPHINS_GRACE
         );
 
-
+        builder.addMix(
+                Potions.AWKWARD,
+                ModItems.PUFFERFISH_LIVER.get(),
+                ModPotions.PUFFERFISH_VENOM
+        );
     }
 }

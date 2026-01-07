@@ -72,8 +72,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TIDAL_PICKAXE);
                         output.accept(ModItems.TIDAL_SHOVEL);
                         output.accept(ModItems.TIDAL_AXE);
-                        output.accept(ModItems.TIDAL_SWORD);
                         output.accept(ModItems.TIDAL_HOE);
+                        output.accept(ModItems.TIDAL_SWORD);
+                        output.accept(ModItems.TIDAL_MORNING_STAR);
+                        output.accept(ModItems.TIDAL_SLEDGE);
                         output.accept(ModItems.SERPENT_BONE_BOW);
 
                         output.accept(ModItems.TIDAL_HELMET);
@@ -84,14 +86,19 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FISH_BONE);
                         output.accept(ModItems.SHARP_TOOTH);
                         output.accept(ModItems.SHARK_TOOTH);
+                        output.accept(ModItems.FORKED_SHARK_TOOTH);
+                        output.accept(ModItems.SERPENT_FIN);
                         output.accept(ModItems.GLOWY_GOOP);
+                        output.accept(ModItems.BLUBBER);
                         output.accept(ModItems.SHELL_FRAGMENT);
                         output.accept(ModItems.PRISMARINE_ROD);
                         output.accept(ModItems.HUGE_BONE);
                         output.accept(ModItems.GIANT_WHISKER);
                         output.accept(ModItems.LARGE_SCALES);
                         output.accept(ModItems.SQUID_EYE);
+                        output.accept(ModItems.HUGE_AMETHYST_SHARD);
                         output.accept(ModItems.DUNKLEOSTEUS_PLATING);
+                        output.accept(ModItems.PHANTOM_JELLY_SILK);
                         output.accept(ModItems.LEGENDARY_HEART);
                         output.accept(ModItems.DEEP_SEA_RESIDUE);
                         output.accept(ModItems.DEEP_SEA_AMALGAM);
@@ -99,12 +106,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COOKED_FILLET);
                         output.accept(ModItems.RAW_HUGE_FILLET);
                         output.accept(ModItems.COOKED_HUGE_FILLET);
+                        output.accept(ModItems.RAW_TUNA_FILLET);
+                        output.accept(ModItems.COOKED_TUNA_FILLET);
                         output.accept(ModItems.FISH_STEW);
                         output.accept(ModItems.FISH_SANDWICH);
                         output.accept(ModItems.TENTACLE);
                         output.accept(ModItems.COOKED_TENTACLE);
                         output.accept(ModItems.FIN);
                         output.accept(ModItems.BAKED_FIN);
+                        output.accept(ModItems.RAW_SHELLFISH);
+                        output.accept(ModItems.COOKED_SHELLFISH);
+                        output.accept(ModItems.PUFFERFISH_LIVER);
 
                         output.accept(ModItems.SAND_DOLLAR);
                         output.accept(ModItems.MAGMATIC_UPGRADE_SMITHING_TEMPLATE);

@@ -6,6 +6,7 @@ import com.kaironeybaloney.hadeandepths.datagen.advancements.ModAdvancementProvi
 import com.kaironeybaloney.hadeandepths.block.ModBlocks;
 import com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities;
 import com.kaironeybaloney.hadeandepths.entity.ModEntities;
+import com.kaironeybaloney.hadeandepths.event.CombatEvents;
 import com.kaironeybaloney.hadeandepths.event.TickScheduler;
 import com.kaironeybaloney.hadeandepths.item.ModCreativeModeTabs;
 import com.kaironeybaloney.hadeandepths.item.ModItems;
@@ -54,6 +55,7 @@ public class HadeanDepths {
 
         modEventBus.addListener(this::OnGatherData);
         NeoForge.EVENT_BUS.addListener(this::onLevelTick);
+        NeoForge.EVENT_BUS.register(new CombatEvents());
 
         ModCreativeModeTabs.register(modEventBus);
 

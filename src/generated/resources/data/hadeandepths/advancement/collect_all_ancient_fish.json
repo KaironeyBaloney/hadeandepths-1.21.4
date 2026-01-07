@@ -31,6 +31,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_megalodon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:megalodon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_nautilus": {
       "conditions": {
         "items": [
@@ -76,6 +86,9 @@
     ],
     [
       "has_coelacanth"
+    ],
+    [
+      "has_megalodon"
     ]
   ],
   "sends_telemetry_event": true

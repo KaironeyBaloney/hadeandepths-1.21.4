@@ -27,6 +27,21 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "hadeandepths:giant_whisker",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
           "name": "hadeandepths:raw_huge_fillet",
           "functions": [
             {

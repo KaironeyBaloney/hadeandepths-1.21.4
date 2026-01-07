@@ -1,0 +1,29 @@
+{
+  "parent": "hadeandepths:fishing/root",
+  "criteria": {
+    "has_deep_sea_residue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:deep_sea_residue"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Find a Deep Sea Residue",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:deep_sea_residue"
+    },
+    "title": "Abyssal Remnants"
+  },
+  "requirements": [
+    [
+      "has_deep_sea_residue"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

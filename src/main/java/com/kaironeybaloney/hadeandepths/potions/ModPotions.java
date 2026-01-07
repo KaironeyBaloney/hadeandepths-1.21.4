@@ -66,4 +66,9 @@ public class ModPotions {
             "dolphins_grace",
             new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 1800, 0)
     ));
+
+    public static final Holder<Potion> PUFFERFISH_VENOM = POTIONS.register("pufferfish_venom", registryName -> new Potion(
+            "pufferfish_venom",
+            new MobEffectInstance(MobEffects.POISON, 450, 4)
+    ));
 }

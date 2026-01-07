@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@#@",
+    " % ",
+    " ^ "
+  ],
+  "key": {
+    "#": [
+      "hadeandepths:deep_sea_amalgam"
+    ],
+    "^": [
+      "hadeandepths:legendary_heart"
+    ],
+    "%": [
+      "minecraft:stick"
+    ],
+    "@": [
+      "hadeandepths:forked_shark_tooth"
+    ]
+  },
+  "result": {
+    "id": "hadeandepths:tidal_morning_star",
+    "count": 1
+  }
+}

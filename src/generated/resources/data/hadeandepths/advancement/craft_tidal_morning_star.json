@@ -1,0 +1,30 @@
+{
+  "parent": "hadeandepths:find_deep_sea_residue",
+  "criteria": {
+    "has_tidal_morning_star": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:tidal_morning_star"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a Tidal Morning Star",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:tidal_morning_star"
+    },
+    "title": "Sea Urchin on a Stick"
+  },
+  "requirements": [
+    [
+      "has_tidal_morning_star"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -35,6 +35,11 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
         createToothArrowAdvancement(consumer);
         createCollectFirstLegendaryFishAdvancement(consumer);
         createCollectAllGlacialFishAdvancement(consumer);
+        createDeepSeaResidueAdvancement(consumer);
+        createCollectAllTidalArmorAdvancement(consumer);
+        createTidalSledgeAdvancement(consumer);
+        createTidalMorningStarAdvancement(consumer);
+        createTidalBowAdvancement(consumer);
     }
 
     void createCollectAllGlacialFishAdvancement(Consumer<AdvancementHolder> consumer)
@@ -141,6 +146,113 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
         }
     }
 
+    void createDeepSeaResidueAdvancement(Consumer<AdvancementHolder> consumer)
+    {
+        {
+            Advancement.Builder builder = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.DEEP_SEA_RESIDUE,
+                            Component.literal("Abyssal Remnants"),
+                            Component.literal("Find a Deep Sea Residue"),
+                            null, AdvancementType.TASK,
+                            true, true, false
+                    );
+            builder.addCriterion("has_deep_sea_residue",
+                    InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.DEEP_SEA_RESIDUE));
+
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "fishing/root"));
+
+            builder.save(consumer, "hadeandepths:find_deep_sea_residue");
+        }
+    }
+
+    void createTidalBowAdvancement(Consumer<AdvancementHolder> consumer)
+    {
+        {
+            Advancement.Builder builder = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.SERPENT_BONE_BOW,
+                            Component.literal("The Eb and Flow of the Tides"),
+                            Component.literal("Craft a Tidal Bow"),
+                            null, AdvancementType.GOAL,
+                            true, true, false
+                    );
+            builder.addCriterion("has_tidal_bow",
+                    InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SERPENT_BONE_BOW));
+
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "find_deep_sea_residue"));
+
+            builder.save(consumer, "hadeandepths:craft_tidal_bow");
+        }
+    }
+
+    void createTidalMorningStarAdvancement(Consumer<AdvancementHolder> consumer)
+    {
+        {
+            Advancement.Builder builder = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.TIDAL_MORNING_STAR,
+                            Component.literal("Sea Urchin on a Stick"),
+                            Component.literal("Craft a Tidal Morning Star"),
+                            null, AdvancementType.GOAL,
+                            true, true, false
+                    );
+            builder.addCriterion("has_tidal_morning_star",
+                    InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TIDAL_MORNING_STAR));
+
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "find_deep_sea_residue"));
+
+            builder.save(consumer, "hadeandepths:craft_tidal_morning_star");
+        }
+    }
+    void createTidalSledgeAdvancement(Consumer<AdvancementHolder> consumer)
+    {
+        {
+            Advancement.Builder builder = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.TIDAL_SLEDGE,
+                            Component.literal("With All the Force of A Great Typhoon"),
+                            Component.literal("Craft a Tidal Sledge"),
+                            null, AdvancementType.GOAL,
+                            true, true, false
+                    );
+            builder.addCriterion("has_tidal_sledge",
+                    InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TIDAL_SLEDGE));
+
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "find_deep_sea_residue"));
+
+            builder.save(consumer, "hadeandepths:craft_tidal_sledge");
+        }
+    }
+
+    void createCollectAllTidalArmorAdvancement(Consumer<AdvancementHolder> consumer)
+    {
+        {
+            final List<Supplier<Item>> CAVERNOUS_FISH_ITEMS = List.of(
+                    ModItems.TIDAL_HELMET, ModItems.TIDAL_CHESTPLATE, ModItems.TIDAL_LEGGINGS, ModItems.TIDAL_BOOTS
+            );
+            Advancement.Builder builder = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.TIDAL_CHESTPLATE,
+                            Component.literal("Cover Me in the Sea"),
+                            Component.literal("Collect every Tidal Armor Piece"),
+                            null, AdvancementType.CHALLENGE,
+                            true, true, false
+                    );
+
+            for (Supplier<Item> fishSupplier : CAVERNOUS_FISH_ITEMS) {
+                Item fishItem = fishSupplier.get();
+                ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(fishItem);
+
+                builder.addCriterion("has_" + itemId.getPath(),
+                        InventoryChangeTrigger.TriggerInstance.hasItems(fishItem));
+            }
+
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "find_deep_sea_residue"));
+
+            builder.save(consumer, "hadeandepths:collect_all_tidal_armor");
+        }
+    }
     void createToothArrowAdvancement(Consumer<AdvancementHolder> consumer)
     {
         {

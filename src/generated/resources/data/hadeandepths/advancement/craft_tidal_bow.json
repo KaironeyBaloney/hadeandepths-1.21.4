@@ -1,0 +1,30 @@
+{
+  "parent": "hadeandepths:find_deep_sea_residue",
+  "criteria": {
+    "has_tidal_bow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:serpent_bone_bow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a Tidal Bow",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:serpent_bone_bow"
+    },
+    "title": "The Eb and Flow of the Tides"
+  },
+  "requirements": [
+    [
+      "has_tidal_bow"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
