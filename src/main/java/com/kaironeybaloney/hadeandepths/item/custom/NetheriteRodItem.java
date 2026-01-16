@@ -1,5 +1,6 @@
 package com.kaironeybaloney.hadeandepths.item.custom;
 
+import com.kaironeybaloney.hadeandepths.entity.NetheriteFishingHook;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -51,7 +52,7 @@ public class NetheriteRodItem extends FishingRodItem {
                 ServerLevel serverlevel = (ServerLevel)level;
                 int j = (int)((EnchantmentHelper.getFishingTimeReduction(serverlevel, itemstack, player) * 20.0F) * 1.5F);
                 int k = (int) ((EnchantmentHelper.getFishingLuckBonus(serverlevel, itemstack, player)) * 1.5F);
-                Projectile.spawnProjectile(new FishingHook(player, level, k, j), serverlevel, itemstack);
+                Projectile.spawnProjectile(new NetheriteFishingHook(player, level, k, j), serverlevel, itemstack);
             }
 
             player.awardStat(Stats.ITEM_USED.get(this));

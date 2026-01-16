@@ -9,8 +9,9 @@
   "block.hadeandepths.glowy_goop_block": "Glowy Goop Block",
   "block.hadeandepths.butchering_hook": "Butchering Hook",
 
-  "item.hadeandepths.twig_rod": "Twig Fishing Rod",
-  "item.hadeandepths.reinforced_rod": "Reinforced Fishing Rod",
+  "item.hadeandepths.twig_rod": "Wooden Fishing Rod",
+  "item.hadeandepths.iron_fishing_rod": "Iron Fishing Rod",
+  "item.hadeandepths.reinforced_rod": "Diamond Fishing Rod",
   "item.hadeandepths.netherite_rod": "Netherite Fishing Rod",
   "item.hadeandepths.magmatic_rod": "Magmatic Fishing Rod",
   "item.hadeandepths.serpent_bone_bow": "Tidal Bow",
@@ -120,6 +121,7 @@
   "item.hadeandepths.phantom_jellyfish": "Phantom Jellyfish",
   "item.hadeandepths.megalodon": "Megalodon",
   "item.hadeandepths.red_herring": "Red Herring",
+  "item.hadeandepths.metamorfin": "Metamorfin",
 
   "tooltip.hadeandepths.shift_up": "§7Press§r §eShift§r §7for more Information§r",
   "tooltip.hadeandepths.minn_o_wisp": "Don't follow this one into the seagrass at night",
@@ -166,9 +168,12 @@
   "tooltip.hadeandepths.phantom_jellyfish":"The silky giant of the deep",
   "tooltip.hadeandepths.megalodon":"Bigger than Jaws",
   "tooltip.hadeandepths.red_herring":"You should double check what this guy says",
+  "tooltip.hadeandepths.metamorfin":"How does this thing swim? It's made of basalt...",
 
   "tooltip.hadeandepths.twig_rod_lure": "§675% §8Lure Speed",
   "tooltip.hadeandepths.twig_rod_luck": "§675% §8Luck",
+  "tooltip.hadeandepths.iron_fishing_rod_lure": "§6100% §8Lure Speed",
+  "tooltip.hadeandepths.iron_fishing_rod_luck": "§6100% §8Luck",
   "tooltip.hadeandepths.reinforced_rod_lure": "§6125% §8Lure Speed",
   "tooltip.hadeandepths.reinforced_rod_luck": "§6125% §8Luck",
   "tooltip.hadeandepths.netherite_rod_lure": "§6150% §8Lure Speed",
@@ -190,6 +195,7 @@
   "type.ancient": "§cAncient",
   "type.oceanic": "§9Oceanic",
   "type.glacial": "§bGlacial",
+  "type.magmatic": "§6Magmatic",
   "type.unexplained": "§4Unexplained",
   "tooltip.hadeandepths.rarity_type": "%1$s / %2$s",
 

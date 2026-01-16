@@ -308,6 +308,11 @@ public class ModItems {
                     .nutrition(3)
                     .saturationModifier(0.5F)
                     .build()), FishRarity.COMMON, FishType.FABLED));
+    public static final DeferredItem<Item> METAMORFIN = ITEMS.registerItem("metamorfin",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.COMMON, FishType.MAGMATIC));
 
 
 
@@ -343,6 +348,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> TWIG_ROD = ITEMS.registerItem("twig_rod",
             properties -> new TwigRodItem(properties.stacksTo(1).rarity(Rarity.COMMON).durability(32)));
+    public static final DeferredItem<Item> IRON_FISHING_ROD = ITEMS.registerItem("iron_fishing_rod",
+            properties -> new IronFishingRodItem(properties.stacksTo(1).rarity(Rarity.COMMON).durability(64)));
     public static final DeferredItem<Item> REINFORCED_ROD = ITEMS.registerItem("reinforced_rod",
             properties -> new ReinforcedRodItem(properties.stacksTo(1).rarity(Rarity.COMMON).durability(128)));
     public static final DeferredItem<Item> NETHERITE_ROD = ITEMS.registerItem("netherite_rod",

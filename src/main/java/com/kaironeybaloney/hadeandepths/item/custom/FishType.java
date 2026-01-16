@@ -10,6 +10,7 @@ public enum FishType implements StringRepresentable {
     INLAND("inland"),
     FABLED("fabled"),
     GLACIAL("glacial"),
+    MAGMATIC("magmatic"),
     UNEXPLAINED("unexplained");
 
     private final String name;

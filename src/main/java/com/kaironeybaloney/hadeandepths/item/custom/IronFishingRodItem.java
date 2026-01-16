@@ -1,6 +1,6 @@
 package com.kaironeybaloney.hadeandepths.item.custom;
 
-import com.kaironeybaloney.hadeandepths.entity.MagmaticFishingHook;
+import com.kaironeybaloney.hadeandepths.entity.IronFishingHook;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.FishingRodItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -26,8 +27,9 @@ import net.neoforged.neoforge.event.EventHooks;
 
 import java.util.List;
 
-public class MagmaticRodItem extends FishingRodItem {
-    public MagmaticRodItem(Properties properties) {
+public class IronFishingRodItem extends FishingRodItem {
+
+    public IronFishingRodItem(Properties properties) {
         super(properties);
     }
 
@@ -50,9 +52,9 @@ public class MagmaticRodItem extends FishingRodItem {
             level.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.FISHING_BOBBER_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
             if (level instanceof ServerLevel) {
                 ServerLevel serverlevel = (ServerLevel)level;
-                int j = (int)((EnchantmentHelper.getFishingTimeReduction(serverlevel, itemstack, player) * 20.0F) * 1.5F);
-                int k = (int) ((EnchantmentHelper.getFishingLuckBonus(serverlevel, itemstack, player)) * 1.5F);
-                Projectile.spawnProjectile(new MagmaticFishingHook(player, level, k, j), serverlevel, itemstack);
+                int j = (int)((EnchantmentHelper.getFishingTimeReduction(serverlevel, itemstack, player) * 20.0F));
+                int k = (int) ((EnchantmentHelper.getFishingLuckBonus(serverlevel, itemstack, player)));
+                Projectile.spawnProjectile(new IronFishingHook(player, level, k, j), serverlevel, itemstack);
             }
 
             player.awardStat(Stats.ITEM_USED.get(this));
@@ -63,15 +65,13 @@ public class MagmaticRodItem extends FishingRodItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if(Screen.hasShiftDown()) {
             ResourceLocation id = BuiltInRegistries.ITEM.getKey(this);
             if (id != null) {
                 tooltipComponents.add(Component.translatable("tooltip." + id.getNamespace() + "." + id.getPath() + "_lure")
                         .withStyle(ChatFormatting.GRAY));
                 tooltipComponents.add(Component.translatable("tooltip." + id.getNamespace() + "." + id.getPath() + "_luck")
-                        .withStyle(ChatFormatting.GRAY));
-                tooltipComponents.add(Component.translatable("tooltip." + id.getNamespace() + "." + id.getPath() + "_tip")
                         .withStyle(ChatFormatting.GRAY));
             }
         } else {

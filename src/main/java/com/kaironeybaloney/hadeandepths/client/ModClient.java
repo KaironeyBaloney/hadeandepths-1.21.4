@@ -6,8 +6,7 @@ import com.kaironeybaloney.hadeandepths.block.entity.BlueNiteliteJarBlockEntity;
 import com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities;
 import com.kaironeybaloney.hadeandepths.client.properties.LoadedArrowsProperty;
 import com.kaironeybaloney.hadeandepths.client.renderer.block.*;
-import com.kaironeybaloney.hadeandepths.client.renderer.entity.HangingFishEntityRenderer;
-import com.kaironeybaloney.hadeandepths.client.renderer.entity.ToothArrowRenderer;
+import com.kaironeybaloney.hadeandepths.client.renderer.entity.*;
 import com.kaironeybaloney.hadeandepths.data.ModDataComponents;
 import com.kaironeybaloney.hadeandepths.data.custom.LoadedAmmoComponent;
 import com.kaironeybaloney.hadeandepths.entity.ModEntities;
@@ -67,6 +66,11 @@ public class ModClient {
         EntityRenderers.register(ModEntities.HANGING_FISH_COMMON.get(), HangingFishEntityRenderer::new);
         EntityRenderers.register(ModEntities.HANGING_FISH_LEGENDARY.get(), HangingFishEntityRenderer::new);
         EntityRenderers.register(ModEntities.TOOTH_ARROW.get(), ToothArrowRenderer::new);
+        EntityRenderers.register(ModEntities.WOODEN_FISHING_BOBBER.get(), WoodenFishingHookRenderer::new);
+        EntityRenderers.register(ModEntities.IRON_FISHING_BOBBER.get(), IronFishingHookRenderer::new);
+        EntityRenderers.register(ModEntities.DIAMOND_FISHING_BOBBER.get(), DiamondFishingHookRenderer::new);
+        EntityRenderers.register(ModEntities.NETHERITE_FISHING_BOBBER.get(), NetheriteFishingHookRenderer::new);
+        EntityRenderers.register(ModEntities.MAGMATIC_FISHING_BOBBER.get(), MagmaticFishingHookRenderer::new);
     }
 
     @SubscribeEvent

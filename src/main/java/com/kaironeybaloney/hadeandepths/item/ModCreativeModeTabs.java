@@ -50,6 +50,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BASSIGATOR);
                         output.accept(ModItems.SLACK_JAW);
                         output.accept(ModItems.RED_HERRING);
+                        output.accept(ModItems.METAMORFIN);
 
                         output.accept(ModItems.GREAT_WHITE_SHARK);
                         output.accept(ModItems.TUNA);
@@ -65,6 +66,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MEGALODON);
 
                         output.accept(ModItems.TWIG_ROD);
+                        output.accept(ModItems.IRON_FISHING_ROD);
                         output.accept(ModItems.REINFORCED_ROD);
                         output.accept(ModItems.NETHERITE_ROD);
                         output.accept(ModItems.MAGMATIC_ROD);
