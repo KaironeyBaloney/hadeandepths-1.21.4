@@ -122,6 +122,10 @@
   "item.hadeandepths.megalodon": "Megalodon",
   "item.hadeandepths.red_herring": "Red Herring",
   "item.hadeandepths.metamorfin": "Metamorfin",
+  "item.hadeandepths.lava_jelly": "Lava Jelly",
+  "item.hadeandepths.twisted_eel": "Twisted Eel",
+  "item.hadeandepths.helios": "Helios",
+  "item.hadeandepths.magma_gut": "Magma Gut",
 
   "tooltip.hadeandepths.shift_up": "§7Press§r §eShift§r §7for more Information§r",
   "tooltip.hadeandepths.minn_o_wisp": "Don't follow this one into the seagrass at night",
@@ -169,6 +173,9 @@
   "tooltip.hadeandepths.megalodon":"Bigger than Jaws",
   "tooltip.hadeandepths.red_herring":"You should double check what this guy says",
   "tooltip.hadeandepths.metamorfin":"How does this thing swim? It's made of basalt...",
+  "tooltip.hadeandepths.lava_jelly":"These are known to jump out of the lava at plumbers",
+  "tooltip.hadeandepths.twisted_eel":"Stories say a twisted vine fell into the lava and grew into this slimeball",
+  "tooltip.hadeandepths.helios":"Only found in surface lava, this fish is said to be the sun's favorite",
 
   "tooltip.hadeandepths.twig_rod_lure": "§675% §8Lure Speed",
   "tooltip.hadeandepths.twig_rod_luck": "§675% §8Luck",
@@ -195,8 +202,8 @@
   "type.ancient": "§cAncient",
   "type.oceanic": "§9Oceanic",
   "type.glacial": "§bGlacial",
-  "type.magmatic": "§6Magmatic",
-  "type.unexplained": "§4Unexplained",
+  "type.magmatic": "§4Magmatic",
+  "type.unexplained": "§7Unexplained",
   "tooltip.hadeandepths.rarity_type": "%1$s / %2$s",
 
   "item.hadeandepths.magmatic_upgrade_smithing_template_tooltip": "§7Smithing Template\n\n§7Applies to:\n §9Netherite Fishing Rod\n§7Ingredients:\n §9Blaze Rod",

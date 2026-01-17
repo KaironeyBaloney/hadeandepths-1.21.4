@@ -557,8 +557,10 @@ public class MagmaticFishingHook extends FishingHook {
                 ResourceLocation lootTableID;
 
                 if(this.inLava) {
+                    System.out.println("Lava Loot Table");
                     lootTableID = ResourceLocation.fromNamespaceAndPath("hadeandepths", "gameplay/fishing_lava_master");
                 } else {
+                    System.out.println("Water Loot Table");
                     lootTableID = ResourceLocation.fromNamespaceAndPath("hadeandepths", "gameplay/fishing_master");
                 }
 

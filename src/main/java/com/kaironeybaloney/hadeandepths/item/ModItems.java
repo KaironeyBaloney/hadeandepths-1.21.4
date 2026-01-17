@@ -313,6 +313,26 @@ public class ModItems {
                     .nutrition(3)
                     .saturationModifier(0.5F)
                     .build()), FishRarity.COMMON, FishType.MAGMATIC));
+    public static final DeferredItem<Item> LAVA_JELLY = ITEMS.registerItem("lava_jelly",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.UNCOMMON, FishType.MAGMATIC, FishAttachPoint.TOP_RIGHT));
+    public static final DeferredItem<Item> TWISTED_EEL = ITEMS.registerItem("twisted_eel",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.COMMON, FishType.MAGMATIC));
+    public static final DeferredItem<Item> HELIOS = ITEMS.registerItem("helios",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.RARE, FishType.MAGMATIC));
+    public static final DeferredItem<Item> MAGMA_GUT = ITEMS.registerItem("magma_gut",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.UNCOMMON, FishType.MAGMATIC));
 
 
 

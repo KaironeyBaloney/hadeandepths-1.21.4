@@ -51,6 +51,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SLACK_JAW);
                         output.accept(ModItems.RED_HERRING);
                         output.accept(ModItems.METAMORFIN);
+                        output.accept(ModItems.LAVA_JELLY);
+                        output.accept(ModItems.TWISTED_EEL);
+                        output.accept(ModItems.HELIOS);
+                        output.accept(ModItems.MAGMA_GUT);
 
                         output.accept(ModItems.GREAT_WHITE_SHARK);
                         output.accept(ModItems.TUNA);

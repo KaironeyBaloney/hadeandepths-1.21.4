@@ -18,7 +18,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "name": "hadeandepths:gameplay/fishing/junk",
+          "value": "hadeandepths:gameplay/fishing/junk",
           "weight": 10,
           "quality": -2
         }
