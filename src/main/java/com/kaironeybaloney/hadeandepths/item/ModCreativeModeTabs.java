@@ -55,6 +55,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TWISTED_EEL);
                         output.accept(ModItems.HELIOS);
                         output.accept(ModItems.MAGMA_GUT);
+                        output.accept(ModItems.OBSIDIAN_SHARD_FIN);
+                        output.accept(ModItems.ZOMBIE_HOG_SUCKER);
+                        output.accept(ModItems.HOG_SUCKER);
+                        output.accept(ModItems.BRUTISH_HOG_SUCKER);
+                        output.accept(ModItems.CRIMSON_SHROOMLITE);
+                        output.accept(ModItems.WARPED_SHROOMLITE);
+                        output.accept(ModItems.INFERNO_EEL);
+                        output.accept(ModItems.SOULFERNO_EEL);
 
                         output.accept(ModItems.GREAT_WHITE_SHARK);
                         output.accept(ModItems.TUNA);
@@ -68,6 +76,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ORCA);
                         output.accept(ModItems.PHANTOM_JELLYFISH);
                         output.accept(ModItems.MEGALODON);
+                        output.accept(ModItems.NETHERITIC_CONTRAPTION);
 
                         output.accept(ModItems.TWIG_ROD);
                         output.accept(ModItems.IRON_FISHING_ROD);
