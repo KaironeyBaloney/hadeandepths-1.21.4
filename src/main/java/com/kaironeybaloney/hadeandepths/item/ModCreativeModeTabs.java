@@ -77,6 +77,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PHANTOM_JELLYFISH);
                         output.accept(ModItems.MEGALODON);
                         output.accept(ModItems.NETHERITIC_CONTRAPTION);
+                        output.accept(ModItems.MANTA_RAY);
+                        output.accept(ModItems.MAGMA_WYRM);
 
                         output.accept(ModItems.TWIG_ROD);
                         output.accept(ModItems.IRON_FISHING_ROD);
@@ -114,9 +116,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HUGE_AMETHYST_SHARD);
                         output.accept(ModItems.DUNKLEOSTEUS_PLATING);
                         output.accept(ModItems.PHANTOM_JELLY_SILK);
+                        output.accept(ModItems.MANTA_RAY_WING);
                         output.accept(ModItems.LEGENDARY_HEART);
                         output.accept(ModItems.DEEP_SEA_RESIDUE);
                         output.accept(ModItems.DEEP_SEA_AMALGAM);
+                        output.accept(ModItems.LIVING_FLAME);
+                        output.accept(ModItems.LIVING_SOUL_FLAME);
+                        output.accept(ModItems.SCORCHED_FISH_BONE);
                         output.accept(ModItems.RAW_FILLET);
                         output.accept(ModItems.COOKED_FILLET);
                         output.accept(ModItems.RAW_HUGE_FILLET);
@@ -132,12 +138,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAW_SHELLFISH);
                         output.accept(ModItems.COOKED_SHELLFISH);
                         output.accept(ModItems.PUFFERFISH_LIVER);
+                        output.accept(ModItems.EMBER_FILLET);
+                        output.accept(ModItems.EMBER_FIN);
 
                         output.accept(ModItems.SAND_DOLLAR);
                         output.accept(ModItems.MAGMATIC_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(ModItems.GLASS_JAR);
                         output.accept(ModItems.WATER_JAR);
                         output.accept(ModItems.TOOTH_ARROW);
+                        output.accept(ModItems.FLAME_SEEKER_ARROW);
 
                         output.accept(ModBlocks.GLOWY_GOOP_BLOCK);
                         output.accept(ModBlocks.BLUE_NITELITE_JAR);

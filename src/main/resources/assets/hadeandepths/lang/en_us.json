@@ -50,10 +50,14 @@
   "item.hadeandepths.shark_tooth": "Shark Tooth",
   "item.hadeandepths.forked_shark_tooth": "Forked Shark Tooth",
   "item.hadeandepths.serpent_fin": "Serpent Fin",
+  "item.hadeandepths.scorched_fish_bone": "Scorched Fish Bone",
   "item.hadeandepths.huge_amethyst_shard": "Huge Amethyst Shard",
   "item.hadeandepths.phantom_jelly_silk": "Phantom Jelly Silk",
+  "item.hadeandepths.manta_ray_wing": "Manta Ray Wing",
   "item.hadeandepths.pufferfish_liver": "Pufferfish Liver",
   "item.hadeandepths.prismarine_rod": "Prismarine Rod",
+  "item.hadeandepths.living_flame": "Living Flame",
+  "item.hadeandepths.living_soul_flame": "Living Soul Flame",
   "item.hadeandepths.tentacle": "Tentacle",
   "item.hadeandepths.cooked_tentacle": "Cooked Tentacle",
   "item.hadeandepths.raw_fillet": "Raw Fillet",
@@ -67,11 +71,14 @@
   "item.hadeandepths.fish_stew": "Fish Stew",
   "item.hadeandepths.fish_sandwich": "Fish Sandwich",
   "item.hadeandepths.baked_fin": "Baked Fin",
+  "item.hadeandepths.ember_fillet": "Ember Fillet",
+  "item.hadeandepths.ember_fin": "Ember Fin",
 
 
   "item.hadeandepths.glass_jar": "Glass Jar",
   "item.hadeandepths.water_jar": "Jar of water",
   "item.hadeandepths.tooth_arrow": "Tooth Arrow",
+  "item.hadeandepths.flame_seeker_arrow": "Flame Seeker Arrow",
 
   "item.hadeandepths.sand_dollar": "Sand Dollar",
 
@@ -135,6 +142,8 @@
   "item.hadeandepths.netheritic_contraption": "Netheritic Contraption",
   "item.hadeandepths.inferno_eel": "Inferno Eel",
   "item.hadeandepths.soulferno_eel": "Soulferno Eel",
+  "item.hadeandepths.manta_ray": "Manta Ray",
+  "item.hadeandepths.magma_wyrm": "Magma Wyrm",
 
   "tooltip.hadeandepths.shift_up": "§7Press§r §eShift§r §7for more Information§r",
   "tooltip.hadeandepths.minn_o_wisp": "Don't follow this one into the seagrass at night",
@@ -195,6 +204,8 @@
   "tooltip.hadeandepths.netheritic_contraption": "It seems this ancient beast was built from netherite and its alloys...",
   "tooltip.hadeandepths.inferno_eel": "Yeah I'm sure this is still edible",
   "tooltip.hadeandepths.soulferno_eel": "If a soul is damned and nobody is there to hear it, does it make a sound?",
+  "tooltip.hadeandepths.manta_ray": "The swimming pancake of the ocean",
+  "tooltip.hadeandepths.magma_wyrm": "Bet you wish you never knew this was in all that lava",
 
   "tooltip.hadeandepths.twig_rod_lure": "§675% §8Lure Speed",
   "tooltip.hadeandepths.twig_rod_luck": "§675% §8Luck",

@@ -19,6 +19,7 @@ public class ModEntities {
 
     public static ResourceKey<EntityType<?>> HANGING_FISH_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("hanging_fish"));
     public static ResourceKey<EntityType<?>> TOOTH_ARROW_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("tooth_arrow"));
+    public static ResourceKey<EntityType<?>> FLAME_SEEKER_ARROW_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("flame_seeker_arrow"));
     public static ResourceKey<EntityType<?>> WOODEN_FISHING_BOBBER_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("wooden_fishing_bobber"));
     public static ResourceKey<EntityType<?>> IRON_FISHING_BOBBER_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("iron_fishing_bobber"));
     public static ResourceKey<EntityType<?>> DIAMOND_FISHING_BOBBER_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("diamond_fishing_bobber"));
@@ -31,9 +32,13 @@ public class ModEntities {
     public static final Supplier<EntityType<HangingFishEntity>> HANGING_FISH_COMMON =
             ENTITY_TYPES.register("hanging_fish_common", () -> EntityType.Builder.of(HangingFishEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.75f).build(HANGING_FISH_KEY));
+
     public static final Supplier<EntityType<ToothArrowEntity>> TOOTH_ARROW =
             ENTITY_TYPES.register("tooth_arrow", () -> EntityType.Builder.<ToothArrowEntity>of(ToothArrowEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.75f).build(TOOTH_ARROW_KEY));
+    public static final Supplier<EntityType<FlameSeekerArrowEntity>> FLAME_SEEKER_ARROW =
+            ENTITY_TYPES.register("flame_seeker_arrow", () -> EntityType.Builder.<FlameSeekerArrowEntity>of(FlameSeekerArrowEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.75f).build(FLAME_SEEKER_ARROW_KEY));
 
     public static final Supplier<EntityType<WoodenFishingHook>> WOODEN_FISHING_BOBBER =
             ENTITY_TYPES.register("wooden_fishing_bobber", () -> EntityType.Builder.<WoodenFishingHook>of(WoodenFishingHook::new, MobCategory.MISC)

@@ -6,6 +6,7 @@ import com.kaironeybaloney.hadeandepths.entity.HangingFishEntity;
 import com.kaironeybaloney.hadeandepths.item.ModItems;
 import com.kaironeybaloney.hadeandepths.item.custom.FishItem;
 import com.kaironeybaloney.hadeandepths.item.custom.FishRarity;
+import com.kaironeybaloney.hadeandepths.item.custom.FishType;
 import com.kaironeybaloney.hadeandepths.sounds.ModSounds;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
@@ -179,37 +180,44 @@ public class ButcheringHookBlock extends Block implements EntityBlock, SimpleWat
             if(fishStack.getItem() instanceof FishItem fishItem)
             {
                 FishRarity rarity = fishItem.getRarity(fishStack);
+                FishType type = fishItem.getType(fishStack);
                 double randomValue = level.random.nextDouble();
                 switch (rarity)
                 {
                     case FishRarity.COMMON:
                     {
-                        if(randomValue <= 0.02) {
-                            Containers.dropItemStack(level, pos.getX() + 0.5,pos.getY() - 0.5, pos.getZ() + 0.5, ModItems.DEEP_SEA_RESIDUE.toStack(1));
+                        if(type != FishType.MAGMATIC && type !=  FishType.NETHEROUS) {
+                            if (randomValue <= 0.02) {
+                                Containers.dropItemStack(level, pos.getX() + 0.5, pos.getY() - 0.5, pos.getZ() + 0.5, ModItems.DEEP_SEA_RESIDUE.toStack(1));
+                            }
                         }
                         break;
                     }
                     case FishRarity.UNCOMMON:
                     {
-                        if(randomValue <= 0.06) {
-                            Containers.dropItemStack(level, pos.getX() + 0.5,pos.getY() - 0.5, pos.getZ() + 0.5, ModItems.DEEP_SEA_RESIDUE.toStack(1));
+                        if(type != FishType.MAGMATIC && type !=  FishType.NETHEROUS) {
+                            if (randomValue <= 0.06) {
+                                Containers.dropItemStack(level, pos.getX() + 0.5, pos.getY() - 0.5, pos.getZ() + 0.5, ModItems.DEEP_SEA_RESIDUE.toStack(1));
+                            }
                         }
                         break;
                     }
                     case FishRarity.RARE:
                     {
-                        if(randomValue <= 0.18)
-                        {
-                            Containers.dropItemStack(level, pos.getX() + 0.5,pos.getY() - 0.5, pos.getZ() + 0.5, ModItems.DEEP_SEA_RESIDUE.toStack(1));
+                        if(type != FishType.MAGMATIC && type !=  FishType.NETHEROUS) {
+                            if (randomValue <= 0.18) {
+                                Containers.dropItemStack(level, pos.getX() + 0.5, pos.getY() - 0.5, pos.getZ() + 0.5, ModItems.DEEP_SEA_RESIDUE.toStack(1));
+                            }
                         }
 
                         break;
                     }
                     case FishRarity.LEGENDARY:
                     {
-                        if(randomValue <= 0.50)
-                        {
-                            Containers.dropItemStack(level, pos.getX() + 0.5,pos.getY() - 1, pos.getZ() + 0.5, ModItems.DEEP_SEA_RESIDUE.toStack(1));
+                        if(type != FishType.MAGMATIC && type !=  FishType.NETHEROUS) {
+                            if (randomValue <= 0.50) {
+                                Containers.dropItemStack(level, pos.getX() + 0.5, pos.getY() - 1, pos.getZ() + 0.5, ModItems.DEEP_SEA_RESIDUE.toStack(1));
+                            }
                         }
                         Containers.dropItemStack(level, pos.getX() + 0.5,pos.getY() - 1, pos.getZ() + 0.5, ModItems.LEGENDARY_HEART.toStack(1));
                         break;

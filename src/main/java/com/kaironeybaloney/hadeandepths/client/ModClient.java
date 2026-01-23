@@ -66,6 +66,7 @@ public class ModClient {
         EntityRenderers.register(ModEntities.HANGING_FISH_COMMON.get(), HangingFishEntityRenderer::new);
         EntityRenderers.register(ModEntities.HANGING_FISH_LEGENDARY.get(), HangingFishEntityRenderer::new);
         EntityRenderers.register(ModEntities.TOOTH_ARROW.get(), ToothArrowRenderer::new);
+        EntityRenderers.register(ModEntities.FLAME_SEEKER_ARROW.get(), FlameSeekerArrowRenderer::new);
         EntityRenderers.register(ModEntities.WOODEN_FISHING_BOBBER.get(), WoodenFishingHookRenderer::new);
         EntityRenderers.register(ModEntities.IRON_FISHING_BOBBER.get(), IronFishingHookRenderer::new);
         EntityRenderers.register(ModEntities.DIAMOND_FISHING_BOBBER.get(), DiamondFishingHookRenderer::new);
