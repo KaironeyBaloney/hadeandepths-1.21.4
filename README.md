@@ -1,9 +1,9 @@
-A Fishing Addon that currently adds **43 Unique Fish** to spice up vanilla fishing! Catch and butcher new and exotic fish for unique items that can be used in crafting and cooking! The mod also adds:
+A Fishing Addon that currently adds **60+ Unique Fish** to spice up vanilla fishing! Catch and butcher new and exotic fish for unique items that can be used in crafting and cooking! The mod also adds:
 
 *   **4** New Fishing Rods!
 *   **8** New Tools!
 *   **1** New Armor Set!
-*   **43** Fish, categorized by Rarity and Type!
+*   **60+** Fish, categorized by Rarity and Type!
 *   **A new Fish Butchering mechanic!**
 *   **16** new Food items!
 
