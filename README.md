@@ -1,25 +1,12 @@
+A Fishing Addon that currently adds **43 Unique Fish** to spice up vanilla fishing! Catch and butcher new and exotic fish for unique items that can be used in crafting and cooking! The mod also adds:
 
-Installation information
-=======
+*   **4** New Fishing Rods!
+*   **8** New Tools!
+*   **1** New Armor Set!
+*   **43** Fish, categorized by Rarity and Type!
+*   **A new Fish Butchering mechanic!**
+*   **16** new Food items!
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+Every fish, treasure, and junk can be found in different biomes, weathers, heights, time of days, etc. so get fishing! The mod features a fully fleshed out advancement progression to help you along your fishing journey.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+Here is the (Hopefully Accurate) [Fish, Junk, and Treasure Loot Tables](https://docs.google.com/spreadsheets/d/1KIS6Go3KpFgw0oryHcyhUBswDL0cmJ3OGx-xtLAR5tM/edit?usp=sharing) that should give you all the information you need to catch every fish. I'll do my best to upkeep these, but ideally I will integrate an in-game system to resolve the need for this!
