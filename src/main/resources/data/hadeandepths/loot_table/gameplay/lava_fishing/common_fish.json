@@ -1,0 +1,73 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:metamorfin",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:basalt_deltas"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:magma_gut",
+          "weight": 100000
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:twisted_eel",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:warped_forest"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:obsidian_shard_fin",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:zombie_hog_sucker",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:nether_wastes"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:bug_fish",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "functions": []
+}

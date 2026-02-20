@@ -27,19 +27,7 @@
           "type": "minecraft:loot_table",
           "value": "hadeandepths:gameplay/lava_fishing/legendary_fish",
           "weight": 1,
-          "quality": 3,
-          "conditions": [
-            {
-              "condition": "minecraft:match_tool",
-              "predicate": {
-                "items": [
-                  "hadeandepths:reinforced_rod",
-                  "hadeandepths:netherite_rod",
-                  "hadeandepths:magmatic_rod"
-                ]
-              }
-            }
-          ]
+          "quality": 3
         }
       ]
     }

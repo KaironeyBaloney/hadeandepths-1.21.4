@@ -179,6 +179,30 @@
           ]
         },
         {
+          "type": "minecraft:item",
+          "name": "hadeandepths:manta_ray",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:time_check",
+              "clock": "minecraft:overworld",
+              "value": {
+                "min": 18000,
+                "max": 24000
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": [
+                  "minecraft:warm_ocean",
+                  "minecraft:lukewarm_ocean"
+                ]
+              }
+            }
+          ]
+        },
+        {
           "type": "minecraft:loot_table",
           "value": "hadeandepths:gameplay/fishing/rare_fish",
           "weight": 1

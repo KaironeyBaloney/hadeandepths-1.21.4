@@ -5,10 +5,16 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:netherite_ingot",
-          "weight": 10000000,
+          "type": "minecraft:loot_table",
+          "value": "hadeandepths:gameplay/lava_fishing/treasure",
+          "weight": 2,
           "quality": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "hadeandepths:gameplay/lava_fishing/fish",
+          "weight": 98,
+          "quality": 0
         }
       ]
     }

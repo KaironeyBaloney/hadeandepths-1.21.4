@@ -59,6 +59,7 @@ public class ModClient {
         event.registerBlockEntityRenderer(ModBlockEntities.PINK_NITELITE_JAR_BLOCK_ENTITY.get(), PinkNiteliteJarRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.DAVY_JONES_LOCKER_BLOCK_ENTITY.get(), DavyJonesLockerRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.BUTCHERING_HOOK_BLOCK_ENTITY.get(), ButcheringHookRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.CRUCIBLE_BLOCK_ENTITY.get(), CrucibleRenderer::new);
     }
 
     @SubscribeEvent

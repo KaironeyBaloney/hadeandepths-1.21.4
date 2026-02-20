@@ -63,6 +63,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WARPED_SHROOMLITE);
                         output.accept(ModItems.INFERNO_EEL);
                         output.accept(ModItems.SOULFERNO_EEL);
+                        output.accept(ModItems.WITHER_SKELETON_FISH);
 
                         output.accept(ModItems.GREAT_WHITE_SHARK);
                         output.accept(ModItems.TUNA);
@@ -123,6 +124,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LIVING_FLAME);
                         output.accept(ModItems.LIVING_SOUL_FLAME);
                         output.accept(ModItems.SCORCHED_FISH_BONE);
+                        output.accept(ModItems.MAGMA_CORE);
+                        output.accept(ModItems.ANCIENT_COG);
                         output.accept(ModItems.RAW_FILLET);
                         output.accept(ModItems.COOKED_FILLET);
                         output.accept(ModItems.RAW_HUGE_FILLET);

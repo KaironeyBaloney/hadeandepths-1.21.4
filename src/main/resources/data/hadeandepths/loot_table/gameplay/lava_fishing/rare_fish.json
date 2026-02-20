@@ -6,8 +6,30 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_ingot",
-          "weight": 5000,
+          "name": "hadeandepths:helios",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:time_check",
+              "clock": "minecraft:overworld",
+              "value": {
+                "min": 0,
+                "max": 12000
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld",
+                "can_see_sky": true
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:brutish_hog_sucker",
+          "weight": 100000,
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -19,12 +41,13 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_scrap",
-          "weight": 40000,
+          "name": "hadeandepths:soulferno_eel",
+          "weight": 100000,
           "conditions": [
             {
               "condition": "minecraft:location_check",
               "predicate": {
+                "biomes": "minecraft:soul_sand_valley",
                 "dimension": "minecraft:the_nether"
               }
             }
@@ -32,8 +55,8 @@
         },
         {
           "type": "minecraft:item",
-          "name": "ancient_debris",
-          "weight": 55000,
+          "name": "hadeandepths:wither_skeleton_fish",
+          "weight": 100000,
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -45,7 +68,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "hadeandepths:gameplay/lava_fishing/fish",
+          "value": "hadeandepths:gameplay/lava_fishing/uncommon_fish",
           "weight": 1
         }
       ]

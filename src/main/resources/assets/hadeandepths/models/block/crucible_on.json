@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down":  "hadeandepths:block/crucible_bottom",
+    "up":    "hadeandepths:block/crucible_top",
+    "north": "hadeandepths:block/crucible_front_on",
+    "south": "hadeandepths:block/crucible_back",
+    "west":  "hadeandepths:block/crucible_side_left_on",
+    "east":  "hadeandepths:block/crucible_side_right_on"
+  }
+}

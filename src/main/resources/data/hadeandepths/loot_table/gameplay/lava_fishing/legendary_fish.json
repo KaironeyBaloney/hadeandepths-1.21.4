@@ -6,8 +6,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_ingot",
-          "weight": 5000,
+          "name": "hadeandepths:netheritic_contraption",
+          "weight": 100000,
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -19,33 +19,20 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_scrap",
-          "weight": 40000,
+          "name": "hadeandepths:magma_wyrm",
+          "weight": 100000,
           "conditions": [
             {
               "condition": "minecraft:location_check",
               "predicate": {
-                "dimension": "minecraft:the_nether"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "ancient_debris",
-          "weight": 55000,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "dimension": "minecraft:the_nether"
+                "dimension": "minecraft:overworld"
               }
             }
           ]
         },
         {
           "type": "minecraft:loot_table",
-          "value": "hadeandepths:gameplay/lava_fishing/fish",
+          "value": "hadeandepths:gameplay/lava_fishing/rare_fish",
           "weight": 1
         }
       ]

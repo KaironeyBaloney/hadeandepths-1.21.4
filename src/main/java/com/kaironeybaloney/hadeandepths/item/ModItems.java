@@ -66,17 +66,21 @@ public class ModItems {
     public static final DeferredItem<Item> SAND_DOLLAR = ITEMS.registerItem("sand_dollar",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> LIVING_FLAME = ITEMS.registerItem("living_flame",
-            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant()));
+            properties -> new FuelItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant(), 1600));
     public static final DeferredItem<Item> LIVING_SOUL_FLAME = ITEMS.registerItem("living_soul_flame",
-            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant()));
+            properties -> new FuelItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant(), 1600));
     public static final DeferredItem<Item> SCORCHED_FISH_BONE = ITEMS.registerItem("scorched_fish_bone",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant()));
+    public static final DeferredItem<Item> MAGMA_CORE = ITEMS.registerItem("magma_core",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant()));
+    public static final DeferredItem<Item> ANCIENT_COG = ITEMS.registerItem("ancient_cog",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant()));
     public static final DeferredItem<Item> MAGMATIC_UPGRADE_SMITHING_TEMPLATE = ITEMS.registerItem("magmatic_upgrade_smithing_template",
             properties -> new MagmaticUpgradeSmithingTemplateItem(properties.stacksTo(64).rarity((Rarity.UNCOMMON))));
     public static final DeferredItem<Item> TOOTH_ARROW = ITEMS.registerItem("tooth_arrow",
             properties -> new ToothArrowItem(properties.stacksTo(64).rarity((Rarity.COMMON))));
     public static final DeferredItem<Item> FLAME_SEEKER_ARROW = ITEMS.registerItem("flame_seeker_arrow",
-            properties -> new FlameSeekerArrowItem(properties.stacksTo(64).rarity((Rarity.COMMON))));
+            properties -> new FlameSeekerArrowItem(properties.stacksTo(64).fireResistant().rarity((Rarity.COMMON))));
 
     public static final DeferredItem<Item> GLASS_JAR = ITEMS.registerItem("glass_jar",
             properties -> new GlassJarItem(properties.stacksTo(16).rarity(Rarity.COMMON)));
@@ -351,7 +355,7 @@ public class ModItems {
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
                     .nutrition(3)
                     .saturationModifier(0.5F)
-                    .build()), FishRarity.UNCOMMON, FishType.MAGMATIC));
+                    .build()), FishRarity.COMMON, FishType.MAGMATIC));
     public static final DeferredItem<Item> OBSIDIAN_SHARD_FIN = ITEMS.registerItem("obsidian_shard_fin",
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
                     .nutrition(3)
@@ -388,6 +392,11 @@ public class ModItems {
                     .saturationModifier(0.5F)
                     .build()), FishRarity.UNCOMMON, FishType.MAGMATIC));
     public static final DeferredItem<Item> SOULFERNO_EEL = ITEMS.registerItem("soulferno_eel",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.RARE, FishType.NETHEROUS));
+    public static final DeferredItem<Item> WITHER_SKELETON_FISH = ITEMS.registerItem("wither_skeleton_fish",
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
                     .nutrition(2)
                     .saturationModifier(0.5F)

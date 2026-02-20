@@ -58,6 +58,8 @@
   "item.hadeandepths.prismarine_rod": "Prismarine Rod",
   "item.hadeandepths.living_flame": "Living Flame",
   "item.hadeandepths.living_soul_flame": "Living Soul Flame",
+  "item.hadeandepths.magma_core": "Magma Core",
+  "item.hadeandepths.ancient_cog": "Ancient Cog",
   "item.hadeandepths.tentacle": "Tentacle",
   "item.hadeandepths.cooked_tentacle": "Cooked Tentacle",
   "item.hadeandepths.raw_fillet": "Raw Fillet",
@@ -144,6 +146,7 @@
   "item.hadeandepths.soulferno_eel": "Soulferno Eel",
   "item.hadeandepths.manta_ray": "Manta Ray",
   "item.hadeandepths.magma_wyrm": "Magma Wyrm",
+  "item.hadeandepths.wither_skeleton_fish": "Wither Skeleton Fish",
 
   "tooltip.hadeandepths.shift_up": "§7Press§r §eShift§r §7for more Information§r",
   "tooltip.hadeandepths.minn_o_wisp": "Don't follow this one into the seagrass at night",
@@ -206,6 +209,7 @@
   "tooltip.hadeandepths.soulferno_eel": "If a soul is damned and nobody is there to hear it, does it make a sound?",
   "tooltip.hadeandepths.manta_ray": "The swimming pancake of the ocean",
   "tooltip.hadeandepths.magma_wyrm": "Bet you wish you never knew this was in all that lava",
+  "tooltip.hadeandepths.wither_skeleton_fish": "Don't even need Looting III for this guy",
 
   "tooltip.hadeandepths.twig_rod_lure": "§675% §8Lure Speed",
   "tooltip.hadeandepths.twig_rod_luck": "§675% §8Luck",
