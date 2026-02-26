@@ -12,6 +12,7 @@ import com.kaironeybaloney.hadeandepths.data.custom.LoadedAmmoComponent;
 import com.kaironeybaloney.hadeandepths.entity.ModEntities;
 import com.kaironeybaloney.hadeandepths.item.ModItems;
 import com.kaironeybaloney.hadeandepths.screen.ModMenuTypes;
+import com.kaironeybaloney.hadeandepths.screen.custom.CrucibleScreen;
 import com.kaironeybaloney.hadeandepths.screen.custom.DavyJonesLockerScreen;
 import com.kaironeybaloney.hadeandepths.screen.custom.WoodenCrateScreen;
 import net.minecraft.client.Minecraft;
@@ -79,6 +80,7 @@ public class ModClient {
     public static void registerScreens(RegisterMenuScreensEvent event) {
         event.register(ModMenuTypes.DAVY_JONES_LOCKER_MENU.get(), DavyJonesLockerScreen::new);
         event.register(ModMenuTypes.WOODEN_CRATE_MENU.get(), WoodenCrateScreen::new);
+        event.register(ModMenuTypes.CRUCIBLE_MENU.get(), CrucibleScreen::new);
     }
 
     @SubscribeEvent

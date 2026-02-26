@@ -51,6 +51,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_brutish_hog_sucker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:brutish_hog_sucker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_carp": {
       "conditions": {
         "items": [
@@ -96,6 +106,16 @@
         "items": [
           {
             "items": "hadeandepths:colossal_squid"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_crimson_shroomlite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:crimson_shroomlite"
           }
         ]
       },
@@ -231,6 +251,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_helios": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:helios"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_hog_sucker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:hog_sucker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_horseshoe_crab": {
       "conditions": {
         "items": [
@@ -261,6 +301,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_inferno_eel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:inferno_eel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_lamplighter": {
       "conditions": {
         "items": [
@@ -281,11 +331,61 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_lava_jelly": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:lava_jelly"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magma_gut": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:magma_gut"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magma_wyrm": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:magma_wyrm"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_manta_ray": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:manta_ray"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_megalodon": {
       "conditions": {
         "items": [
           {
             "items": "hadeandepths:megalodon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_metamorfin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:metamorfin"
           }
         ]
       },
@@ -306,6 +406,26 @@
         "items": [
           {
             "items": "hadeandepths:nautilus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_netheritic_contraption": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:netheritic_contraption"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_obsidian_shard_fin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:obsidian_shard_fin"
           }
         ]
       },
@@ -401,6 +521,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_soulferno_eel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:soulferno_eel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_sturgeon": {
       "conditions": {
         "items": [
@@ -461,11 +591,51 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_twisted_eel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:twisted_eel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_warped_shroomlite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:warped_shroomlite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wither_skeleton_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:wither_skeleton_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_zombie_fish": {
       "conditions": {
         "items": [
           {
             "items": "hadeandepths:zombie_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_zombie_hog_sucker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:zombie_hog_sucker"
           }
         ]
       },
@@ -610,6 +780,57 @@
     ],
     [
       "has_red_herring"
+    ],
+    [
+      "has_manta_ray"
+    ],
+    [
+      "has_metamorfin"
+    ],
+    [
+      "has_lava_jelly"
+    ],
+    [
+      "has_twisted_eel"
+    ],
+    [
+      "has_helios"
+    ],
+    [
+      "has_magma_gut"
+    ],
+    [
+      "has_obsidian_shard_fin"
+    ],
+    [
+      "has_brutish_hog_sucker"
+    ],
+    [
+      "has_hog_sucker"
+    ],
+    [
+      "has_zombie_hog_sucker"
+    ],
+    [
+      "has_crimson_shroomlite"
+    ],
+    [
+      "has_warped_shroomlite"
+    ],
+    [
+      "has_netheritic_contraption"
+    ],
+    [
+      "has_inferno_eel"
+    ],
+    [
+      "has_soulferno_eel"
+    ],
+    [
+      "has_magma_wyrm"
+    ],
+    [
+      "has_wither_skeleton_fish"
     ],
     [
       "has_cod"

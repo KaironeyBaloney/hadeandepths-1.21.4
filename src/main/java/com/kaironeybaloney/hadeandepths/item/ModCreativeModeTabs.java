@@ -158,6 +158,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.WOODEN_CRATE);
                         output.accept(ModBlocks.DAVY_JONES_LOCKER);
                         output.accept(ModBlocks.BUTCHERING_HOOK);
+                        output.accept(ModBlocks.CRUCIBLE);
 
                     }).build());
 

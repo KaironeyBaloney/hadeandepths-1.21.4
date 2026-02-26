@@ -4,11 +4,13 @@ import com.kaironeybaloney.hadeandepths.HadeanDepths;
 import com.kaironeybaloney.hadeandepths.block.ModBlocks;
 import com.kaironeybaloney.hadeandepths.block.custom.ButcheringHookBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
+import java.util.Set;
 import java.util.function.Supplier;
 
 public class ModBlockEntities {
@@ -38,6 +40,10 @@ public class ModBlockEntities {
     public static final Supplier<BlockEntityType<ButcheringHookBlockEntity>> BUTCHERING_HOOK_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("butchering_hook_block_entity", () -> new BlockEntityType<>(
                     ButcheringHookBlockEntity::new, ModBlocks.BUTCHERING_HOOK.get()));
+
+    public static final Supplier<BlockEntityType<CrucibleBlockEntity>> CRUCIBLE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("crucible_block_entity", () -> new BlockEntityType<>(
+                    CrucibleBlockEntity::new, ModBlocks.CRUCIBLE.get()));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

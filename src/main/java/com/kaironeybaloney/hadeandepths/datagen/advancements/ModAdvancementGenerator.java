@@ -29,6 +29,8 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
         createCollectAllAncientFishAdvancement(consumer);
         createCollectAllFabledFishAdvancement(consumer);
         createCollectAllCavernousFishAdvancement(consumer);
+        createCollectAllMagmaticFishAdvancement(consumer);
+        createCollectAllNetherousFishAdvancement(consumer);
         createFindDavyJonesLockerAdvancement(consumer);
         createNiteliteJarAdvancement(consumer);
         createButcheringHookAdvancement(consumer);
@@ -40,8 +42,69 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
         createTidalSledgeAdvancement(consumer);
         createTidalMorningStarAdvancement(consumer);
         createTidalBowAdvancement(consumer);
+        createCollectCrucibleAdvancement(consumer);
+        createDeepSeaAmalgamAdvancement(consumer);
     }
 
+    void createCollectAllNetherousFishAdvancement(Consumer<AdvancementHolder> consumer)
+    {
+        {
+            final List<Supplier<Item>> NETHEROUS_FISH_ITEMS = List.of(
+                    ModItems.WITHER_SKELETON_FISH, ModItems.SOULFERNO_EEL, ModItems.NETHERITIC_CONTRAPTION, ModItems.WARPED_SHROOMLITE,
+                    ModItems.CRIMSON_SHROOMLITE, ModItems.ZOMBIE_HOG_SUCKER, ModItems.HOG_SUCKER, ModItems.BRUTISH_HOG_SUCKER, ModItems.METAMORFIN,
+                    ModItems.TWISTED_EEL
+            );
+            Advancement.Builder builder = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.WITHER_SKELETON_FISH,
+                            Component.literal("Fish from Hell"),
+                            Component.literal("Collect every Netherous Fish"),
+                            null, AdvancementType.GOAL,
+                            true, true, false
+                    );
+
+            for (Supplier<Item> fishSupplier : NETHEROUS_FISH_ITEMS) {
+                Item fishItem = fishSupplier.get();
+                ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(fishItem);
+
+                builder.addCriterion("has_" + itemId.getPath(),
+                        InventoryChangeTrigger.TriggerInstance.hasItems(fishItem));
+            }
+
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "fishing/magmatic_rod"));
+
+            builder.save(consumer, "hadeandepths:collect_all_netherous_fish");
+        }
+    }
+
+    void createCollectAllMagmaticFishAdvancement(Consumer<AdvancementHolder> consumer)
+    {
+        {
+            final List<Supplier<Item>> MAGMATIC_FISH_ITEMS = List.of(
+                    ModItems.OBSIDIAN_SHARD_FIN, ModItems.MAGMA_GUT, ModItems.HELIOS, ModItems.LAVA_JELLY, ModItems.INFERNO_EEL, ModItems.MAGMA_WYRM
+            );
+            Advancement.Builder builder = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.INFERNO_EEL,
+                            Component.literal("Red Hot Fishing"),
+                            Component.literal("Collect every Magmatic Fish"),
+                            null, AdvancementType.GOAL,
+                            true, true, false
+                    );
+
+            for (Supplier<Item> fishSupplier : MAGMATIC_FISH_ITEMS) {
+                Item fishItem = fishSupplier.get();
+                ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(fishItem);
+
+                builder.addCriterion("has_" + itemId.getPath(),
+                        InventoryChangeTrigger.TriggerInstance.hasItems(fishItem));
+            }
+
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "fishing/magmatic_rod"));
+
+            builder.save(consumer, "hadeandepths:collect_all_magmatic_fish");
+        }
+    }
     void createCollectAllGlacialFishAdvancement(Consumer<AdvancementHolder> consumer)
     {
         {
@@ -76,7 +139,8 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
         {
             final List<Supplier<Item>> LEGENDARY_FISH_ITEMS = List.of(
                     ModItems.DUNKLEOSTEUS, ModItems.SEA_SERPENT, ModItems.GIANT_CATFISH, ModItems.GREAT_WHITE_SHARK, ModItems.COLOSSAL_SQUID, ModItems.STURGEON,
-                    ModItems.AMETHYST_GROUPER, ModItems.TUNA, ModItems.FRILLED_SHARK, ModItems.PHANTOM_JELLYFISH, ModItems.MEGALODON
+                    ModItems.AMETHYST_GROUPER, ModItems.TUNA, ModItems.FRILLED_SHARK, ModItems.PHANTOM_JELLYFISH, ModItems.MEGALODON, ModItems.NETHERITIC_CONTRAPTION,
+                    ModItems.MANTA_RAY, ModItems.MAGMA_WYRM
             );
             Advancement.Builder builder = Advancement.Builder.advancement()
                     .display(
@@ -162,7 +226,27 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
 
             builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "fishing/root"));
 
-            builder.save(consumer, "hadeandepths:find_deep_sea_residue");
+            builder.save(consumer, "hadeandepths:fish_deep_sea_residue");
+        }
+    }
+
+    void createDeepSeaAmalgamAdvancement(Consumer<AdvancementHolder> consumer)
+    {
+        {
+            Advancement.Builder builder = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.DEEP_SEA_AMALGAM,
+                            Component.literal("Forged in the Abyss"),
+                            Component.literal("Craft a Deep Sea Amalgam"),
+                            null, AdvancementType.TASK,
+                            true, true, false
+                    );
+            builder.addCriterion("has_deep_sea_amalgam",
+                    InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.DEEP_SEA_AMALGAM));
+
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "fish_deep_sea_residue"));
+
+            builder.save(consumer, "hadeandepths:craft_deep_sea_amalgam");
         }
     }
 
@@ -180,7 +264,7 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
             builder.addCriterion("has_tidal_bow",
                     InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SERPENT_BONE_BOW));
 
-            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "find_deep_sea_residue"));
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "craft_deep_sea_amalgam"));
 
             builder.save(consumer, "hadeandepths:craft_tidal_bow");
         }
@@ -200,7 +284,7 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
             builder.addCriterion("has_tidal_morning_star",
                     InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TIDAL_MORNING_STAR));
 
-            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "find_deep_sea_residue"));
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "craft_deep_sea_amalgam"));
 
             builder.save(consumer, "hadeandepths:craft_tidal_morning_star");
         }
@@ -219,7 +303,7 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
             builder.addCriterion("has_tidal_sledge",
                     InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TIDAL_SLEDGE));
 
-            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "find_deep_sea_residue"));
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "craft_deep_sea_amalgam"));
 
             builder.save(consumer, "hadeandepths:craft_tidal_sledge");
         }
@@ -248,7 +332,7 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(fishItem));
             }
 
-            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "find_deep_sea_residue"));
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "craft_deep_sea_amalgam"));
 
             builder.save(consumer, "hadeandepths:collect_all_tidal_armor");
         }
@@ -290,6 +374,26 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
             builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "fishing/root"));
 
             builder.save(consumer, "hadeandepths:find_davy_jones_locker");
+        }
+    }
+
+    void createCollectCrucibleAdvancement(Consumer<AdvancementHolder> consumer)
+    {
+        {
+            Advancement.Builder builder = Advancement.Builder.advancement()
+                    .display(
+                            ModBlocks.CRUCIBLE,
+                            Component.literal("White-Hot Smelting"),
+                            Component.literal("Craft the Crucible"),
+                            null, AdvancementType.GOAL,
+                            true, true, false
+                    );
+            builder.addCriterion("has_crucible",
+                    InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.CRUCIBLE));
+
+            builder.parent(ResourceLocation.fromNamespaceAndPath("hadeandepths", "fishing/root"));
+
+            builder.save(consumer, "hadeandepths:craft_crucible");
         }
     }
 
@@ -487,7 +591,10 @@ public class ModAdvancementGenerator implements AdvancementSubProvider {
                 ModItems.ZOMBIE_FISH, ModItems.GIANT_CATFISH, ModItems.GREAT_WHITE_SHARK, ModItems.GLOW_FISH, ModItems.GHOST_FISH, ModItems.HORSESHOE_CRAB,
                 ModItems.NAUTILUS, ModItems.MINN_O_WISP, ModItems.SEA_SERPENT, ModItems.STURGEON, ModItems.TIGER_FISH, ModItems.FRILLED_SHARK, ModItems.ICY_KRILL,
                 ModItems.TROUT, ModItems.FUR_BEARING_TROUT, ModItems.ICICLE_FISH, ModItems.FROZEN_FISH, ModItems.ORCA, ModItems.BASSIGATOR, ModItems.SLACK_JAW,
-                ModItems.PHANTOM_JELLYFISH, ModItems.MEGALODON, ModItems.RED_HERRING
+                ModItems.PHANTOM_JELLYFISH, ModItems.MEGALODON, ModItems.RED_HERRING, ModItems.MANTA_RAY, ModItems.METAMORFIN, ModItems.LAVA_JELLY,
+                ModItems.TWISTED_EEL, ModItems.HELIOS, ModItems.MAGMA_GUT, ModItems.OBSIDIAN_SHARD_FIN, ModItems.BRUTISH_HOG_SUCKER, ModItems.HOG_SUCKER, ModItems.ZOMBIE_HOG_SUCKER,
+                ModItems.CRIMSON_SHROOMLITE, ModItems.WARPED_SHROOMLITE, ModItems.NETHERITIC_CONTRAPTION, ModItems.INFERNO_EEL, ModItems.SOULFERNO_EEL, ModItems.MAGMA_WYRM,
+                ModItems.WITHER_SKELETON_FISH
         );
         Advancement.Builder builder = Advancement.Builder.advancement()
                 .display(

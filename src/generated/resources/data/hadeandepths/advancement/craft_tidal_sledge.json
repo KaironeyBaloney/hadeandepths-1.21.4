@@ -1,5 +1,5 @@
 {
-  "parent": "hadeandepths:find_deep_sea_residue",
+  "parent": "hadeandepths:craft_deep_sea_amalgam",
   "criteria": {
     "has_tidal_sledge": {
       "conditions": {

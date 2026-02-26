@@ -6,6 +6,7 @@
     "north": "hadeandepths:block/crucible_front",
     "south": "hadeandepths:block/crucible_back",
     "west":  "hadeandepths:block/crucible_side_left",
-    "east":  "hadeandepths:block/crucible_side_right"
+    "east":  "hadeandepths:block/crucible_side_right",
+    "particle": "minecraft:block/blackstone"
   }
 }
