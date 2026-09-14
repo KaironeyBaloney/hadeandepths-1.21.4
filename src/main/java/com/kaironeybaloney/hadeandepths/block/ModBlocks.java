@@ -4,6 +4,7 @@ import com.kaironeybaloney.hadeandepths.HadeanDepths;
 import com.kaironeybaloney.hadeandepths.block.custom.*;
 import com.kaironeybaloney.hadeandepths.item.ModItems;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FurnaceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -60,6 +61,11 @@ public class ModBlocks {
                     .sound(SoundType.HONEY_BLOCK)
                     .noOcclusion()
                     .lightLevel(state -> 15));
+
+    public static final DeferredBlock<Block> CRUCIBLE = registerBlock("crucible",
+            properties -> new CrucibleBlock(properties), BlockBehaviour.Properties.of()
+                    .strength(4f, 4f)
+                    .sound(SoundType.METAL));
 
 
 

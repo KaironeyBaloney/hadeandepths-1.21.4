@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": "hadeandepths:magma_core",
+    "B": "hadeandepths:ancient_cog",
+    "C": "minecraft:obsidian",
+    "D": "minecraft:blackstone"
+  },
+  "pattern": [
+    "DDD",
+    "BAB",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hadeandepths:crucible"
+  }
+}

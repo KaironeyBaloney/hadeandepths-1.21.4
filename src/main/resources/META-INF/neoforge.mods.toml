@@ -12,6 +12,7 @@ loaderVersion="2" #mandatory
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="MIT"
+logoFile="icon.png"
 
 # A URL to refer people to when problems occur with this mod
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
@@ -23,7 +24,7 @@ license="MIT"
 modId="hadeandepths" #mandatory
 
 # The version number of the mod
-version="1" #mandatory
+version="1.1.0" #mandatory
 
 # A display name for the mod
 displayName="Hadean Depths" #mandatory
@@ -43,7 +44,7 @@ ordering= "AFTER"
 #credits="" #optional
 
 # A text field displayed in the mod UI
-authors="${mod_authors}" #optional
+authors="KaironeyBaloney" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''Fishing from the depths!'''
@@ -70,7 +71,7 @@ description='''Fishing from the depths!'''
     # Optional field describing why the dependency is required or why it is incompatible
     # reason="..."
     # The version range of the dependency
-    versionRange="21.4." #mandatory
+    versionRange="[21.4,)" #mandatory
     # An ordering relationship for the dependency.
     # BEFORE - This mod is loaded BEFORE the dependency
     # AFTER - This mod is loaded AFTER the dependency
@@ -83,9 +84,16 @@ description='''Fishing from the depths!'''
     modId="minecraft"
     type="required"
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="1.21.4"
+    versionRange="[1.21.4]"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.hadeandepths]]
+modId="geckolib"
+type="required"
+versionRange="[4.2,)"
+ordering="AFTER"
+side="BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't

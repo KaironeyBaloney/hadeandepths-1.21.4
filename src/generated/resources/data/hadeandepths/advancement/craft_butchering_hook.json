@@ -1,0 +1,29 @@
+{
+  "parent": "hadeandepths:fishing/root",
+  "criteria": {
+    "has_butchering_hook": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:butchering_hook"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a Butchering Hook",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:butchering_hook"
+    },
+    "title": "Hooked"
+  },
+  "requirements": [
+    [
+      "has_butchering_hook"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

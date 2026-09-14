@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "#^#",
+    "&^&",
     "# #",
     "# #"
   ],
@@ -12,6 +12,9 @@
     ],
     "^": [
       "hadeandepths:legendary_heart"
+    ],
+    "&": [
+      "hadeandepths:manta_ray_wing"
     ]
   },
   "result": {

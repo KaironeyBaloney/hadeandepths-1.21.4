@@ -1,0 +1,108 @@
+{
+  "parent": "hadeandepths:fishing/first_fish",
+  "criteria": {
+    "has_blobfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:blobfish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_colossal_squid": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:colossal_squid"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_frilled_shark": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:frilled_shark"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lamplighter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:lamplighter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lantern_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:lantern_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_phantom_jellyfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:phantom_jellyfish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_slack_jaw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:slack_jaw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Collect every Abyssal Fish",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:slack_jaw"
+    },
+    "title": "Cast Into the Abyss"
+  },
+  "requirements": [
+    [
+      "has_lamplighter"
+    ],
+    [
+      "has_colossal_squid"
+    ],
+    [
+      "has_blobfish"
+    ],
+    [
+      "has_lantern_fish"
+    ],
+    [
+      "has_frilled_shark"
+    ],
+    [
+      "has_slack_jaw"
+    ],
+    [
+      "has_phantom_jellyfish"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

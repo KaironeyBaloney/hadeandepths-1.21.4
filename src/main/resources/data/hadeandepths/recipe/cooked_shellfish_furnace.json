@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": "hadeandepths:raw_shellfish",
+  "result": {
+    "id": "hadeandepths:cooked_shellfish"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

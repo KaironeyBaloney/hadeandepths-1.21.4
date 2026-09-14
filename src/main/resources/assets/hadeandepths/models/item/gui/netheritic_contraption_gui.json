@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hadeandepths:item/netheritic_contraption_gui"
+  }
+}

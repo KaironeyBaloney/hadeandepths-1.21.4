@@ -1,0 +1,147 @@
+{
+  "parent": "hadeandepths:fishing/magmatic_rod",
+  "criteria": {
+    "has_brutish_hog_sucker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:brutish_hog_sucker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_crimson_shroomlite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:crimson_shroomlite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_hog_sucker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:hog_sucker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_metamorfin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:metamorfin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_netheritic_contraption": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:netheritic_contraption"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soulferno_eel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:soulferno_eel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_twisted_eel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:twisted_eel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_warped_shroomlite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:warped_shroomlite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wither_skeleton_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:wither_skeleton_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_zombie_hog_sucker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:zombie_hog_sucker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Collect every Netherous Fish",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:wither_skeleton_fish"
+    },
+    "title": "Fish from Hell"
+  },
+  "requirements": [
+    [
+      "has_wither_skeleton_fish"
+    ],
+    [
+      "has_soulferno_eel"
+    ],
+    [
+      "has_netheritic_contraption"
+    ],
+    [
+      "has_warped_shroomlite"
+    ],
+    [
+      "has_crimson_shroomlite"
+    ],
+    [
+      "has_zombie_hog_sucker"
+    ],
+    [
+      "has_hog_sucker"
+    ],
+    [
+      "has_brutish_hog_sucker"
+    ],
+    [
+      "has_metamorfin"
+    ],
+    [
+      "has_twisted_eel"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

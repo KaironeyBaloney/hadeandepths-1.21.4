@@ -50,6 +50,20 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BASSIGATOR);
                         output.accept(ModItems.SLACK_JAW);
                         output.accept(ModItems.RED_HERRING);
+                        output.accept(ModItems.METAMORFIN);
+                        output.accept(ModItems.LAVA_JELLY);
+                        output.accept(ModItems.TWISTED_EEL);
+                        output.accept(ModItems.HELIOS);
+                        output.accept(ModItems.MAGMA_GUT);
+                        output.accept(ModItems.OBSIDIAN_SHARD_FIN);
+                        output.accept(ModItems.ZOMBIE_HOG_SUCKER);
+                        output.accept(ModItems.HOG_SUCKER);
+                        output.accept(ModItems.BRUTISH_HOG_SUCKER);
+                        output.accept(ModItems.CRIMSON_SHROOMLITE);
+                        output.accept(ModItems.WARPED_SHROOMLITE);
+                        output.accept(ModItems.INFERNO_EEL);
+                        output.accept(ModItems.SOULFERNO_EEL);
+                        output.accept(ModItems.WITHER_SKELETON_FISH);
 
                         output.accept(ModItems.GREAT_WHITE_SHARK);
                         output.accept(ModItems.TUNA);
@@ -63,8 +77,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ORCA);
                         output.accept(ModItems.PHANTOM_JELLYFISH);
                         output.accept(ModItems.MEGALODON);
+                        output.accept(ModItems.NETHERITIC_CONTRAPTION);
+                        output.accept(ModItems.MANTA_RAY);
+                        output.accept(ModItems.MAGMA_WYRM);
 
                         output.accept(ModItems.TWIG_ROD);
+                        output.accept(ModItems.IRON_FISHING_ROD);
                         output.accept(ModItems.REINFORCED_ROD);
                         output.accept(ModItems.NETHERITE_ROD);
                         output.accept(ModItems.MAGMATIC_ROD);
@@ -72,8 +90,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TIDAL_PICKAXE);
                         output.accept(ModItems.TIDAL_SHOVEL);
                         output.accept(ModItems.TIDAL_AXE);
-                        output.accept(ModItems.TIDAL_SWORD);
                         output.accept(ModItems.TIDAL_HOE);
+                        output.accept(ModItems.TIDAL_SWORD);
+                        output.accept(ModItems.TIDAL_MORNING_STAR);
+                        output.accept(ModItems.TIDAL_SLEDGE);
                         output.accept(ModItems.SERPENT_BONE_BOW);
 
                         output.accept(ModItems.TIDAL_HELMET);
@@ -84,33 +104,52 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FISH_BONE);
                         output.accept(ModItems.SHARP_TOOTH);
                         output.accept(ModItems.SHARK_TOOTH);
+                        output.accept(ModItems.FORKED_SHARK_TOOTH);
+                        output.accept(ModItems.SERPENT_FIN);
                         output.accept(ModItems.GLOWY_GOOP);
+                        output.accept(ModItems.BLUBBER);
                         output.accept(ModItems.SHELL_FRAGMENT);
                         output.accept(ModItems.PRISMARINE_ROD);
                         output.accept(ModItems.HUGE_BONE);
                         output.accept(ModItems.GIANT_WHISKER);
                         output.accept(ModItems.LARGE_SCALES);
                         output.accept(ModItems.SQUID_EYE);
+                        output.accept(ModItems.HUGE_AMETHYST_SHARD);
                         output.accept(ModItems.DUNKLEOSTEUS_PLATING);
+                        output.accept(ModItems.PHANTOM_JELLY_SILK);
+                        output.accept(ModItems.MANTA_RAY_WING);
                         output.accept(ModItems.LEGENDARY_HEART);
                         output.accept(ModItems.DEEP_SEA_RESIDUE);
                         output.accept(ModItems.DEEP_SEA_AMALGAM);
+                        output.accept(ModItems.LIVING_FLAME);
+                        output.accept(ModItems.LIVING_SOUL_FLAME);
+                        output.accept(ModItems.SCORCHED_FISH_BONE);
+                        output.accept(ModItems.MAGMA_CORE);
+                        output.accept(ModItems.ANCIENT_COG);
                         output.accept(ModItems.RAW_FILLET);
                         output.accept(ModItems.COOKED_FILLET);
                         output.accept(ModItems.RAW_HUGE_FILLET);
                         output.accept(ModItems.COOKED_HUGE_FILLET);
+                        output.accept(ModItems.RAW_TUNA_FILLET);
+                        output.accept(ModItems.COOKED_TUNA_FILLET);
                         output.accept(ModItems.FISH_STEW);
                         output.accept(ModItems.FISH_SANDWICH);
                         output.accept(ModItems.TENTACLE);
                         output.accept(ModItems.COOKED_TENTACLE);
                         output.accept(ModItems.FIN);
                         output.accept(ModItems.BAKED_FIN);
+                        output.accept(ModItems.RAW_SHELLFISH);
+                        output.accept(ModItems.COOKED_SHELLFISH);
+                        output.accept(ModItems.PUFFERFISH_LIVER);
+                        output.accept(ModItems.EMBER_FILLET);
+                        output.accept(ModItems.EMBER_FIN);
 
                         output.accept(ModItems.SAND_DOLLAR);
                         output.accept(ModItems.MAGMATIC_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(ModItems.GLASS_JAR);
                         output.accept(ModItems.WATER_JAR);
                         output.accept(ModItems.TOOTH_ARROW);
+                        output.accept(ModItems.FLAME_SEEKER_ARROW);
 
                         output.accept(ModBlocks.GLOWY_GOOP_BLOCK);
                         output.accept(ModBlocks.BLUE_NITELITE_JAR);
@@ -119,6 +158,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.WOODEN_CRATE);
                         output.accept(ModBlocks.DAVY_JONES_LOCKER);
                         output.accept(ModBlocks.BUTCHERING_HOOK);
+                        output.accept(ModBlocks.CRUCIBLE);
 
                     }).build());
 

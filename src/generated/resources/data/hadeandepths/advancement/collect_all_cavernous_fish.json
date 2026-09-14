@@ -1,0 +1,82 @@
+{
+  "parent": "hadeandepths:fishing/first_fish",
+  "criteria": {
+    "has_amethyst_grouper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:amethyst_grouper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cave_carp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:cave_carp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ghost_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:ghost_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_glow_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:glow_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_gold_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:gold_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Collect every Cavernous Fish",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:gold_fish"
+    },
+    "title": "Fishy Subterranean Wonders"
+  },
+  "requirements": [
+    [
+      "has_gold_fish"
+    ],
+    [
+      "has_glow_fish"
+    ],
+    [
+      "has_ghost_fish"
+    ],
+    [
+      "has_cave_carp"
+    ],
+    [
+      "has_amethyst_grouper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

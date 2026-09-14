@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    " DC",
-    "DCB",
+    " DA",
+    "DAB",
     "A B"
   ],
   "key": {
@@ -12,9 +12,6 @@
     ],
     "B": [
       "minecraft:string"
-    ],
-    "C": [
-      "minecraft:iron_ingot"
     ],
     "D": [
       "minecraft:diamond"

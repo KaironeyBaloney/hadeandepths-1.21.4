@@ -1,0 +1,30 @@
+{
+  "parent": "hadeandepths:fishing/root",
+  "criteria": {
+    "has_crucible": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:crucible"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft the Crucible",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:crucible"
+    },
+    "title": "White-Hot Smelting"
+  },
+  "requirements": [
+    [
+      "has_crucible"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

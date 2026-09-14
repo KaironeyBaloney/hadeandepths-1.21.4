@@ -1,0 +1,80 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:lava_jelly",
+          "weight": 100000
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:hog_sucker",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:crimson_shroomlite",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:crimson_forest",
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:warped_shroomlite",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:warped_forest",
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "hadeandepths:inferno_eel",
+          "weight": 100000,
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": -64,
+                    "max": 0
+                  }
+                },
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "hadeandepths:gameplay/lava_fishing/common_fish",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "functions": []
+}

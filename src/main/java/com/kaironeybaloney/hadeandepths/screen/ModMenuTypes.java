@@ -1,6 +1,7 @@
 package com.kaironeybaloney.hadeandepths.screen;
 
 import com.kaironeybaloney.hadeandepths.HadeanDepths;
+import com.kaironeybaloney.hadeandepths.screen.custom.CrucibleMenu;
 import com.kaironeybaloney.hadeandepths.screen.custom.DavyJonesLockerMenu;
 import com.kaironeybaloney.hadeandepths.screen.custom.WoodenCrateMenu;
 import net.minecraft.core.registries.Registries;
@@ -24,6 +25,9 @@ public class ModMenuTypes {
 
     public static final DeferredHolder<MenuType<?>, MenuType<WoodenCrateMenu>> WOODEN_CRATE_MENU =
             registerMenuType("wooden_crate_menu", WoodenCrateMenu::new);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<CrucibleMenu>> CRUCIBLE_MENU =
+            registerMenuType("crucible_menu", CrucibleMenu::new);
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                               IContainerFactory<T> factory) {

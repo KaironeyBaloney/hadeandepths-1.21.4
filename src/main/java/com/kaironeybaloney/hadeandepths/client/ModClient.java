@@ -6,13 +6,13 @@ import com.kaironeybaloney.hadeandepths.block.entity.BlueNiteliteJarBlockEntity;
 import com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities;
 import com.kaironeybaloney.hadeandepths.client.properties.LoadedArrowsProperty;
 import com.kaironeybaloney.hadeandepths.client.renderer.block.*;
-import com.kaironeybaloney.hadeandepths.client.renderer.entity.HangingFishEntityRenderer;
-import com.kaironeybaloney.hadeandepths.client.renderer.entity.ToothArrowRenderer;
+import com.kaironeybaloney.hadeandepths.client.renderer.entity.*;
 import com.kaironeybaloney.hadeandepths.data.ModDataComponents;
 import com.kaironeybaloney.hadeandepths.data.custom.LoadedAmmoComponent;
 import com.kaironeybaloney.hadeandepths.entity.ModEntities;
 import com.kaironeybaloney.hadeandepths.item.ModItems;
 import com.kaironeybaloney.hadeandepths.screen.ModMenuTypes;
+import com.kaironeybaloney.hadeandepths.screen.custom.CrucibleScreen;
 import com.kaironeybaloney.hadeandepths.screen.custom.DavyJonesLockerScreen;
 import com.kaironeybaloney.hadeandepths.screen.custom.WoodenCrateScreen;
 import net.minecraft.client.Minecraft;
@@ -60,6 +60,7 @@ public class ModClient {
         event.registerBlockEntityRenderer(ModBlockEntities.PINK_NITELITE_JAR_BLOCK_ENTITY.get(), PinkNiteliteJarRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.DAVY_JONES_LOCKER_BLOCK_ENTITY.get(), DavyJonesLockerRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.BUTCHERING_HOOK_BLOCK_ENTITY.get(), ButcheringHookRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.CRUCIBLE_BLOCK_ENTITY.get(), CrucibleRenderer::new);
     }
 
     @SubscribeEvent
@@ -67,12 +68,19 @@ public class ModClient {
         EntityRenderers.register(ModEntities.HANGING_FISH_COMMON.get(), HangingFishEntityRenderer::new);
         EntityRenderers.register(ModEntities.HANGING_FISH_LEGENDARY.get(), HangingFishEntityRenderer::new);
         EntityRenderers.register(ModEntities.TOOTH_ARROW.get(), ToothArrowRenderer::new);
+        EntityRenderers.register(ModEntities.FLAME_SEEKER_ARROW.get(), FlameSeekerArrowRenderer::new);
+        EntityRenderers.register(ModEntities.WOODEN_FISHING_BOBBER.get(), WoodenFishingHookRenderer::new);
+        EntityRenderers.register(ModEntities.IRON_FISHING_BOBBER.get(), IronFishingHookRenderer::new);
+        EntityRenderers.register(ModEntities.DIAMOND_FISHING_BOBBER.get(), DiamondFishingHookRenderer::new);
+        EntityRenderers.register(ModEntities.NETHERITE_FISHING_BOBBER.get(), NetheriteFishingHookRenderer::new);
+        EntityRenderers.register(ModEntities.MAGMATIC_FISHING_BOBBER.get(), MagmaticFishingHookRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
         event.register(ModMenuTypes.DAVY_JONES_LOCKER_MENU.get(), DavyJonesLockerScreen::new);
         event.register(ModMenuTypes.WOODEN_CRATE_MENU.get(), WoodenCrateScreen::new);
+        event.register(ModMenuTypes.CRUCIBLE_MENU.get(), CrucibleScreen::new);
     }
 
     @SubscribeEvent

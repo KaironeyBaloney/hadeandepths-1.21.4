@@ -1,0 +1,29 @@
+{
+  "parent": "hadeandepths:fishing/craft_butchering_hook",
+  "criteria": {
+    "has_tooth_arrow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:tooth_arrow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a Tooth Arrow that works above and below",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:butchering_hook"
+    },
+    "title": "Sharper Arrows"
+  },
+  "requirements": [
+    [
+      "has_tooth_arrow"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

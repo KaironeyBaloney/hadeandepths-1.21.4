@@ -1,0 +1,30 @@
+{
+  "parent": "hadeandepths:fishing/root",
+  "criteria": {
+    "has_davy_jones_locker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:davy_jones_locker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Fish up Davy Jones' Locker",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:davy_jones_locker"
+    },
+    "title": "Dead Men Tell No Tales"
+  },
+  "requirements": [
+    [
+      "has_davy_jones_locker"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

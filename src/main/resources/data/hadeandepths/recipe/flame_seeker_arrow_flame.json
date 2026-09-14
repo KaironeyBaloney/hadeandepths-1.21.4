@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "hadeandepths:scorched_fish_bone",
+    "X": "hadeandepths:living_flame",
+    "Y": "hadeandepths:ember_fin"
+  },
+  "pattern": [
+    "X",
+    "#",
+    "Y"
+  ],
+  "result": {
+    "count": 4,
+    "id": "hadeandepths:flame_seeker_arrow"
+  }
+}

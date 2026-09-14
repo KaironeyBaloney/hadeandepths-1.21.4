@@ -12,6 +12,8 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -22,7 +24,6 @@ import java.util.Collections;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(HadeanDepths.MODID);
-
 
     public static final DeferredItem<Item> FISH_BONE = ITEMS.registerItem("fish_bone",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
@@ -35,6 +36,14 @@ public class ModItems {
     public static final DeferredItem<Item> SHARP_TOOTH = ITEMS.registerItem("sharp_tooth",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> SHARK_TOOTH = ITEMS.registerItem("shark_tooth",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> FORKED_SHARK_TOOTH = ITEMS.registerItem("forked_shark_tooth",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> SERPENT_FIN = ITEMS.registerItem("serpent_fin",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> HUGE_AMETHYST_SHARD = ITEMS.registerItem("huge_amethyst_shard",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> PHANTOM_JELLY_SILK = ITEMS.registerItem("phantom_jelly_silk",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> SHELL_FRAGMENT = ITEMS.registerItem("shell_fragment",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
@@ -52,18 +61,40 @@ public class ModItems {
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> DUNKLEOSTEUS_PLATING = ITEMS.registerItem("dunkleosteus_plating",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> MANTA_RAY_WING = ITEMS.registerItem("manta_ray_wing",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> SAND_DOLLAR = ITEMS.registerItem("sand_dollar",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> LIVING_FLAME = ITEMS.registerItem("living_flame",
+            properties -> new FuelItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant(), 1600));
+    public static final DeferredItem<Item> LIVING_SOUL_FLAME = ITEMS.registerItem("living_soul_flame",
+            properties -> new FuelItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant(), 1600));
+    public static final DeferredItem<Item> SCORCHED_FISH_BONE = ITEMS.registerItem("scorched_fish_bone",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant()));
+    public static final DeferredItem<Item> MAGMA_CORE = ITEMS.registerItem("magma_core",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant()));
+    public static final DeferredItem<Item> ANCIENT_COG = ITEMS.registerItem("ancient_cog",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant()));
     public static final DeferredItem<Item> MAGMATIC_UPGRADE_SMITHING_TEMPLATE = ITEMS.registerItem("magmatic_upgrade_smithing_template",
             properties -> new MagmaticUpgradeSmithingTemplateItem(properties.stacksTo(64).rarity((Rarity.UNCOMMON))));
     public static final DeferredItem<Item> TOOTH_ARROW = ITEMS.registerItem("tooth_arrow",
             properties -> new ToothArrowItem(properties.stacksTo(64).rarity((Rarity.COMMON))));
+    public static final DeferredItem<Item> FLAME_SEEKER_ARROW = ITEMS.registerItem("flame_seeker_arrow",
+            properties -> new FlameSeekerArrowItem(properties.stacksTo(64).fireResistant().rarity((Rarity.COMMON))));
 
     public static final DeferredItem<Item> GLASS_JAR = ITEMS.registerItem("glass_jar",
             properties -> new GlassJarItem(properties.stacksTo(16).rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> WATER_JAR = ITEMS.registerItem("water_jar",
             properties -> new Item(properties.stacksTo(1).rarity(Rarity.COMMON)));
 
+    public static final DeferredItem<Item> BLUBBER = ITEMS.registerItem("blubber",
+            properties -> new FuelItem(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(4)
+                    .saturationModifier(0.5F)
+                    .build()), 3200));
+    public static final DeferredItem<Item> PUFFERFISH_LIVER = ITEMS.registerItem("pufferfish_liver",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).component(DataComponents.CONSUMABLE, Consumable.builder()
+                    .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.POISON, 450,4))).build())));
     public static final DeferredItem<Item> RAW_FILLET = ITEMS.registerItem("raw_fillet",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
                     .nutrition(3)
@@ -74,12 +105,32 @@ public class ModItems {
                     .nutrition(6)
                     .saturationModifier(0.6F)
                     .build())));
+    public static final DeferredItem<Item> RAW_SHELLFISH = ITEMS.registerItem("raw_shellfish",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.3F)
+                    .build())));
+    public static final DeferredItem<Item> COOKED_SHELLFISH = ITEMS.registerItem("cooked_shellfish",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(4)
+                    .saturationModifier(0.6F)
+                    .build())));
     public static final DeferredItem<Item> RAW_HUGE_FILLET = ITEMS.registerItem("raw_huge_fillet",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
                     .nutrition(6)
                     .saturationModifier(0.5F)
                     .build())));
     public static final DeferredItem<Item> COOKED_HUGE_FILLET = ITEMS.registerItem("cooked_huge_fillet",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(12)
+                    .saturationModifier(0.6F)
+                    .build())));
+    public static final DeferredItem<Item> RAW_TUNA_FILLET = ITEMS.registerItem("raw_tuna_fillet",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(6)
+                    .saturationModifier(0.6F)
+                    .build())));
+    public static final DeferredItem<Item> COOKED_TUNA_FILLET = ITEMS.registerItem("cooked_tuna_fillet",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
                     .nutrition(12)
                     .saturationModifier(0.6F)
@@ -109,9 +160,18 @@ public class ModItems {
                     .nutrition(1)
                     .saturationModifier(0.5F)
                     .build())));
-
     public static final DeferredItem<Item> BAKED_FIN = ITEMS.registerItem("baked_fin",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build())));
+    public static final DeferredItem<Item> EMBER_FILLET = ITEMS.registerItem("ember_fillet",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(4)
+                    .saturationModifier(0.5F)
+                    .build())));
+    public static final DeferredItem<Item> EMBER_FIN = ITEMS.registerItem("ember_fin",
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
                     .nutrition(3)
                     .saturationModifier(0.5F)
                     .build())));
@@ -271,10 +331,83 @@ public class ModItems {
                     .nutrition(3)
                     .saturationModifier(0.5F)
                     .build()), FishRarity.COMMON, FishType.FABLED));
+    public static final DeferredItem<Item> METAMORFIN = ITEMS.registerItem("metamorfin",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.COMMON, FishType.NETHEROUS));
+    public static final DeferredItem<Item> LAVA_JELLY = ITEMS.registerItem("lava_jelly",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.UNCOMMON, FishType.MAGMATIC, FishAttachPoint.TOP_RIGHT));
+    public static final DeferredItem<Item> TWISTED_EEL = ITEMS.registerItem("twisted_eel",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.COMMON, FishType.NETHEROUS));
+    public static final DeferredItem<Item> HELIOS = ITEMS.registerItem("helios",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.RARE, FishType.MAGMATIC));
+    public static final DeferredItem<Item> MAGMA_GUT = ITEMS.registerItem("magma_gut",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.COMMON, FishType.MAGMATIC));
+    public static final DeferredItem<Item> OBSIDIAN_SHARD_FIN = ITEMS.registerItem("obsidian_shard_fin",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.COMMON, FishType.MAGMATIC));
+    public static final DeferredItem<Item> BRUTISH_HOG_SUCKER = ITEMS.registerItem("brutish_hog_sucker",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.RARE, FishType.NETHEROUS));
+    public static final DeferredItem<Item> HOG_SUCKER = ITEMS.registerItem("hog_sucker",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.UNCOMMON, FishType.NETHEROUS));
+    public static final DeferredItem<Item> ZOMBIE_HOG_SUCKER = ITEMS.registerItem("zombie_hog_sucker",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.COMMON, FishType.NETHEROUS));
+    public static final DeferredItem<Item> CRIMSON_SHROOMLITE = ITEMS.registerItem("crimson_shroomlite",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.UNCOMMON, FishType.NETHEROUS, FishAttachPoint.TOP_RIGHT));
+    public static final DeferredItem<Item> WARPED_SHROOMLITE = ITEMS.registerItem("warped_shroomlite",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.UNCOMMON, FishType.NETHEROUS, FishAttachPoint.TOP_RIGHT));
+    public static final DeferredItem<Item> INFERNO_EEL = ITEMS.registerItem("inferno_eel",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.UNCOMMON, FishType.MAGMATIC));
+    public static final DeferredItem<Item> SOULFERNO_EEL = ITEMS.registerItem("soulferno_eel",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.RARE, FishType.NETHEROUS));
+    public static final DeferredItem<Item> WITHER_SKELETON_FISH = ITEMS.registerItem("wither_skeleton_fish",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON).fireResistant().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.5F)
+                    .build()), FishRarity.RARE, FishType.NETHEROUS));
+
 
 
 
     public static final DeferredItem<Item> GREAT_WHITE_SHARK = ITEMS.registerItem("great_white_shark",
+            properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.RARE), FishRarity.LEGENDARY, FishType.OCEANIC));
+    public static final DeferredItem<Item> MANTA_RAY = ITEMS.registerItem("manta_ray",
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.RARE), FishRarity.LEGENDARY, FishType.OCEANIC));
     public static final DeferredItem<Item> TUNA = ITEMS.registerItem("tuna",
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.RARE), FishRarity.LEGENDARY, FishType.OCEANIC));
@@ -298,6 +431,10 @@ public class ModItems {
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.RARE), FishRarity.LEGENDARY, FishType.ABYSSAL, FishAttachPoint.TOP_RIGHT));
     public static final DeferredItem<Item> MEGALODON = ITEMS.registerItem("megalodon",
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.RARE), FishRarity.LEGENDARY, FishType.ANCIENT));
+    public static final DeferredItem<Item> NETHERITIC_CONTRAPTION = ITEMS.registerItem("netheritic_contraption",
+            properties -> new FishItem(properties.stacksTo(64).fireResistant().rarity(Rarity.RARE), FishRarity.LEGENDARY, FishType.NETHEROUS));
+    public static final DeferredItem<Item> MAGMA_WYRM = ITEMS.registerItem("magma_wyrm",
+            properties -> new FishItem(properties.stacksTo(64).fireResistant().rarity(Rarity.RARE), FishRarity.LEGENDARY, FishType.MAGMATIC));
 
     public static final DeferredItem<Item> BUG_FISH = ITEMS.registerItem("bug_fish",
             properties -> new FishItem(properties.stacksTo(64).rarity(Rarity.COMMON), FishRarity.IMPOSSIBLE, FishType.UNEXPLAINED));
@@ -306,12 +443,14 @@ public class ModItems {
 
     public static final DeferredItem<Item> TWIG_ROD = ITEMS.registerItem("twig_rod",
             properties -> new TwigRodItem(properties.stacksTo(1).rarity(Rarity.COMMON).durability(32)));
+    public static final DeferredItem<Item> IRON_FISHING_ROD = ITEMS.registerItem("iron_fishing_rod",
+            properties -> new IronFishingRodItem(properties.stacksTo(1).rarity(Rarity.COMMON).durability(64)));
     public static final DeferredItem<Item> REINFORCED_ROD = ITEMS.registerItem("reinforced_rod",
             properties -> new ReinforcedRodItem(properties.stacksTo(1).rarity(Rarity.COMMON).durability(128)));
     public static final DeferredItem<Item> NETHERITE_ROD = ITEMS.registerItem("netherite_rod",
-            properties -> new NetheriteRodItem(properties.stacksTo(1).rarity(Rarity.COMMON).durability(256)));
+            properties -> new NetheriteRodItem(properties.stacksTo(1).rarity(Rarity.COMMON).durability(256).fireResistant()));
     public static final DeferredItem<Item> MAGMATIC_ROD = ITEMS.registerItem("magmatic_rod",
-            properties -> new MagmaticRodItem(properties.stacksTo(1).rarity(Rarity.UNCOMMON).durability(512)));
+            properties -> new MagmaticRodItem(properties.stacksTo(1).rarity(Rarity.UNCOMMON).durability(512).fireResistant()));
     public static final DeferredItem<Item> SERPENT_BONE_BOW = ITEMS.registerItem("serpent_bone_bow",
             properties -> new SerpentBoneBowItem(properties.stacksTo(1).rarity(Rarity.UNCOMMON).durability(512)));
     public static final DeferredItem<Item> TIDAL_PICKAXE = ITEMS.registerItem("tidal_pickaxe",
@@ -320,10 +459,14 @@ public class ModItems {
             properties -> new ShovelItem(ModToolMaterials.TIDAL_TOOL, 2.5f, 0, properties.rarity(Rarity.UNCOMMON)));
     public static final DeferredItem<Item> TIDAL_AXE = ITEMS.registerItem("tidal_axe",
             properties -> new AxeItem(ModToolMaterials.TIDAL_TOOL, 6, -3f, properties.rarity(Rarity.UNCOMMON)));
-    public static final DeferredItem<Item> TIDAL_SWORD = ITEMS.registerItem("tidal_sword",
-            properties -> new SwordItem(ModToolMaterials.TIDAL_TOOL, 4, -2.4f, properties.rarity(Rarity.UNCOMMON)));
     public static final DeferredItem<Item> TIDAL_HOE = ITEMS.registerItem("tidal_hoe",
             properties -> new HoeItem(ModToolMaterials.TIDAL_TOOL, -2, 0, properties.rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<Item> TIDAL_SWORD = ITEMS.registerItem("tidal_sword",
+            properties -> new SwordItem(ModToolMaterials.TIDAL_TOOL, 4, -2.4f, properties.rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<Item> TIDAL_MORNING_STAR = ITEMS.registerItem("tidal_morning_star",
+            properties -> new TidalMorningStarItem(ModToolMaterials.TIDAL_TOOL, 5, -2.6f, 20, properties.rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<Item> TIDAL_SLEDGE = ITEMS.registerItem("tidal_sledge",
+            properties -> new TidalSledgeItem(ModToolMaterials.TIDAL_TOOL, 9, -3.2f, properties.rarity(Rarity.UNCOMMON)));
 
     public static final DeferredItem<Item> TIDAL_HELMET = ITEMS.registerItem("tidal_helmet",
             properties -> new TidalArmorItem(ModArmorMaterials.TIDAL_ARMOR_MATERIAL, ArmorType.HELMET, properties.rarity(Rarity.UNCOMMON)));
