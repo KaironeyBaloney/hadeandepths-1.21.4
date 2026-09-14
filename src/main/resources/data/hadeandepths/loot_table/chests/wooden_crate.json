@@ -1,82 +1,31 @@
 {
-  "type": "minecraft:chest",
+  "type": "minecraft:generic",
   "pools": [
     {
-      "rolls": 3,
+      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "hadeandepths:fish_bone",
-          "weight": 200,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              }
-            }
-          ]
+          "type": "minecraft:loot_table",
+          "value": "hadeandepths:chests/wooden_crate_broken",
+          "weight": 5
         },
         {
-          "type": "minecraft:item",
-          "name": "minecraft:kelp",
-          "weight": 200,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              }
-            }
-          ]
+          "type": "minecraft:loot_table",
+          "value": "hadeandepths:chests/wooden_crate_construction",
+          "weight": 10
         },
         {
-          "type": "minecraft:tag",
-          "name": "hadeandepths:legendary_fish",
-          "expand": true,
-          "weight": 1
-        }
-      ]
-    },
-    {
-      "rolls": 3,
-      "entries": [
-        {
-          "type": "minecraft:tag",
-          "name": "hadeandepths:rare_fish",
-          "expand": true,
-          "weight": 10,
-          "functions": []
+          "type": "minecraft:loot_table",
+          "value": "hadeandepths:chests/wooden_crate_ores",
+          "weight": 10
         },
         {
-          "type": "minecraft:tag",
-          "name": "hadeandepths:uncommon_fish",
-          "expand": true,
-          "weight": 29,
-          "functions": []
-        },
-        {
-          "type": "minecraft:tag",
-          "name": "hadeandepths:common_fish",
-          "expand": true,
-          "weight": 60,
-          "functions": []
-        }
-      ],
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": {
-            "type": "minecraft:uniform",
-            "min": 2,
-            "max": 5
-          }
+          "type": "minecraft:loot_table",
+          "value": "hadeandepths:chests/wooden_crate_food",
+          "weight": 10
         }
       ]
     }
-  ]
+  ],
+  "functions": []
 }

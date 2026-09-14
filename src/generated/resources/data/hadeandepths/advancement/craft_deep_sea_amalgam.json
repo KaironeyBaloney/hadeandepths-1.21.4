@@ -1,0 +1,29 @@
+{
+  "parent": "hadeandepths:fish_deep_sea_residue",
+  "criteria": {
+    "has_deep_sea_amalgam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:deep_sea_amalgam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a Deep Sea Amalgam",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:deep_sea_amalgam"
+    },
+    "title": "Forged in the Abyss"
+  },
+  "requirements": [
+    [
+      "has_deep_sea_amalgam"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

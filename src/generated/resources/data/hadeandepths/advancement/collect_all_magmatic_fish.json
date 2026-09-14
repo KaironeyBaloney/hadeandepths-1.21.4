@@ -1,0 +1,95 @@
+{
+  "parent": "hadeandepths:fishing/magmatic_rod",
+  "criteria": {
+    "has_helios": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:helios"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_inferno_eel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:inferno_eel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lava_jelly": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:lava_jelly"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magma_gut": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:magma_gut"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magma_wyrm": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:magma_wyrm"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_obsidian_shard_fin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hadeandepths:obsidian_shard_fin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Collect every Magmatic Fish",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "hadeandepths:inferno_eel"
+    },
+    "title": "Red Hot Fishing"
+  },
+  "requirements": [
+    [
+      "has_obsidian_shard_fin"
+    ],
+    [
+      "has_magma_gut"
+    ],
+    [
+      "has_helios"
+    ],
+    [
+      "has_lava_jelly"
+    ],
+    [
+      "has_inferno_eel"
+    ],
+    [
+      "has_magma_wyrm"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
