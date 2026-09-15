@@ -8,7 +8,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
@@ -25,7 +24,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AbstractFurnaceBlock;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.FuelValues;
 import net.minecraft.world.level.block.entity.FurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -69,9 +67,7 @@ public class CrucibleBlockEntity extends AbstractFurnaceBlockEntity {
     public static void tick(Level level, BlockPos pos, BlockState state, CrucibleBlockEntity furnace) {
         if(!level.isClientSide())
         {
-            AbstractFurnaceBlockEntity.serverTick((ServerLevel) level, pos, state, furnace);
-            AbstractFurnaceBlockEntity.serverTick((ServerLevel) level, pos, state, furnace);
-            AbstractFurnaceBlockEntity.serverTick((ServerLevel) level, pos, state, furnace);
+            AbstractFurnaceBlockEntity.serverTick(level, pos, state, furnace);
         }
     }
 }

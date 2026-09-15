@@ -7,16 +7,15 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.*;
-import net.minecraft.world.item.crafting.RecipePropertySet;
 import net.minecraft.world.item.crafting.RecipeType;
 
 public class CrucibleMenu extends AbstractFurnaceMenu {
 
     public CrucibleMenu(int containerId, Inventory playerInventory, RegistryFriendlyByteBuf registryFriendlyByteBuf) {
-        super(ModMenuTypes.CRUCIBLE_MENU.get(), RecipeType.SMELTING, RecipePropertySet.FURNACE_INPUT, RecipeBookType.FURNACE, containerId, playerInventory);
+        super(ModMenuTypes.CRUCIBLE_MENU.get(), RecipeType.SMELTING, RecipeBookType.FURNACE, containerId, playerInventory);
     }
 
     public CrucibleMenu(int containerId, Inventory playerInventory, Container furnaceContainer, ContainerData furnaceData) {
-        super(ModMenuTypes.CRUCIBLE_MENU.get(), RecipeType.SMELTING, RecipePropertySet.FURNACE_INPUT, RecipeBookType.FURNACE, containerId, playerInventory, furnaceContainer, furnaceData);
+        super(ModMenuTypes.CRUCIBLE_MENU.get(), RecipeType.SMELTING, RecipeBookType.FURNACE, containerId, playerInventory, furnaceContainer, furnaceData);
     }
 }

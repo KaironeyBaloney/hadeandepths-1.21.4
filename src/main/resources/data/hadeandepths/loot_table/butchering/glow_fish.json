@@ -15,7 +15,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:glow_berry",
+          "name": "minecraft:glow_berries",
           "functions": [
             {
               "function": "minecraft:set_count",

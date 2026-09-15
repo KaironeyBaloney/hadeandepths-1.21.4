@@ -11,7 +11,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -37,31 +37,25 @@ public class SerpentBoneBowItem extends BowItem {
     }
 
     @Override
-    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity user, int remainingUseTicks) {
-        if (!(user instanceof Player player)) return false;
-        if (!(level instanceof ServerLevel serverLevel)) return false;
+    public void releaseUsing(ItemStack stack, Level level, LivingEntity user, int remainingUseTicks) {
+        if (!(user instanceof Player player)) return;
+        if (!(level instanceof ServerLevel serverLevel)) return;
 
         LoadedAmmoComponent comp = stack.get(ModDataComponents.LOADED_AMMO);
-        if (comp == null || comp.ammo().isEmpty()) return false;
+        if (comp == null || comp.ammo().isEmpty()) return;
 
         float charge = getPowerForTime(this.getUseDuration(stack, player) - remainingUseTicks);
-        if (charge < 0.1F) return false;
+        if (charge < 0.1F) return;
 
         List<ItemStack> arrowsToFire = comp.ammo();
 
         stack.remove(ModDataComponents.LOADED_AMMO);
 
-        if (level instanceof ServerLevel) {
-            ServerLevel serverlevel = (ServerLevel)level;
-
-            if (!arrowsToFire.isEmpty()) {
-                shoot(serverlevel, player, player.getUsedItemHand(), stack, arrowsToFire, charge * 3.0F, 1.0F, charge == 1.0F, (LivingEntity)null);
-
-            }
+        if (!arrowsToFire.isEmpty()) {
+            shoot(serverLevel, player, player.getUsedItemHand(), stack, arrowsToFire, charge * 3.0F, 1.0F, charge == 1.0F, null);
         }
 
         player.awardStat(Stats.ITEM_USED.get(this));
-        return true;
     }
 
     protected void shoot(ServerLevel level, LivingEntity shooter, InteractionHand hand, ItemStack weapon, List<ItemStack> projectileItems, float velocity, float inaccuracy, boolean isCrit, @Nullable LivingEntity target) {
@@ -81,12 +75,9 @@ public class SerpentBoneBowItem extends BowItem {
             int delay = 11 * index;
 
             TickScheduler.schedule(level, delay, () -> {
-                Projectile.spawnProjectile(
-                        this.createProjectile(level, shooter, weapon, itemstack, isCrit),
-                        level,
-                        itemstack,
-                        (p) -> this.shootProjectile(shooter, p, index, velocity, inaccuracy, f4, target)
-                );
+                Projectile projectile = this.createProjectile(level, shooter, weapon, itemstack, isCrit);
+                this.shootProjectile(shooter, projectile, index, velocity, inaccuracy, f4, target);
+                level.addFreshEntity(projectile);
                 level.playSound((Player)null, shooter.getX(), shooter.getY(), shooter.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (level.getRandom().nextFloat() * 0.4F + 1.2F) + f4 * 0.5F);
                 level.playSound((Player)null, shooter.getX(), shooter.getY(), shooter.getZ(), SoundEvents.TRIDENT_RIPTIDE_1, SoundSource.PLAYERS, 0.25F * velocity, 1.5F / (level.getRandom().nextFloat() * 0.4F + 1.2F) + f4 * 0.5F);
 
@@ -121,13 +112,13 @@ public class SerpentBoneBowItem extends BowItem {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
         boolean flag = !player.getProjectile(stack).isEmpty();
-        InteractionResult ret = EventHooks.onArrowNock(stack, level, player, hand, flag);
+        InteractionResultHolder<ItemStack> ret = EventHooks.onArrowNock(stack, level, player, hand, flag);
         if (ret != null) return ret;
-        if (!player.hasInfiniteMaterials() && !flag) return InteractionResult.FAIL;
+        if (!player.hasInfiniteMaterials() && !flag) return InteractionResultHolder.fail(stack);
 
         List<ItemStack> ammo = new ArrayList<>();
         Set<Integer> used = new HashSet<>();
@@ -143,7 +134,7 @@ public class SerpentBoneBowItem extends BowItem {
                     System.out.println("Added arrow on use(): " + invStack);
                     stack.set(ModDataComponents.LOADED_AMMO, new LoadedAmmoComponent(ammo, used));
                     player.startUsingItem(hand);
-                    return InteractionResult.CONSUME;
+                    return InteractionResultHolder.consume(stack);
                 }
             }
             if(player.isCreative())
@@ -153,11 +144,11 @@ public class SerpentBoneBowItem extends BowItem {
                 stack.set(ModDataComponents.LOADED_AMMO, new LoadedAmmoComponent(ammo, used));
                 player.startUsingItem(hand);
                 level.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.CROSSBOW_LOADING_START, SoundSource.PLAYERS, 1.5F, 1.0F / (level.getRandom().nextFloat() * 0.4F + 1.2F));
-                return InteractionResult.CONSUME;
+                return InteractionResultHolder.consume(stack);
             }
         }
 
-        return InteractionResult.FAIL;
+        return InteractionResultHolder.fail(stack);
     }
 
 

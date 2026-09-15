@@ -18,32 +18,32 @@ public class ModBlockEntities {
             DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, HadeanDepths.MODID);
 
     public static final Supplier<BlockEntityType<BlueNiteliteJarBlockEntity>> BLUE_NITELITE_JAR_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("blue_nitelite_jar_block_entity", () -> new BlockEntityType<>(
-                    BlueNiteliteJarBlockEntity::new, ModBlocks.BLUE_NITELITE_JAR.get()));
+            BLOCK_ENTITIES.register("blue_nitelite_jar_block_entity", () -> BlockEntityType.Builder.of(
+                    BlueNiteliteJarBlockEntity::new, ModBlocks.BLUE_NITELITE_JAR.get()).build(null));
 
     public static final Supplier<BlockEntityType<PinkNiteliteJarBlockEntity>> PINK_NITELITE_JAR_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("pink_nitelite_jar_block_entity", () -> new BlockEntityType<>(
-                    PinkNiteliteJarBlockEntity::new, ModBlocks.PINK_NITELITE_JAR.get()));
+            BLOCK_ENTITIES.register("pink_nitelite_jar_block_entity", () -> BlockEntityType.Builder.of(
+                    PinkNiteliteJarBlockEntity::new, ModBlocks.PINK_NITELITE_JAR.get()).build(null));
 
     public static final Supplier<BlockEntityType<GreenNiteliteJarBlockEntity>> GREEN_NITELITE_JAR_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("green_nitelite_jar_block_entity", () -> new BlockEntityType<>(
-                    GreenNiteliteJarBlockEntity::new, ModBlocks.GREEN_NITELITE_JAR.get()));
+            BLOCK_ENTITIES.register("green_nitelite_jar_block_entity", () -> BlockEntityType.Builder.of(
+                    GreenNiteliteJarBlockEntity::new, ModBlocks.GREEN_NITELITE_JAR.get()).build(null));
 
     public static final Supplier<BlockEntityType<DavyJonesLockerBlockEntity>> DAVY_JONES_LOCKER_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("davy_jones_locker_block_entity", () -> new BlockEntityType<>(
-                    DavyJonesLockerBlockEntity::new, ModBlocks.DAVY_JONES_LOCKER.get()));
+            BLOCK_ENTITIES.register("davy_jones_locker_block_entity", () -> BlockEntityType.Builder.of(
+                    DavyJonesLockerBlockEntity::new, ModBlocks.DAVY_JONES_LOCKER.get()).build(null));
 
     public static final Supplier<BlockEntityType<WoodenCrateBlockEntity>> WOODEN_CRATE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("wooden_crate_block_entity", () -> new BlockEntityType<>(
-                    WoodenCrateBlockEntity::new, ModBlocks.WOODEN_CRATE.get()));
+            BLOCK_ENTITIES.register("wooden_crate_block_entity", () -> BlockEntityType.Builder.of(
+                    WoodenCrateBlockEntity::new, ModBlocks.WOODEN_CRATE.get()).build(null));
 
     public static final Supplier<BlockEntityType<ButcheringHookBlockEntity>> BUTCHERING_HOOK_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("butchering_hook_block_entity", () -> new BlockEntityType<>(
-                    ButcheringHookBlockEntity::new, ModBlocks.BUTCHERING_HOOK.get()));
+            BLOCK_ENTITIES.register("butchering_hook_block_entity", () -> BlockEntityType.Builder.of(
+                    ButcheringHookBlockEntity::new, ModBlocks.BUTCHERING_HOOK.get()).build(null));
 
     public static final Supplier<BlockEntityType<CrucibleBlockEntity>> CRUCIBLE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("crucible_block_entity", () -> new BlockEntityType<>(
-                    CrucibleBlockEntity::new, ModBlocks.CRUCIBLE.get()));
+            BLOCK_ENTITIES.register("crucible_block_entity", () -> BlockEntityType.Builder.of(
+                    CrucibleBlockEntity::new, ModBlocks.CRUCIBLE.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

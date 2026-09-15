@@ -1,24 +1,29 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "pattern": [
-    " DA",
-    "DAB",
-    "A B"
-  ],
-  "key": {
-    "A": [
-      "minecraft:stick"
-    ],
-    "B": [
-      "minecraft:string"
-    ],
-    "D": [
-      "minecraft:diamond"
-    ]
-  },
-  "result": {
-    "id": "hadeandepths:reinforced_rod",
-    "count": 1
-  }
+    "type":  "minecraft:crafting_shaped",
+    "category":  "equipment",
+    "pattern":  [
+                    " DA",
+                    "DAB",
+                    "A B"
+                ],
+    "key":  {
+                "D":  [
+                          {
+                              "item":  "minecraft:diamond"
+                          }
+                      ],
+                "A":  [
+                          {
+                              "item":  "minecraft:stick"
+                          }
+                      ],
+                "B":  [
+                          {
+                              "item":  "minecraft:string"
+                          }
+                      ]
+            },
+    "result":  {
+                   "id":  "hadeandepths:reinforced_rod"
+               }
 }

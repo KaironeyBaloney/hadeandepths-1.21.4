@@ -5,37 +5,29 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.state.EntityRenderState;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.resources.ResourceLocation;
 
-public class HangingFishEntityRenderer extends EntityRenderer<HangingFishEntity, EntityRenderState> {
+public class HangingFishEntityRenderer extends EntityRenderer<HangingFishEntity> {
     public HangingFishEntityRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
 
     @Override
-    public EntityRenderState createRenderState() {
-        return new EntityRenderState();
-    }
-
-    public void render(HangingFishEntity entity, float yaw, float partialTicks, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(HangingFishEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
     }
 
     @Override
-    protected boolean shouldShowName(HangingFishEntity entity, double distanceToCameraSq) {
+    public ResourceLocation getTextureLocation(HangingFishEntity entity) {
+        return ResourceLocation.fromNamespaceAndPath("hadeandepths", "textures/entity/hanging_fish.png");
+    }
+
+    @Override
+    protected boolean shouldShowName(HangingFishEntity entity) {
         return false;
     }
 
     @Override
-
-    protected float getShadowRadius(EntityRenderState renderState) {
+    protected float getShadowRadius(HangingFishEntity entity) {
         return 0;
     }
-
-    @Override
-
-    protected float getShadowStrength(EntityRenderState renderState) {
-        return 0;
-    }
-
 }

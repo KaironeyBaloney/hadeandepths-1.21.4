@@ -22,10 +22,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -83,16 +82,16 @@ public class ButcheringHookBlock extends Block implements EntityBlock, SimpleWat
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
+    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
 
-        if (direction == Direction.UP && !state.canSurvive(world, pos)) {
-            if (world instanceof Level level) {
-                level.destroyBlock(pos, true);
+        if (direction == Direction.UP && !state.canSurvive(level, pos)) {
+            if (level instanceof Level lvl) {
+                lvl.destroyBlock(pos, true);
             }
             return Blocks.AIR.defaultBlockState();
         }
 
-        return super.updateShape(state, world, scheduledTickAccess, pos, direction, neighborPos, neighborState, random);
+        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
     @Override
@@ -139,11 +138,11 @@ public class ButcheringHookBlock extends Block implements EntityBlock, SimpleWat
     }
 
     @Override
-    public InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
 
         var be = level.getBlockEntity(pos);
         if (!(be instanceof ButcheringHookBlockEntity hookBE)) {
-            return InteractionResult.PASS;
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
 
         if(!level.isClientSide) {
@@ -228,7 +227,7 @@ public class ButcheringHookBlock extends Block implements EntityBlock, SimpleWat
             hookBE.setChanged();
             player.getMainHandItem().hurtAndBreak(1, player,
                     hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }
         else if (held.isEmpty()) {
             ItemStack removed = hookBE.removeItem();
@@ -239,7 +238,7 @@ public class ButcheringHookBlock extends Block implements EntityBlock, SimpleWat
                 level.sendBlockUpdated(pos, state, state, 3);
                 hookBE.setChanged();
             }
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }
         else if (held.is(FISH_TAG)) {
             if (hookBE.isEmpty()) {
@@ -253,7 +252,7 @@ public class ButcheringHookBlock extends Block implements EntityBlock, SimpleWat
                 }
                 level.sendBlockUpdated(pos, state, state, 3);
                 hookBE.setChanged();
-                return InteractionResult.SUCCESS;
+                return ItemInteractionResult.SUCCESS;
             } else {
                 level.playSound(null, pos, SoundEvents.SALMON_FLOP, SoundSource.BLOCKS, 1F,
                         level.random.nextFloat() * 0.1F + 0.9F);
@@ -265,10 +264,10 @@ public class ButcheringHookBlock extends Block implements EntityBlock, SimpleWat
                     level.sendBlockUpdated(pos, state, state, 3);
                     hookBE.setChanged();
                 }
-                return InteractionResult.SUCCESS;
+                return ItemInteractionResult.SUCCESS;
             }
         }
-        return InteractionResult.FAIL;
+        return ItemInteractionResult.FAIL;
     }
 
     private void dropFishLoot(Level level, BlockPos pos, ItemStack fish) {

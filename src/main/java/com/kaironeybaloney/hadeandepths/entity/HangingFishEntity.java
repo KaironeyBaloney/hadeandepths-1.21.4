@@ -183,7 +183,7 @@ public class HangingFishEntity extends Entity {
     }
 
     @Override
-    public boolean hurtServer(ServerLevel serverLevel, DamageSource damageSource, float v) {
+    public boolean hurt(DamageSource damageSource, float v) {
         return false;
     }
 

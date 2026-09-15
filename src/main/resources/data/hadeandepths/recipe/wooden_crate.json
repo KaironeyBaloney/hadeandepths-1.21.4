@@ -1,17 +1,20 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "###",
-    "$ $",
-    "###"
-  ],
-  "key": {
-    "#": "#minecraft:planks",
-    "$": "#minecraft:wooden_slabs"
-  },
-  "result": {
-    "id": "hadeandepths:wooden_crate",
-    "count": 1
-  }
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "pattern":  [
+                    "###",
+                    "$ $",
+                    "###"
+                ],
+    "key":  {
+                "$":  {
+                          "tag":  "minecraft:wooden_slabs"
+                      },
+                "#":  {
+                          "tag":  "minecraft:planks"
+                      }
+            },
+    "result":  {
+                   "id":  "hadeandepths:wooden_crate"
+               }
 }

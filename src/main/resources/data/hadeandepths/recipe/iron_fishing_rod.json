@@ -1,18 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": "minecraft:stick",
-    "X": "minecraft:string",
-    "C": "minecraft:iron_ingot"
-  },
-  "pattern": [
-    " C#",
-    "C#X",
-    "# X"
-  ],
-  "result": {
-    "count": 1,
-    "id": "hadeandepths:iron_fishing_rod"
-  }
+    "type":  "minecraft:crafting_shaped",
+    "category":  "equipment",
+    "key":  {
+                "C":  {
+                          "item":  "minecraft:iron_ingot"
+                      },
+                "#":  {
+                          "item":  "minecraft:stick"
+                      },
+                "X":  {
+                          "item":  "minecraft:string"
+                      }
+            },
+    "pattern":  [
+                    " C#",
+                    "C#X",
+                    "# X"
+                ],
+    "result":  {
+                   "id":  "hadeandepths:iron_fishing_rod"
+               }
 }

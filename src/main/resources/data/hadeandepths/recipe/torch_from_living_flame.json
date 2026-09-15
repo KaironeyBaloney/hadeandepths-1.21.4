@@ -1,16 +1,20 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": "minecraft:stick",
-    "X": "hadeandepths:living_flame"
-  },
-  "pattern": [
-    "X",
-    "#"
-  ],
-  "result": {
-    "count": 8,
-    "id": "minecraft:torch"
-  }
+    "type":  "minecraft:crafting_shaped",
+    "category":  "equipment",
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:stick"
+                      },
+                "X":  {
+                          "item":  "hadeandepths:living_flame"
+                      }
+            },
+    "pattern":  [
+                    "X",
+                    "#"
+                ],
+    "result":  {
+                   "id":  "minecraft:torch",
+                   "count":  8
+               }
 }

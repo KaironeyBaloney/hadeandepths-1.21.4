@@ -16,8 +16,18 @@ public class ButcheringHookModel extends GeoModel<ButcheringHookBlockEntity> {
 
 
     @Override
+    public ResourceLocation getModelResource(ButcheringHookBlockEntity animatable) {
+        return MODEL;
+    }
+
+    @Override
     public ResourceLocation getModelResource(ButcheringHookBlockEntity animatable, @Nullable GeoRenderer<ButcheringHookBlockEntity> renderer) {
         return MODEL;
+    }
+
+    @Override
+    public ResourceLocation getTextureResource(ButcheringHookBlockEntity animatable) {
+        return TEXTURE;
     }
 
     @Override

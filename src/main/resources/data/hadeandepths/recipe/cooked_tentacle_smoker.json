@@ -1,10 +1,12 @@
 {
-  "type": "minecraft:smoking",
-  "category": "food",
-  "ingredient": "hadeandepths:tentacle",
-  "result": {
-    "id": "hadeandepths:cooked_tentacle"
-  },
-  "experience": 0.35,
-  "cookingtime": 100
+    "type":  "minecraft:smoking",
+    "category":  "food",
+    "ingredient":  {
+                       "item":  "hadeandepths:tentacle"
+                   },
+    "result":  {
+                   "id":  "hadeandepths:cooked_tentacle"
+               },
+    "experience":  0.35,
+    "cookingtime":  100
 }

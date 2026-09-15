@@ -1,10 +1,12 @@
 {
-  "type": "minecraft:smoking",
-  "category": "food",
-  "ingredient": "hadeandepths:raw_huge_fillet",
-  "result": {
-    "id": "hadeandepths:cooked_huge_fillet"
-  },
-  "experience": 0.35,
-  "cookingtime": 100
+    "type":  "minecraft:smoking",
+    "category":  "food",
+    "ingredient":  {
+                       "item":  "hadeandepths:raw_huge_fillet"
+                   },
+    "result":  {
+                   "id":  "hadeandepths:cooked_huge_fillet"
+               },
+    "experience":  0.35,
+    "cookingtime":  100
 }

@@ -1,15 +1,24 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:baked_potato",
-    "hadeandepths:cooked_fillet",
-    "minecraft:bowl",
-    "hadeandepths:fish_bone",
-    "minecraft:red_mushroom"
-  ],
-  "result": {
-    "id": "hadeandepths:fish_stew",
-    "count": 1
-  }
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "misc",
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:baked_potato"
+                        },
+                        {
+                            "item":  "hadeandepths:cooked_fillet"
+                        },
+                        {
+                            "item":  "minecraft:bowl"
+                        },
+                        {
+                            "item":  "hadeandepths:fish_bone"
+                        },
+                        {
+                            "item":  "minecraft:red_mushroom"
+                        }
+                    ],
+    "result":  {
+                   "id":  "hadeandepths:fish_stew"
+               }
 }

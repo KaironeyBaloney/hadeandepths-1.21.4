@@ -1,10 +1,12 @@
 {
-  "type": "minecraft:campfire_cooking",
-  "category": "food",
-  "ingredient": "hadeandepths:fin",
-  "result": {
-    "id": "hadeandepths:baked_fin"
-  },
-  "experience": 0.35,
-  "cookingtime": 600
+    "type":  "minecraft:campfire_cooking",
+    "category":  "food",
+    "ingredient":  {
+                       "item":  "hadeandepths:fin"
+                   },
+    "result":  {
+                   "id":  "hadeandepths:baked_fin"
+               },
+    "experience":  0.35,
+    "cookingtime":  600
 }

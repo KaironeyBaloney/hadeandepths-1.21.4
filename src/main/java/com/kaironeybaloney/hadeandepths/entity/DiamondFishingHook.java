@@ -247,7 +247,7 @@ public class DiamondFishingHook extends FishingHook {
             }
 
             this.move(MoverType.SELF, this.getDeltaMovement());
-            this.applyEffectsFromBlocks();
+            this.updateInWaterStateAndDoFluidPushing();
             this.updateRotation();
             if (this.currentState == DiamondFishingHook.FishHookState.FLYING && (this.onGround() || this.horizontalCollision)) {
                 this.setDeltaMovement(Vec3.ZERO);

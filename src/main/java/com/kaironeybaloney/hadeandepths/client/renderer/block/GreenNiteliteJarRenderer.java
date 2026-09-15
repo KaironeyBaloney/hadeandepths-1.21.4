@@ -21,6 +21,7 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import org.joml.Vector3f;
 
 
 public class GreenNiteliteJarRenderer<T extends BlockEntity> implements BlockEntityRenderer<T> {
@@ -50,7 +51,9 @@ public class GreenNiteliteJarRenderer<T extends BlockEntity> implements BlockEnt
                 double y = pos.getY() + Math.clamp(rand.nextDouble(), 1.0 / 16, 10.0 / 16);
                 double z = pos.getZ() + Math.clamp(rand.nextDouble(), 4.0 / 16, 12.0 / 16);
 
-                DustParticleOptions dust = new DustParticleOptions(10091442, 0.5f);
+                int color = 10091442;
+                Vector3f colorVec = new Vector3f(((color >> 16) & 0xFF) / 255f, ((color >> 8) & 0xFF) / 255f, (color & 0xFF) / 255f);
+                DustParticleOptions dust = new DustParticleOptions(colorVec, 0.5f);
 
                 level.addParticle(dust, x, y, z, 0, 10, 0);
             }

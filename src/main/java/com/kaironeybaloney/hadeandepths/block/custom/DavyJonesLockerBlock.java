@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Consumer;
 
 public class DavyJonesLockerBlock extends HorizontalDirectionalBlock implements EntityBlock {
-    public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public DavyJonesLockerBlock(Properties props) {
         super(props);
         this.registerDefaultState(this.stateDefinition.any()

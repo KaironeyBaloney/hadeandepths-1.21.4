@@ -12,9 +12,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.component.Consumable;
-import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
-import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -93,8 +90,11 @@ public class ModItems {
                     .saturationModifier(0.5F)
                     .build()), 3200));
     public static final DeferredItem<Item> PUFFERFISH_LIVER = ITEMS.registerItem("pufferfish_liver",
-            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).component(DataComponents.CONSUMABLE, Consumable.builder()
-                    .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.POISON, 450,4))).build())));
+            properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
+                    .nutrition(0)
+                    .saturationModifier(0)
+                    .effect(new MobEffectInstance(MobEffects.POISON, 450, 4), 1.0F)
+                    .build())));
     public static final DeferredItem<Item> RAW_FILLET = ITEMS.registerItem("raw_fillet",
             properties -> new Item(properties.stacksTo(64).rarity(Rarity.COMMON).food(new FoodProperties.Builder()
                     .nutrition(3)
@@ -136,7 +136,7 @@ public class ModItems {
                     .saturationModifier(0.6F)
                     .build())));
     public static final DeferredItem<Item> FISH_STEW = ITEMS.registerItem("fish_stew",
-            properties -> new Item(properties.stacksTo(16).rarity(Rarity.COMMON).usingConvertsTo(Items.BOWL).food(new FoodProperties.Builder()
+            properties -> new Item(properties.stacksTo(16).rarity(Rarity.COMMON).craftRemainder(Items.BOWL).food(new FoodProperties.Builder()
                     .nutrition(12)
                     .saturationModifier(0.6F)
                     .build())));
@@ -454,28 +454,28 @@ public class ModItems {
     public static final DeferredItem<Item> SERPENT_BONE_BOW = ITEMS.registerItem("serpent_bone_bow",
             properties -> new SerpentBoneBowItem(properties.stacksTo(1).rarity(Rarity.UNCOMMON).durability(512)));
     public static final DeferredItem<Item> TIDAL_PICKAXE = ITEMS.registerItem("tidal_pickaxe",
-            properties -> new PickaxeItem(ModToolMaterials.TIDAL_TOOL, 2, -2.8f, properties.rarity(Rarity.UNCOMMON)));
+            properties -> new PickaxeItem(ModToolMaterials.TIDAL_TOOL, properties.rarity(Rarity.UNCOMMON).attributes(DiggerItem.createAttributes(ModToolMaterials.TIDAL_TOOL, 2f, -2.8f))));
     public static final DeferredItem<Item> TIDAL_SHOVEL = ITEMS.registerItem("tidal_shovel",
-            properties -> new ShovelItem(ModToolMaterials.TIDAL_TOOL, 2.5f, 0, properties.rarity(Rarity.UNCOMMON)));
+            properties -> new ShovelItem(ModToolMaterials.TIDAL_TOOL, properties.rarity(Rarity.UNCOMMON).attributes(DiggerItem.createAttributes(ModToolMaterials.TIDAL_TOOL, 2.5f, 0f))));
     public static final DeferredItem<Item> TIDAL_AXE = ITEMS.registerItem("tidal_axe",
-            properties -> new AxeItem(ModToolMaterials.TIDAL_TOOL, 6, -3f, properties.rarity(Rarity.UNCOMMON)));
+            properties -> new AxeItem(ModToolMaterials.TIDAL_TOOL, properties.rarity(Rarity.UNCOMMON).attributes(DiggerItem.createAttributes(ModToolMaterials.TIDAL_TOOL, 6f, -3f))));
     public static final DeferredItem<Item> TIDAL_HOE = ITEMS.registerItem("tidal_hoe",
-            properties -> new HoeItem(ModToolMaterials.TIDAL_TOOL, -2, 0, properties.rarity(Rarity.UNCOMMON)));
+            properties -> new HoeItem(ModToolMaterials.TIDAL_TOOL, properties.rarity(Rarity.UNCOMMON).attributes(HoeItem.createAttributes(ModToolMaterials.TIDAL_TOOL, -2f, 0f))));
     public static final DeferredItem<Item> TIDAL_SWORD = ITEMS.registerItem("tidal_sword",
-            properties -> new SwordItem(ModToolMaterials.TIDAL_TOOL, 4, -2.4f, properties.rarity(Rarity.UNCOMMON)));
+            properties -> new SwordItem(ModToolMaterials.TIDAL_TOOL, properties.rarity(Rarity.UNCOMMON).attributes(SwordItem.createAttributes(ModToolMaterials.TIDAL_TOOL, 4, -2.4f))));
     public static final DeferredItem<Item> TIDAL_MORNING_STAR = ITEMS.registerItem("tidal_morning_star",
             properties -> new TidalMorningStarItem(ModToolMaterials.TIDAL_TOOL, 5, -2.6f, 20, properties.rarity(Rarity.UNCOMMON)));
     public static final DeferredItem<Item> TIDAL_SLEDGE = ITEMS.registerItem("tidal_sledge",
             properties -> new TidalSledgeItem(ModToolMaterials.TIDAL_TOOL, 9, -3.2f, properties.rarity(Rarity.UNCOMMON)));
 
     public static final DeferredItem<Item> TIDAL_HELMET = ITEMS.registerItem("tidal_helmet",
-            properties -> new TidalArmorItem(ModArmorMaterials.TIDAL_ARMOR_MATERIAL, ArmorType.HELMET, properties.rarity(Rarity.UNCOMMON)));
+            properties -> new TidalArmorItem(ModArmorMaterials.TIDAL_ARMOR_MATERIAL, ArmorItem.Type.HELMET, properties.rarity(Rarity.UNCOMMON).durability(ArmorItem.Type.HELMET.getDurability(1200))));
     public static final DeferredItem<Item> TIDAL_CHESTPLATE = ITEMS.registerItem("tidal_chestplate",
-            properties -> new TidalArmorItem(ModArmorMaterials.TIDAL_ARMOR_MATERIAL, ArmorType.CHESTPLATE, properties.rarity(Rarity.UNCOMMON)));
+            properties -> new TidalArmorItem(ModArmorMaterials.TIDAL_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, properties.rarity(Rarity.UNCOMMON).durability(ArmorItem.Type.CHESTPLATE.getDurability(1200))));
     public static final DeferredItem<Item> TIDAL_LEGGINGS = ITEMS.registerItem("tidal_leggings",
-            properties -> new TidalArmorItem(ModArmorMaterials.TIDAL_ARMOR_MATERIAL, ArmorType.LEGGINGS, properties.rarity(Rarity.UNCOMMON)));
+            properties -> new TidalArmorItem(ModArmorMaterials.TIDAL_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, properties.rarity(Rarity.UNCOMMON).durability(ArmorItem.Type.LEGGINGS.getDurability(1200))));
     public static final DeferredItem<Item> TIDAL_BOOTS = ITEMS.registerItem("tidal_boots",
-            properties -> new TidalArmorItem(ModArmorMaterials.TIDAL_ARMOR_MATERIAL, ArmorType.BOOTS, properties.rarity(Rarity.UNCOMMON)));
+            properties -> new TidalArmorItem(ModArmorMaterials.TIDAL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, properties.rarity(Rarity.UNCOMMON).durability(ArmorItem.Type.BOOTS.getDurability(1200))));
 
     public static final DeferredItem<Item> BLUE_NITELITE_JELLYFISH = ITEMS.registerItem("blue_nitelite_jar_jellyfish",
             properties -> new Item(properties.stacksTo(1).rarity(Rarity.COMMON)));

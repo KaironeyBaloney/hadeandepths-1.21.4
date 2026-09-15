@@ -24,5 +24,50 @@
       "translation": [ 1.13, 3.2, 1.13],
       "scale": [ 0.68, 0.68, 0.68 ]
     }
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "hadeandepths:using_item": 1
+      },
+      "model": "hadeandepths:item/serpent_bone_bow_0"
+    },
+    {
+      "predicate": {
+        "hadeandepths:using_item": 1,
+        "hadeandepths:loaded_arrows": 0.5
+      },
+      "model": "hadeandepths:item/serpent_bone_bow_0"
+    },
+    {
+      "predicate": {
+        "hadeandepths:using_item": 1,
+        "hadeandepths:loaded_arrows": 0.5,
+        "hadeandepths:use_duration": 13
+      },
+      "model": "hadeandepths:item/serpent_bone_bow_1"
+    },
+    {
+      "predicate": {
+        "hadeandepths:using_item": 1,
+        "hadeandepths:loaded_arrows": 0.5,
+        "hadeandepths:use_duration": 18
+      },
+      "model": "hadeandepths:item/serpent_bone_bow_2"
+    },
+    {
+      "predicate": {
+        "hadeandepths:using_item": 1,
+        "hadeandepths:loaded_arrows": 1.5
+      },
+      "model": "hadeandepths:item/serpent_bone_bow_3"
+    },
+    {
+      "predicate": {
+        "hadeandepths:using_item": 1,
+        "hadeandepths:loaded_arrows": 2.5
+      },
+      "model": "hadeandepths:item/serpent_bone_bow_4"
+    }
+  ]
 }

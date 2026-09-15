@@ -68,7 +68,9 @@ public class BlueNiteliteJarRenderer<T extends BlockEntity> implements BlockEnti
                 double y = pos.getY() + Math.clamp(rand.nextDouble(), 1.0 / 16, 10.0 / 16);
                 double z = pos.getZ() + Math.clamp(rand.nextDouble(), 4.0 / 16, 12.0 / 16);
 
-                DustParticleOptions dust = new DustParticleOptions(5099007, 0.5f);
+                int color = 5099007;
+                Vector3f colorVec = new Vector3f(((color >> 16) & 0xFF) / 255f, ((color >> 8) & 0xFF) / 255f, (color & 0xFF) / 255f);
+                DustParticleOptions dust = new DustParticleOptions(colorVec, 0.5f);
 
                 level.addParticle(dust, x, y, z, 0, 10, 0);
             }

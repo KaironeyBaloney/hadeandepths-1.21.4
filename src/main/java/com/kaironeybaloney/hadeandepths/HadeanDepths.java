@@ -77,7 +77,7 @@ public class HadeanDepths {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    public void OnGatherData(GatherDataEvent.Client event) {
+    public void OnGatherData(GatherDataEvent event) {
         var generator = event.getGenerator();
         var output = generator.getPackOutput();
         var lookupProvider = event.getLookupProvider();

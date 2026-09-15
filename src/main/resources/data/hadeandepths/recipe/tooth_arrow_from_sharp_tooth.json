@@ -1,18 +1,24 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": "minecraft:stick",
-    "X": "hadeandepths:sharp_tooth",
-    "Y": "hadeandepths:fin"
-  },
-  "pattern": [
-    "X",
-    "#",
-    "Y"
-  ],
-  "result": {
-    "count": 4,
-    "id": "hadeandepths:tooth_arrow"
-  }
+    "type":  "minecraft:crafting_shaped",
+    "category":  "equipment",
+    "key":  {
+                "Y":  {
+                          "item":  "hadeandepths:fin"
+                      },
+                "#":  {
+                          "item":  "minecraft:stick"
+                      },
+                "X":  {
+                          "item":  "hadeandepths:sharp_tooth"
+                      }
+            },
+    "pattern":  [
+                    "X",
+                    "#",
+                    "Y"
+                ],
+    "result":  {
+                   "id":  "hadeandepths:tooth_arrow",
+                   "count":  4
+               }
 }

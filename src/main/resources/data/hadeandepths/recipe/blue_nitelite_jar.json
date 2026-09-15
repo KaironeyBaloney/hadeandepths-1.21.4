@@ -1,11 +1,14 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    "hadeandepths:blue_nitelite",
-    "hadeandepths:water_jar"
-  ],
-  "result": {
-    "count": 1,
-    "id": "hadeandepths:blue_nitelite_jar"
-  }
+    "type":  "minecraft:crafting_shapeless",
+    "ingredients":  [
+                        {
+                            "item":  "hadeandepths:blue_nitelite"
+                        },
+                        {
+                            "item":  "hadeandepths:water_jar"
+                        }
+                    ],
+    "result":  {
+                   "id":  "hadeandepths:blue_nitelite_jar"
+               }
 }

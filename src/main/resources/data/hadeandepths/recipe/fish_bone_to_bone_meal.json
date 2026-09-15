@@ -1,11 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "hadeandepths:fish_bone"
-  ],
-  "result": {
-    "id": "minecraft:bone_meal",
-    "count": 2
-  }
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "misc",
+    "ingredients":  [
+                        {
+                            "item":  "hadeandepths:fish_bone"
+                        }
+                    ],
+    "result":  {
+                   "id":  "minecraft:bone_meal",
+                   "count":  2
+               }
 }

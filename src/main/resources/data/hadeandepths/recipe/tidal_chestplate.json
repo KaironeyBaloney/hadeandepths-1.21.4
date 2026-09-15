@@ -1,24 +1,29 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "# #",
-    "#^#",
-    "&#&"
-  ],
-  "key": {
-    "#": [
-      "hadeandepths:deep_sea_amalgam"
-    ],
-    "^": [
-      "hadeandepths:legendary_heart"
-    ],
-    "&": [
-      "hadeandepths:phantom_jelly_silk"
-    ]
-  },
-  "result": {
-    "id": "hadeandepths:tidal_chestplate",
-    "count": 1
-  }
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "pattern":  [
+                    "# #",
+                    "#^#",
+                    "\u0026#\u0026"
+                ],
+    "key":  {
+                "^":  [
+                          {
+                              "item":  "hadeandepths:legendary_heart"
+                          }
+                      ],
+                "#":  [
+                          {
+                              "item":  "hadeandepths:deep_sea_amalgam"
+                          }
+                      ],
+                "\u0026":  [
+                               {
+                                   "item":  "hadeandepths:phantom_jelly_silk"
+                               }
+                           ]
+            },
+    "result":  {
+                   "id":  "hadeandepths:tidal_chestplate"
+               }
 }

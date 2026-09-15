@@ -8,14 +8,14 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 
 import java.util.List;
 
 public class TidalSledgeItem extends SwordItem {
-    public TidalSledgeItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties) {
-        super(material, attackDamage, attackSpeed, properties);
+    public TidalSledgeItem(Tier material, float attackDamage, float attackSpeed, Properties properties) {
+        super(material, properties.attributes(SwordItem.createAttributes(material, attackDamage, attackSpeed)));
     }
 
     @Override

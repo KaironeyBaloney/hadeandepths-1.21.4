@@ -1,10 +1,12 @@
 {
-  "type": "minecraft:smoking",
-  "category": "food",
-  "ingredient": "hadeandepths:raw_tuna_fillet",
-  "result": {
-    "id": "hadeandepths:cooked_tuna_fillet"
-  },
-  "experience": 0.35,
-  "cookingtime": 100
+    "type":  "minecraft:smoking",
+    "category":  "food",
+    "ingredient":  {
+                       "item":  "hadeandepths:raw_tuna_fillet"
+                   },
+    "result":  {
+                   "id":  "hadeandepths:cooked_tuna_fillet"
+               },
+    "experience":  0.35,
+    "cookingtime":  100
 }

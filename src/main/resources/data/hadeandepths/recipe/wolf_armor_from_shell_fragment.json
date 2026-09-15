@@ -1,18 +1,19 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "pattern": [
-    "#  ",
-    "###",
-    "# #"
-  ],
-  "key": {
-    "#": [
-      "hadeandepths:shell_fragment"
-    ]
-  },
-  "result": {
-    "id": "minecraft:wolf_armor",
-    "count": 1
-  }
+    "type":  "minecraft:crafting_shaped",
+    "category":  "equipment",
+    "pattern":  [
+                    "#  ",
+                    "###",
+                    "# #"
+                ],
+    "key":  {
+                "#":  [
+                          {
+                              "item":  "hadeandepths:shell_fragment"
+                          }
+                      ]
+            },
+    "result":  {
+                   "id":  "minecraft:wolf_armor"
+               }
 }

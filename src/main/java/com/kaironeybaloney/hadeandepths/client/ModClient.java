@@ -4,9 +4,9 @@ import com.kaironeybaloney.hadeandepths.HadeanDepths;
 import com.kaironeybaloney.hadeandepths.block.ModBlocks;
 import com.kaironeybaloney.hadeandepths.block.entity.BlueNiteliteJarBlockEntity;
 import com.kaironeybaloney.hadeandepths.block.entity.ModBlockEntities;
-import com.kaironeybaloney.hadeandepths.client.properties.LoadedArrowsProperty;
 import com.kaironeybaloney.hadeandepths.client.renderer.block.*;
 import com.kaironeybaloney.hadeandepths.client.renderer.entity.*;
+import com.kaironeybaloney.hadeandepths.client.renderer.item.LegendaryFishRenderer;
 import com.kaironeybaloney.hadeandepths.data.ModDataComponents;
 import com.kaironeybaloney.hadeandepths.data.custom.LoadedAmmoComponent;
 import com.kaironeybaloney.hadeandepths.entity.ModEntities;
@@ -16,13 +16,11 @@ import com.kaironeybaloney.hadeandepths.screen.custom.CrucibleScreen;
 import com.kaironeybaloney.hadeandepths.screen.custom.DavyJonesLockerScreen;
 import com.kaironeybaloney.hadeandepths.screen.custom.WoodenCrateScreen;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.item.properties.conditional.ConditionalItemModelProperties;
-import net.minecraft.client.renderer.item.properties.conditional.ConditionalItemModelProperty;
-import net.minecraft.client.renderer.item.properties.select.SelectItemModelProperties;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.ItemStack;
@@ -35,11 +33,26 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.neoforge.client.event.RegisterRangeSelectItemModelPropertyEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.brewing.BrewingRecipeRegistry;
 
 @EventBusSubscriber(modid = HadeanDepths.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModClient {
+    private static final IClientItemExtensions LEGENDARY_FISH_EXTENSIONS = new IClientItemExtensions() {
+        private LegendaryFishRenderer renderer;
+
+        @Override
+        public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+            if (renderer == null) {
+                renderer = new LegendaryFishRenderer(
+                        Minecraft.getInstance().getBlockEntityRenderDispatcher(),
+                        Minecraft.getInstance().getEntityModels());
+            }
+            return renderer;
+        }
+    };
+
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
@@ -49,10 +62,42 @@ public class ModClient {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLOWY_GOOP_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.BUTCHERING_HOOK.get(), RenderType.cutout());
 
+            ItemProperties.register(
+                    ModItems.SERPENT_BONE_BOW.get(),
+                    ResourceLocation.fromNamespaceAndPath("hadeandepths", "loaded_arrows"),
+                    (stack, level, entity, seed) -> {
+                        var comp = stack.get(ModDataComponents.LOADED_AMMO);
+                        return comp == null ? 0f : (float) comp.ammo().size();
+                    });
 
+            ItemProperties.register(
+                    ModItems.SERPENT_BONE_BOW.get(),
+                    ResourceLocation.fromNamespaceAndPath("hadeandepths", "using_item"),
+                    (stack, level, entity, seed) ->
+                            entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
+
+            ItemProperties.register(
+                    ModItems.SERPENT_BONE_BOW.get(),
+                    ResourceLocation.fromNamespaceAndPath("hadeandepths", "use_duration"),
+                    (stack, level, entity, seed) -> {
+                        if (entity == null) {
+                            return 0.0F;
+                        }
+                        return (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks());
+                    });
         });
+}
 
+    @SubscribeEvent
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        event.registerItem(LEGENDARY_FISH_EXTENSIONS,
+                ModItems.GREAT_WHITE_SHARK.get(), ModItems.MANTA_RAY.get(), ModItems.TUNA.get(),
+                ModItems.COLOSSAL_SQUID.get(), ModItems.DUNKLEOSTEUS.get(), ModItems.SEA_SERPENT.get(),
+                ModItems.AMETHYST_GROUPER.get(), ModItems.GIANT_CATFISH.get(), ModItems.STURGEON.get(),
+                ModItems.FRILLED_SHARK.get(), ModItems.ORCA.get(), ModItems.PHANTOM_JELLYFISH.get(),
+                ModItems.MEGALODON.get(), ModItems.NETHERITIC_CONTRAPTION.get(), ModItems.MAGMA_WYRM.get());
     }
+
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntities.BLUE_NITELITE_JAR_BLOCK_ENTITY.get(), BlueNiteliteJarRenderer::new);
@@ -81,13 +126,5 @@ public class ModClient {
         event.register(ModMenuTypes.DAVY_JONES_LOCKER_MENU.get(), DavyJonesLockerScreen::new);
         event.register(ModMenuTypes.WOODEN_CRATE_MENU.get(), WoodenCrateScreen::new);
         event.register(ModMenuTypes.CRUCIBLE_MENU.get(), CrucibleScreen::new);
-    }
-
-    @SubscribeEvent
-    public static void registerRangeProperties(RegisterRangeSelectItemModelPropertyEvent event) {
-        event.register(
-                ResourceLocation.fromNamespaceAndPath("hadeandepths", "loaded_arrows"),
-                LoadedArrowsProperty.MAP_CODEC
-        );
     }
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "hadeandepths:fishing/craft_butchering_hook",
+  "parent": "hadeandepths:craft_butchering_hook",
   "criteria": {
     "has_tooth_arrow": {
       "conditions": {

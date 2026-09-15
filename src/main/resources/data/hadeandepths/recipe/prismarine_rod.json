@@ -1,21 +1,24 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "#",
-    "$",
-    "#"
-  ],
-  "key": {
-    "#": [
-      "minecraft:prismarine_shard"
-    ],
-    "$": [
-      "minecraft:prismarine_crystals"
-    ]
-  },
-  "result": {
-    "id": "hadeandepths:prismarine_rod",
-    "count": 1
-  }
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "pattern":  [
+                    "#",
+                    "$",
+                    "#"
+                ],
+    "key":  {
+                "$":  [
+                          {
+                              "item":  "minecraft:prismarine_crystals"
+                          }
+                      ],
+                "#":  [
+                          {
+                              "item":  "minecraft:prismarine_shard"
+                          }
+                      ]
+            },
+    "result":  {
+                   "id":  "hadeandepths:prismarine_rod"
+               }
 }

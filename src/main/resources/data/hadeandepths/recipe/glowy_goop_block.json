@@ -1,15 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "key": {
-    "#": "hadeandepths:glowy_goop"
-  },
-  "result": {
-    "id": "hadeandepths:glowy_goop_block",
-    "count": 1
-  }
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "###",
+                    "###",
+                    "###"
+                ],
+    "key":  {
+                "#":  {
+                          "item":  "hadeandepths:glowy_goop"
+                      }
+            },
+    "result":  {
+                   "id":  "hadeandepths:glowy_goop_block"
+               }
 }

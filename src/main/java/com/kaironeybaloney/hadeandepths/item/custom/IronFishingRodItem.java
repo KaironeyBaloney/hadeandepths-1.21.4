@@ -11,7 +11,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
@@ -34,7 +34,7 @@ public class IronFishingRodItem extends FishingRodItem {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
         if (player.fishing != null) {
             if (!level.isClientSide) {
@@ -54,14 +54,14 @@ public class IronFishingRodItem extends FishingRodItem {
                 ServerLevel serverlevel = (ServerLevel)level;
                 int j = (int)((EnchantmentHelper.getFishingTimeReduction(serverlevel, itemstack, player) * 20.0F));
                 int k = (int) ((EnchantmentHelper.getFishingLuckBonus(serverlevel, itemstack, player)));
-                Projectile.spawnProjectile(new IronFishingHook(player, level, k, j), serverlevel, itemstack);
+                level.addFreshEntity(new IronFishingHook(player, level, k, j));
             }
 
             player.awardStat(Stats.ITEM_USED.get(this));
             player.gameEvent(GameEvent.ITEM_INTERACT_START);
         }
 
-        return InteractionResult.SUCCESS;
+        return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
     }
 
     @Override

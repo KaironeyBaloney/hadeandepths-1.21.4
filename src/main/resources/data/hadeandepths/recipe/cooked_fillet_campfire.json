@@ -1,10 +1,12 @@
 {
-  "type": "minecraft:campfire_cooking",
-  "category": "food",
-  "ingredient": "hadeandepths:raw_fillet",
-  "result": {
-    "id": "hadeandepths:cooked_fillet"
-  },
-  "experience": 0.35,
-  "cookingtime": 600
+    "type":  "minecraft:campfire_cooking",
+    "category":  "food",
+    "ingredient":  {
+                       "item":  "hadeandepths:raw_fillet"
+                   },
+    "result":  {
+                   "id":  "hadeandepths:cooked_fillet"
+               },
+    "experience":  0.35,
+    "cookingtime":  600
 }

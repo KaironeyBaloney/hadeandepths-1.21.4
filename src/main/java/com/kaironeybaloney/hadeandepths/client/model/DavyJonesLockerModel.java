@@ -14,8 +14,18 @@ public class DavyJonesLockerModel extends GeoModel<DavyJonesLockerBlockEntity> {
 
 
     @Override
+    public ResourceLocation getModelResource(DavyJonesLockerBlockEntity animatable) {
+        return MODEL;
+    }
+
+    @Override
     public ResourceLocation getModelResource(DavyJonesLockerBlockEntity animatable, @Nullable GeoRenderer<DavyJonesLockerBlockEntity> renderer) {
         return MODEL;
+    }
+
+    @Override
+    public ResourceLocation getTextureResource(DavyJonesLockerBlockEntity animatable) {
+        return TEXTURE;
     }
 
     @Override

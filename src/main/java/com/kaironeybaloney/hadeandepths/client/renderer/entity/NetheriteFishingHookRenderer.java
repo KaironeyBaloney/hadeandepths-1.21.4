@@ -6,69 +6,80 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.state.FishingHookRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.ItemAbilities;
 
-public class NetheriteFishingHookRenderer extends EntityRenderer<NetheriteFishingHook, FishingHookRenderState> {
+public class NetheriteFishingHookRenderer extends EntityRenderer<NetheriteFishingHook> {
     private static final ResourceLocation TEXTURE_LOCATION = ResourceLocation.fromNamespaceAndPath("hadeandepths", "textures/entity/netherite_fishing_hook.png");
-    private static final RenderType RENDER_TYPE;
+    private static final RenderType RENDER_TYPE = RenderType.entityCutout(TEXTURE_LOCATION);
     private static final double VIEW_BOBBING_SCALE = 960.0;
 
-    public NetheriteFishingHookRenderer(EntityRendererProvider.Context ctx) {
-        super(ctx);
+    public NetheriteFishingHookRenderer(EntityRendererProvider.Context context) {
+        super(context);
     }
 
-    public boolean shouldRender(NetheriteFishingHook p_363069_, Frustum p_362635_, double p_361840_, double p_361502_, double p_360380_) {
-        return super.shouldRender(p_363069_, p_362635_, p_361840_, p_361502_, p_360380_) && p_363069_.getPlayerOwner() != null;
-    }
+    @Override
+    public void render(NetheriteFishingHook entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+        Player player = entity.getPlayerOwner();
+        if (player != null) {
+            poseStack.pushPose();
+            poseStack.pushPose();
+            poseStack.scale(0.5F, 0.5F, 0.5F);
+            poseStack.mulPose(this.entityRenderDispatcher.cameraOrientation());
+            PoseStack.Pose posestack$pose = poseStack.last();
+            VertexConsumer vertexconsumer = buffer.getBuffer(RENDER_TYPE);
+            vertex(vertexconsumer, posestack$pose, packedLight, 0.0F, 0, 0, 1);
+            vertex(vertexconsumer, posestack$pose, packedLight, 1.0F, 0, 1, 1);
+            vertex(vertexconsumer, posestack$pose, packedLight, 1.0F, 1, 1, 0);
+            vertex(vertexconsumer, posestack$pose, packedLight, 0.0F, 1, 0, 0);
+            poseStack.popPose();
+            float f = player.getAttackAnim(partialTicks);
+            float f1 = Mth.sin(Mth.sqrt(f) * (float) Math.PI);
+            Vec3 vec3 = this.getPlayerHandPos(player, f1, partialTicks);
+            Vec3 vec31 = entity.getPosition(partialTicks).add(0.0, 0.25, 0.0);
+            float f2 = (float) (vec3.x - vec31.x);
+            float f3 = (float) (vec3.y - vec31.y);
+            float f4 = (float) (vec3.z - vec31.z);
+            VertexConsumer vertexconsumer1 = buffer.getBuffer(RenderType.lineStrip());
+            PoseStack.Pose posestack$pose1 = poseStack.last();
+            int i = 16;
 
-    public void render(FishingHookRenderState p_362456_, PoseStack p_114699_, MultiBufferSource p_114700_, int p_114701_) {
-        p_114699_.pushPose();
-        p_114699_.pushPose();
-        p_114699_.scale(0.5F, 0.5F, 0.5F);
-        p_114699_.mulPose(this.entityRenderDispatcher.cameraOrientation());
-        PoseStack.Pose posestack$pose = p_114699_.last();
-        VertexConsumer vertexconsumer = p_114700_.getBuffer(RENDER_TYPE);
-        vertex(vertexconsumer, posestack$pose, p_114701_, 0.0F, 0, 0, 1);
-        vertex(vertexconsumer, posestack$pose, p_114701_, 1.0F, 0, 1, 1);
-        vertex(vertexconsumer, posestack$pose, p_114701_, 1.0F, 1, 1, 0);
-        vertex(vertexconsumer, posestack$pose, p_114701_, 0.0F, 1, 0, 0);
-        p_114699_.popPose();
-        float f = (float) p_362456_.lineOriginOffset.x;
-        float f1 = (float) p_362456_.lineOriginOffset.y;
-        float f2 = (float) p_362456_.lineOriginOffset.z;
-        VertexConsumer vertexconsumer1 = p_114700_.getBuffer(RenderType.lineStrip());
-        PoseStack.Pose posestack$pose1 = p_114699_.last();
+            for (int j = 0; j <= 16; j++) {
+                stringVertex(f2, f3, f4, vertexconsumer1, posestack$pose1, fraction(j, 16), fraction(j + 1, 16));
+            }
 
-        for (int j = 0; j <= 16; ++j) {
-            stringVertex(f, f1, f2, vertexconsumer1, posestack$pose1, fraction(j, 16), fraction(j + 1, 16));
+            poseStack.popPose();
+            super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
         }
-
-        p_114699_.popPose();
-        super.render(p_362456_, p_114699_, p_114700_, p_114701_);
-    }
-
-    public static HumanoidArm getHoldingArm(Player player) {
-        return player.getMainHandItem().canPerformAction(ItemAbilities.FISHING_ROD_CAST) ? player.getMainArm() : player.getMainArm().getOpposite();
     }
 
     private Vec3 getPlayerHandPos(Player player, float handAngle, float partialTick) {
-        int i = getHoldingArm(player) == HumanoidArm.RIGHT ? 1 : -1;
+        int i = player.getMainArm() == HumanoidArm.RIGHT ? 1 : -1;
+        ItemStack itemstack = player.getMainHandItem();
+        if (!itemstack.canPerformAction(ItemAbilities.FISHING_ROD_CAST)) {
+            i = -i;
+        }
+
         if (this.entityRenderDispatcher.options.getCameraType().isFirstPerson() && player == Minecraft.getInstance().player) {
-            double d4 = 960.0 / (double) (Integer) this.entityRenderDispatcher.options.fov().get();
-            Vec3 vec3 = this.entityRenderDispatcher.camera.getNearPlane().getPointOnPlane((float) i * 0.525F, -0.1F).scale(d4).yRot(handAngle * 0.5F).xRot(-handAngle * 0.7F);
+            double d4 = 960.0 / (double) this.entityRenderDispatcher.options.fov().get().intValue();
+            Vec3 vec3 = this.entityRenderDispatcher
+                    .camera
+                    .getNearPlane()
+                    .getPointOnPlane((float) i * 0.525F, -0.1F)
+                    .scale(d4)
+                    .yRot(handAngle * 0.5F)
+                    .xRot(-handAngle * 0.7F);
             return player.getEyePosition(partialTick).add(vec3);
         } else {
-            float f = Mth.lerp(partialTick, player.yBodyRotO, player.yBodyRot) * 0.017453292F;
+            float f = Mth.lerp(partialTick, player.yBodyRotO, player.yBodyRot) * (float) (Math.PI / 180.0);
             double d0 = (double) Mth.sin(f);
             double d1 = (double) Mth.cos(f);
             float f1 = player.getScale();
@@ -84,7 +95,12 @@ public class NetheriteFishingHookRenderer extends EntityRenderer<NetheriteFishin
     }
 
     private static void vertex(VertexConsumer consumer, PoseStack.Pose pose, int packedLight, float x, int y, int u, int v) {
-        consumer.addVertex(pose, x - 0.5F, (float) y - 0.5F, 0.0F).setColor(-1).setUv((float) u, (float) v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, 0.0F, 1.0F, 0.0F);
+        consumer.addVertex(pose, x - 0.5F, (float) y - 0.5F, 0.0F)
+                .setColor(-1)
+                .setUv((float) u, (float) v)
+                .setOverlay(OverlayTexture.NO_OVERLAY)
+                .setLight(packedLight)
+                .setNormal(pose, 0.0F, 1.0F, 0.0F);
     }
 
     private static void stringVertex(float x, float y, float z, VertexConsumer consumer, PoseStack.Pose pose, float stringFraction, float nextStringFraction) {
@@ -101,30 +117,8 @@ public class NetheriteFishingHookRenderer extends EntityRenderer<NetheriteFishin
         consumer.addVertex(pose, f, f1, f2).setColor(-16777216).setNormal(pose, f3, f4, f5);
     }
 
-    public FishingHookRenderState createRenderState() {
-        return new FishingHookRenderState();
-    }
-
-    public void extractRenderState(NetheriteFishingHook p_361584_, FishingHookRenderState p_364824_, float p_360891_) {
-        super.extractRenderState(p_361584_, p_364824_, p_360891_);
-        Player player = p_361584_.getPlayerOwner();
-        if (player == null) {
-            p_364824_.lineOriginOffset = Vec3.ZERO;
-        } else {
-            float f = player.getAttackAnim(p_360891_);
-            float f1 = Mth.sin(Mth.sqrt(f) * 3.1415927F);
-            Vec3 vec3 = this.getPlayerHandPos(player, f1, p_360891_);
-            Vec3 vec31 = p_361584_.getPosition(p_360891_).add(0.0, 0.25, 0.0);
-            p_364824_.lineOriginOffset = vec3.subtract(vec31);
-        }
-
-    }
-
-    protected boolean affectedByCulling(NetheriteFishingHook p_365042_) {
-        return false;
-    }
-
-    static {
-        RENDER_TYPE = RenderType.entityCutout(TEXTURE_LOCATION);
+    @Override
+    public ResourceLocation getTextureLocation(NetheriteFishingHook entity) {
+        return TEXTURE_LOCATION;
     }
 }

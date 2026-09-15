@@ -7,7 +7,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BottleItem;
 import net.minecraft.world.item.Item;
@@ -31,19 +31,19 @@ public class GlassJarItem extends Item {
     }
 
     @Override
-    public InteractionResult use(Level world, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
         ItemStack stackInHand = player.getItemInHand(hand);
 
         BlockHitResult hitResult = getPlayerPOVHitResult(world, player, ClipContext.Fluid.SOURCE_ONLY);
 
         if (hitResult.getType() == HitResult.Type.MISS) {
-            return InteractionResult.PASS;
+            return InteractionResultHolder.pass(stackInHand);
         }
 
         if (hitResult.getType() == HitResult.Type.BLOCK) {
             BlockPos pos = hitResult.getBlockPos();
             if (!world.mayInteract(player, pos)) {
-                return InteractionResult.PASS;
+                return InteractionResultHolder.pass(stackInHand);
             }
 
             BlockState state = world.getBlockState(pos);
@@ -70,7 +70,7 @@ public class GlassJarItem extends Item {
                     }
 
                     swapItem(player, stackInHand);
-                    return InteractionResult.SUCCESS.heldItemTransformedTo(stackInHand);
+                    return InteractionResultHolder.sidedSuccess(stackInHand, world.isClientSide());
                 }
             }
 
@@ -89,11 +89,11 @@ public class GlassJarItem extends Item {
                 }
 
                 swapItem(player, stackInHand);
-                return InteractionResult.SUCCESS.heldItemTransformedTo(stackInHand);
+                return InteractionResultHolder.sidedSuccess(stackInHand, world.isClientSide());
             }
         }
 
-        return InteractionResult.PASS;
+        return InteractionResultHolder.pass(stackInHand);
     }
 
     private void swapItem(Player player, ItemStack original)
